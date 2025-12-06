@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="nl" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yomi | Data, Automatisering & Performance</title>
+  <meta name="description"
+    content="Yomi helpt organisaties groeien met slimme datakoppelingen, AI-automatiseringen en resultaatgerichte marketing." />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    body {
+      font-family: 'Manrope', sans-serif;
+      background-color: #FFFFFF;
+      color: #0E0E0E;
+    }
+
+    /* Custom selection color */
+    ::selection {
+      background-color: #4BC0E8;
+      color: white;
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-fade-in-up {
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+
+    .delay-100 {
+      animation-delay: 0.1s;
+    }
+
+    .delay-200 {
+      animation-delay: 0.2s;
+    }
+
+    .delay-300 {
+      animation-delay: 0.3s;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    .animate-float {
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .animate-float-delayed {
+      animation: float 7s ease-in-out infinite 1s;
+    }
+
+    .animate-float-slow {
+      animation: float 5s ease-in-out infinite 0.5s;
+    }
+
+    @keyframes growWidth {
+      from {
+        width: 0;
+      }
+
+      to {
+        width: 75%;
+      }
+    }
+
+    .animate-grow {
+      animation: growWidth 1.5s ease-out forwards;
+      animation-delay: 0.5s;
+    }
+  </style>
+</head>
+
+<body class="antialiased">
+
+  <!-- Navbar -->
+  <nav
+    class="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-md z-50 border-b border-gray-100 h-16 flex items-center">
+    <div class="container mx-auto px-6 md:px-12 max-w-7xl flex justify-between items-center">
+      <a href="#" class="flex items-center">
+        <img src="logos/yomi-logo.png" alt="YOMI" class="h-8 md:h-10 object-contain" />
+      </a>
+      <div class="hidden md:flex space-x-8 text-sm font-medium text-[#1C1C1C]">
+        <a href="#diensten" class="hover:text-[#4BC0E8] transition-colors">Diensten</a>
+        <a href="#werkwijze" class="hover:text-[#4BC0E8] transition-colors">Werkwijze</a>
+        <a href="mailto:jordi@yomi.nl" class="text-[#0E0E0E] hover:text-[#4BC0E8] font-bold">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative min-h-[90vh] flex items-center bg-white pt-24 pb-16 md:py-0 overflow-hidden">
+    <div class="container mx-auto px-6 md:px-12 max-w-7xl">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+        <!-- Left Column: Text -->
+        <div class="z-10 animate-fade-in-up">
+          <h1 class="text-5xl md:text-[64px] leading-[1.1] font-extrabold text-[#0E0E0E] mb-6">
+            Data, automatisering en performance marketing
+          </h1>
+          <p class="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed">
+            Yomi helpt organisaties groeien met slimme datakoppelingen, AI-automatiseringen en resultaatgerichte
+            marketing. We verbinden technologie, data en strategie tot één werkend geheel.
+          </p>
+
+          <ul class="space-y-4 mb-10">
+            <li class="flex items-start">
+              <i data-lucide="bar-chart-3" class="w-6 h-6 text-[#4BC0E8] mr-4 mt-1 flex-shrink-0"></i>
+              <span class="text-lg text-gray-800">Betere inzichten in omzet, marge en klantgedrag</span>
+            </li>
+            <li class="flex items-start">
+              <i data-lucide="settings-2" class="w-6 h-6 text-[#4BC0E8] mr-4 mt-1 flex-shrink-0"></i>
+              <span class="text-lg text-gray-800">Minder handmatig werk door automatisering</span>
+            </li>
+            <li class="flex items-start">
+              <i data-lucide="trending-up" class="w-6 h-6 text-[#4BC0E8] mr-4 mt-1 flex-shrink-0"></i>
+              <span class="text-lg text-gray-800">Effectieve SEO/SEA met echte performance metrics</span>
+            </li>
+            <li class="flex items-start">
+              <i data-lucide="layout-dashboard" class="w-6 h-6 text-[#4BC0E8] mr-4 mt-1 flex-shrink-0"></i>
+              <span class="text-lg text-gray-800">Betrouwbare dashboards voor teams en directie</span>
+            </li>
+            <li class="flex items-start">
+              <i data-lucide="store" class="w-6 h-6 text-[#4BC0E8] mr-4 mt-1 flex-shrink-0"></i>
+              <span class="text-lg text-gray-800">Tools op maat voor retail, franchise en B2B</span>
+            </li>
+          </ul>
+
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="mailto:jordi@yomi.nl"
+              class="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold transition-all duration-300 rounded-lg bg-[#0E0E0E] text-white hover:bg-[#1C1C1C] border border-transparent shadow-lg hover:shadow-xl">
+              Plan een kennismaking <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+            </a>
+            <a href="#diensten"
+              class="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold transition-all duration-300 rounded-lg bg-transparent border-2 border-[#0E0E0E] text-[#0E0E0E] hover:bg-[#0E0E0E] hover:text-white">
+              Bekijk diensten
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Column: Abstract Visual -->
+        <div class="relative h-full min-h-[400px] flex items-center justify-center animate-fade-in-up delay-200">
+          <div class="relative w-full aspect-square max-w-[500px]">
+            <!-- Abstract decorative circles/grid -->
+            <div class="absolute inset-0 bg-gradient-to-tr from-[#F5F5F5] to-white rounded-full opacity-50 blur-3xl">
+            </div>
+
+            <!-- Data Node Visualization -->
+            <div
+              class="relative z-10 w-full h-full border border-gray-100 rounded-3xl p-8 shadow-2xl bg-white/80 backdrop-blur-sm grid grid-cols-2 gap-4">
+
+              <!-- Growth Metrics Block -->
+              <div class="col-span-2 bg-[#0E0E0E] rounded-2xl p-6 text-white animate-float">
+                <div class="flex justify-between items-center mb-4">
+                  <span class="font-bold text-lg">Growth Metrics</span>
+                  <i data-lucide="trending-up" class="text-[#4BC0E8]"></i>
+                </div>
+                <div class="h-2 bg-gray-700 rounded-full mb-2 overflow-hidden">
+                  <div class="h-full bg-[#10B981] animate-grow" style="width: 0%"></div>
+                </div>
+                <div class="flex justify-between text-sm text-gray-400">
+                  <span>Automated</span>
+                  <span>+24%</span>
+                </div>
+              </div>
+
+              <!-- Realtime Dashboards Block -->
+              <div class="bg-[#F5F5F5] rounded-2xl p-6 flex flex-col justify-between animate-float-delayed">
+                <i data-lucide="layout-dashboard" class="text-[#0E0E0E] w-8 h-8 mb-4"></i>
+                <span class="font-semibold text-[#1C1C1C]">Realtime<br />Dashboards</span>
+              </div>
+
+              <!-- AI Automation Block -->
+              <div
+                class="bg-gradient-to-br from-[#4BC0E8] to-[#2DA0C8] rounded-2xl p-6 flex flex-col justify-between text-white animate-float-slow">
+                <i data-lucide="settings-2" class="w-8 h-8 mb-4 opacity-90"></i>
+                <span class="font-semibold">AI<br />Automation</span>
+              </div>
+            </div>
+
+            <!-- Decorative floating elements -->
+            <div class="absolute -z-10 top-10 -right-10 w-24 h-24 bg-[#4BC0E8]/20 rounded-full blur-xl animate-pulse">
+            </div>
+            <div class="absolute -z-10 -bottom-10 -left-10 w-32 h-32 bg-[#10B981]/10 rounded-full blur-xl animate-pulse"
+              style="animation-delay: 1s;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who Section -->
+  <section class="py-20 md:py-32 bg-[#F5F5F5]">
+    <div class="container mx-auto px-6 md:px-12 max-w-7xl">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-bold text-[#0E0E0E] mb-6">Voor wie Yomi werkt</h2>
+          <p class="text-lg text-gray-700 mb-6">
+            Yomi is gebouwd voor organisaties die data en marketing willen verbinden:
+          </p>
+          <ul class="space-y-4">
+            <li class="flex items-start">
+              <span class="text-[#4BC0E8] font-bold mr-3">•</span>
+              <span class="text-[#1C1C1C]">B2B-organisaties die slimmer leads willen vinden en kwalificeren</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-[#4BC0E8] font-bold mr-3">•</span>
+              <span class="text-[#1C1C1C]">Retail & omnichannel bedrijven die inzicht willen in marktgebieden</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-[#4BC0E8] font-bold mr-3">•</span>
+              <span class="text-[#1C1C1C]">Franchiseformules die rayonpotentie willen begrijpen</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-[#4BC0E8] font-bold mr-3">•</span>
+              <span class="text-[#1C1C1C]">Marketing- en digital agencies die een whitelabel dataspecialist
+                zoeken</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-white p-8 rounded-xl shadow-sm">
+          <p class="text-sm text-gray-400 font-semibold mb-6 uppercase tracking-widest">Ervaring</p>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
+            <img src="logos/badkamerwinkel.png" alt="badkamerwinkel.nl"
+              class="w-full h-16 md:h-20 object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+            <img src="logos/baderie.png" alt="baderie.nl"
+              class="w-full h-16 md:h-20 object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+            <img src="logos/instalcenter.png" alt="instalcenter.nl"
+              class="w-full h-16 md:h-20 object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+            <img src="logos/badinbeeld.png" alt="badinbeeld.nl"
+              class="w-full h-16 md:h-20 object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+            <img src="logos/purdey.png" alt="Purdey"
+              class="w-full h-16 md:h-20 object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+            <img src="logos/cookandpan.png" alt="Cookandpan"
+              class="w-full h-16 md:h-20 object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+            <img src="logos/vandebovensteplank.png" alt="vandebovensteplank.nl"
+              class="w-full h-16 md:h-20 object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="diensten" class="py-20 md:py-32 bg-white">
+    <div class="container mx-auto px-6 md:px-12 max-w-7xl">
+      <div class="max-w-3xl mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-[#0E0E0E] mb-6">
+          Onze Diensten
+        </h2>
+        <p class="text-xl text-gray-600">
+          Van technische implementatie tot strategisch advies.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Service 1 -->
+        <div class="bg-[#F5F5F5] p-8 rounded-xl hover:shadow-lg transition-shadow duration-300 group">
+          <div
+            class="w-12 h-12 bg-white rounded-lg flex items-center justify-center mb-6 group-hover:bg-[#0E0E0E] transition-colors duration-300">
+            <i data-lucide="map"
+              class="w-6 h-6 text-[#0E0E0E] group-hover:text-[#4BC0E8] transition-colors duration-300"></i>
+          </div>
+          <h3 class="text-xl font-bold text-[#0E0E0E] mb-3">Rayontool</h3>
+          <p class="text-gray-600 leading-relaxed">Interactieve kaart voor groeiplanning en leaddistributie. Combineert
+            marktaandeel, demografie en formuledata.</p>
+        </div>
+        <!-- Service 2 -->
+        <div class="bg-[#F5F5F5] p-8 rounded-xl hover:shadow-lg transition-shadow duration-300 group">
+          <div
+            class="w-12 h-12 bg-white rounded-lg flex items-center justify-center mb-6 group-hover:bg-[#0E0E0E] transition-colors duration-300">
+            <i data-lucide="users"
+              class="w-6 h-6 text-[#0E0E0E] group-hover:text-[#4BC0E8] transition-colors duration-300"></i>
+          </div>
+          <h3 class="text-xl font-bold text-[#0E0E0E] mb-3">B2B Lead Engine</h3>
+          <p class="text-gray-600 leading-relaxed">Automatische verrijking en scoring van bedrijfsdata met AI en Google
+            Places-data.</p>
+        </div>
+        <!-- Service 3 -->
+        <div class="bg-[#F5F5F5] p-8 rounded-xl hover:shadow-lg transition-shadow duration-300 group">
+          <div
+            class="w-12 h-12 bg-white rounded-lg flex items-center justify-center mb-6 group-hover:bg-[#0E0E0E] transition-colors duration-300">
+            <i data-lucide="trending-up"
+              class="w-6 h-6 text-[#0E0E0E] group-hover:text-[#4BC0E8] transition-colors duration-300"></i>
+          </div>
+          <h3 class="text-xl font-bold text-[#0E0E0E] mb-3">Performance Marketing</h3>
+          <p class="text-gray-600 leading-relaxed">SEO, SEA en CRO uitgevoerd op basis van rendement, niet alleen kliks.
+          </p>
+        </div>
+        <!-- Service 4 -->
+        <div class="bg-[#F5F5F5] p-8 rounded-xl hover:shadow-lg transition-shadow duration-300 group">
+          <div
+            class="w-12 h-12 bg-white rounded-lg flex items-center justify-center mb-6 group-hover:bg-[#0E0E0E] transition-colors duration-300">
+            <i data-lucide="database"
+              class="w-6 h-6 text-[#0E0E0E] group-hover:text-[#4BC0E8] transition-colors duration-300"></i>
+          </div>
+          <h3 class="text-xl font-bold text-[#0E0E0E] mb-3">Dashboards & Data</h3>
+          <p class="text-gray-600 leading-relaxed">Koppelingen tussen ERP, CRM en marketingdata, gebouwd met Power BI of
+            Looker Studio.</p>
+        </div>
+        <!-- Service 5 -->
+        <div class="bg-[#F5F5F5] p-8 rounded-xl hover:shadow-lg transition-shadow duration-300 group">
+          <div
+            class="w-12 h-12 bg-white rounded-lg flex items-center justify-center mb-6 group-hover:bg-[#0E0E0E] transition-colors duration-300">
+            <i data-lucide="bot"
+              class="w-6 h-6 text-[#0E0E0E] group-hover:text-[#4BC0E8] transition-colors duration-300"></i>
+          </div>
+          <h3 class="text-xl font-bold text-[#0E0E0E] mb-3">AI Automatisering</h3>
+          <p class="text-gray-600 leading-relaxed">Praktische workflows voor lead scoring, contentgeneratie en interne
+            automatiseringen.</p>
+        </div>
+        <!-- Service 6 -->
+        <div class="bg-[#F5F5F5] p-8 rounded-xl hover:shadow-lg transition-shadow duration-300 group">
+          <div
+            class="w-12 h-12 bg-white rounded-lg flex items-center justify-center mb-6 group-hover:bg-[#0E0E0E] transition-colors duration-300">
+            <i data-lucide="message-square"
+              class="w-6 h-6 text-[#0E0E0E] group-hover:text-[#4BC0E8] transition-colors duration-300"></i>
+          </div>
+          <h3 class="text-xl font-bold text-[#0E0E0E] mb-3">Consultancy op maat</h3>
+          <p class="text-gray-600 leading-relaxed">Voor integraties, routing, datamodelvalidatie en complexe
+            retail-/franchisevraagstukken.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rayontool Detail -->
+  <section class="py-20 md:py-32 bg-[#F5F5F5]">
+    <div class="container mx-auto px-6 md:px-12 max-w-7xl">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <div class="lg:col-span-5">
+          <h2 class="text-3xl md:text-4xl font-bold text-[#0E0E0E] mb-6">Rayontool voor retail en franchise</h2>
+          <p class="text-xl text-gray-600 mb-8">Een interactieve kaart die marktaandeel, demografie, vestigingsdata en
+            leads combineert. Ontworpen voor franchiseformules, retailers en serviceorganisaties.</p>
+        </div>
+        <div class="lg:col-span-7">
+          <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+            <li class="flex items-start">
+              <span
+                class="w-6 h-6 rounded-full bg-[#EAF9FE] flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">
+                <i data-lucide="check" class="w-4 h-4 text-[#4BC0E8]"></i>
+              </span>
+              <span class="text-lg text-[#1C1C1C]">Bekijk potentie per wijk of PC4</span>
+            </li>
+            <li class="flex items-start">
+              <span
+                class="w-6 h-6 rounded-full bg-[#EAF9FE] flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">
+                <i data-lucide="check" class="w-4 h-4 text-[#4BC0E8]"></i>
+              </span>
+              <span class="text-lg text-[#1C1C1C]">Optimaliseer leadverdeling en vestigingslocaties</span>
+            </li>
+            <li class="flex items-start">
+              <span
+                class="w-6 h-6 rounded-full bg-[#EAF9FE] flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">
+                <i data-lucide="check" class="w-4 h-4 text-[#4BC0E8]"></i>
+              </span>
+              <span class="text-lg text-[#1C1C1C]">Combineer CBS-data, klantdata en Google Places</span>
+            </li>
+            <li class="flex items-start">
+              <span
+                class="w-6 h-6 rounded-full bg-[#EAF9FE] flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">
+                <i data-lucide="check" class="w-4 h-4 text-[#4BC0E8]"></i>
+              </span>
+              <span class="text-lg text-[#1C1C1C]">Exporteer rapportages direct voor MT of franchisenemers</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lead Engine Detail -->
+  <section class="py-20 md:py-32 bg-white">
+    <div class="container mx-auto px-6 md:px-12 max-w-7xl">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <div class="lg:col-span-5">
+          <h2 class="text-3xl md:text-4xl font-bold text-[#0E0E0E] mb-6">B2B Lead Engine</h2>
+          <a href="mailto:jordi@yomi.nl"
+            class="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold transition-all duration-300 rounded-lg bg-[#0E0E0E] text-white hover:bg-[#1C1C1C] border border-transparent shadow-lg hover:shadow-xl">
+            Meer info <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+          </a>
+        </div>
+        <div class="lg:col-span-7">
+          <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+            <li class="flex items-start">
+              <span
+                class="w-6 h-6 rounded-full bg-[#EAF9FE] flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">
+                <i data-lucide="check" class="w-4 h-4 text-[#4BC0E8]"></i>
+              </span>
+              <span class="text-lg text-[#1C1C1C]">Realtime bedrijfsverrijking</span>
+            </li>
+            <li class="flex items-start">
+              <span
+                class="w-6 h-6 rounded-full bg-[#EAF9FE] flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">
+                <i data-lucide="check" class="w-4 h-4 text-[#4BC0E8]"></i>
+              </span>
+              <span class="text-lg text-[#1C1C1C]">AI-gebaseerde scoremodellen</span>
+            </li>
+            <li class="flex items-start">
+              <span
+                class="w-6 h-6 rounded-full bg-[#EAF9FE] flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">
+                <i data-lucide="check" class="w-4 h-4 text-[#4BC0E8]"></i>
+              </span>
+              <span class="text-lg text-[#1C1C1C]">Slimme targeting voor sales</span>
+            </li>
+            <li class="flex items-start">
+              <span
+                class="w-6 h-6 rounded-full bg-[#EAF9FE] flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">
+                <i data-lucide="check" class="w-4 h-4 text-[#4BC0E8]"></i>
+              </span>
+              <span class="text-lg text-[#1C1C1C]">Direct te integreren in CRM of ERP</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Performance Detail -->
+  <section class="py-20 md:py-32 bg-white">
+    <div class="container mx-auto px-6 md:px-12 max-w-7xl">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <div class="lg:col-span-5">
+          <h2 class="text-3xl md:text-4xl font-bold text-[#0E0E0E] mb-6">Performance Marketing</h2>
+        </div>
+        <div class="lg:col-span-7">
+          <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+            <li class="flex items-start">
+              <span
+                class="w-6 h-6 rounded-full bg-[#EAF9FE] flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">
+                <i data-lucide="check" class="w-4 h-4 text-[#4BC0E8]"></i>
+              </span>
+              <span class="text-lg text-[#1C1C1C]">Geavanceerde tracking via GTM</span>
+            </li>
+            <li class="flex items-start">
+              <span
+                class="w-6 h-6 rounded-full bg-[#EAF9FE] flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">
+                <i data-lucide="check" class="w-4 h-4 text-[#4BC0E8]"></i>
+              </span>
+              <span class="text-lg text-[#1C1C1C]">Full funnel SEO en SEA</span>
+            </li>
+            <li class="flex items-start">
+              <span
+                class="w-6 h-6 rounded-full bg-[#EAF9FE] flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">
+                <i data-lucide="check" class="w-4 h-4 text-[#4BC0E8]"></i>
+              </span>
+              <span class="text-lg text-[#1C1C1C]">Focus op marge, niet alleen omzet</span>
+            </li>
+            <li class="flex items-start">
+              <span
+                class="w-6 h-6 rounded-full bg-[#EAF9FE] flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">
+                <i data-lucide="check" class="w-4 h-4 text-[#4BC0E8]"></i>
+              </span>
+              <span class="text-lg text-[#1C1C1C]">Dashboards voor direct inzicht</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dashboards Detail -->
+  <section class="py-20 md:py-32 bg-[#F5F5F5]">
+    <div class="container mx-auto px-6 md:px-12 max-w-7xl">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <div class="lg:col-span-5">
+          <h2 class="text-3xl md:text-4xl font-bold text-[#0E0E0E] mb-6">Dashboards & Data Stack</h2>
+        </div>
+        <div class="lg:col-span-7">
+          <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+            <li class="flex items-start">
+              <span
+                class="w-6 h-6 rounded-full bg-[#EAF9FE] flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">
+                <i data-lucide="check" class="w-4 h-4 text-[#4BC0E8]"></i>
+              </span>
+              <span class="text-lg text-[#1C1C1C]">Combineer verkoop, voorraad, marketing en logistiek</span>
+            </li>
+            <li class="flex items-start">
+              <span
+                class="w-6 h-6 rounded-full bg-[#EAF9FE] flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">
+                <i data-lucide="check" class="w-4 h-4 text-[#4BC0E8]"></i>
+              </span>
+              <span class="text-lg text-[#1C1C1C]">Eén waarheid: betrouwbare data voor teams</span>
+            </li>
+            <li class="flex items-start">
+              <span
+                class="w-6 h-6 rounded-full bg-[#EAF9FE] flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">
+                <i data-lucide="check" class="w-4 h-4 text-[#4BC0E8]"></i>
+              </span>
+              <span class="text-lg text-[#1C1C1C]">Dashboards die bruikbaar zijn, geen datagraven</span>
+            </li>
+          </ul>
+          <!-- Tech Stack Badges -->
+          <div class="mt-10 pt-10 border-t border-gray-200">
+            <p class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4">Onze Tech Stack</p>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 items-center">
+              <img src="logos/databricks.png" alt="Databricks" class="h-12 md:h-16 object-contain" />
+              <img src="logos/python.png" alt="Python" class="h-12 md:h-16 object-contain" />
+              <img src="logos/powerbi.png" alt="Power BI" class="h-12 md:h-16 object-contain" />
+              <img src="logos/looker.png" alt="Looker Studio" class="h-12 md:h-16 object-contain" />
+              <img src="logos/gtm.png" alt="Google Tag Manager" class="h-12 md:h-16 object-contain" />
+              <img src="logos/ga.png" alt="Google Analytics" class="h-12 md:h-16 object-contain" />
+              <span
+                class="px-4 py-2 bg-white border border-gray-200 rounded-md text-sm font-medium text-gray-700 shadow-sm text-center">ERP-integraties</span>
+              <span
+                class="px-4 py-2 bg-white border border-gray-200 rounded-md text-sm font-medium text-gray-700 shadow-sm text-center">Middleware</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cases -->
+  <section class="py-20 md:py-32 bg-white">
+    <div class="container mx-auto px-6 md:px-12 max-w-7xl">
+      <div class="mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-[#0E0E0E] mb-6">
+          Resultaten uit de praktijk
+        </h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Case 1 -->
+        <div
+          class="bg-white p-8 rounded-xl border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-shadow duration-300 flex flex-col h-full">
+          <div class="mb-6">
+            <span class="text-xs font-bold text-[#4BC0E8] uppercase tracking-wider">Retail / Franchise</span>
+            <h3 class="text-2xl font-bold text-[#0E0E0E] mt-2">Nieuwe rayonanalyse gemaakt</h3>
+          </div>
+          <div class="mt-auto">
+            <div class="space-y-3">
+              <div class="flex items-start">
+                <span class="text-[#10B981] font-bold mr-2">→</span>
+                <span class="text-gray-700 font-medium">Betere prioritering van locaties</span>
+              </div>
+              <div class="flex items-start">
+                <span class="text-[#10B981] font-bold mr-2">→</span>
+                <span class="text-gray-700 font-medium">Resultaat: 20–30% betere leadverdeling</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Case 2 -->
+        <div
+          class="bg-white p-8 rounded-xl border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-shadow duration-300 flex flex-col h-full">
+          <div class="mb-6">
+            <span class="text-xs font-bold text-[#4BC0E8] uppercase tracking-wider">Fashion Retailer</span>
+            <h3 class="text-2xl font-bold text-[#0E0E0E] mt-2">Cross-channel dashboard</h3>
+          </div>
+          <div class="mt-auto">
+            <div class="space-y-3">
+              <div class="flex items-start">
+                <span class="text-[#10B981] font-bold mr-2">→</span>
+                <span class="text-gray-700 font-medium">KPI’s gestuurd op marge</span>
+              </div>
+              <div class="flex items-start">
+                <span class="text-[#10B981] font-bold mr-2">→</span>
+                <span class="text-gray-700 font-medium">Resultaat: beslissingen sneller en data-gedreven</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Case 3 -->
+        <div
+          class="bg-white p-8 rounded-xl border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-shadow duration-300 flex flex-col h-full">
+          <div class="mb-6">
+            <span class="text-xs font-bold text-[#4BC0E8] uppercase tracking-wider">B2B Lead Engine</span>
+            <h3 class="text-2xl font-bold text-[#0E0E0E] mt-2">Slimmere targeting</h3>
+          </div>
+          <div class="mt-auto">
+            <div class="space-y-3">
+              <div class="flex items-start">
+                <span class="text-[#10B981] font-bold mr-2">→</span>
+                <span class="text-gray-700 font-medium">Sales richt zich op top 15–20% prospects</span>
+              </div>
+              <div class="flex items-start">
+                <span class="text-[#10B981] font-bold mr-2">→</span>
+                <span class="text-gray-700 font-medium">Resultaat: hogere conversie zonder meer budget</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section id="werkwijze" class="py-20 md:py-32 bg-white">
+    <div class="container mx-auto px-6 md:px-12 max-w-7xl">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-[#0E0E0E]">
+          Werkwijze
+        </h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <!-- Step 1 -->
+        <div class="relative group">
+          <div class="text-6xl font-black text-gray-100 mb-4 group-hover:text-[#4BC0E8]/20 transition-colors">01</div>
+          <h3 class="text-xl font-bold text-[#0E0E0E] relative z-10">Inventarisatie & datacheck</h3>
+          <div class="hidden md:block absolute top-8 left-1/2 w-full h-[2px] bg-gray-100 -z-10"></div>
+        </div>
+        <!-- Step 2 -->
+        <div class="relative group">
+          <div class="text-6xl font-black text-gray-100 mb-4 group-hover:text-[#4BC0E8]/20 transition-colors">02</div>
+          <h3 class="text-xl font-bold text-[#0E0E0E] relative z-10">Proof of Concept</h3>
+          <div class="hidden md:block absolute top-8 left-1/2 w-full h-[2px] bg-gray-100 -z-10"></div>
+        </div>
+        <!-- Step 3 -->
+        <div class="relative group">
+          <div class="text-6xl font-black text-gray-100 mb-4 group-hover:text-[#4BC0E8]/20 transition-colors">03</div>
+          <h3 class="text-xl font-bold text-[#0E0E0E] relative z-10">Automatiseren & optimaliseren</h3>
+          <div class="hidden md:block absolute top-8 left-1/2 w-full h-[2px] bg-gray-100 -z-10"></div>
+        </div>
+        <!-- Step 4 -->
+        <div class="relative group">
+          <div class="text-6xl font-black text-gray-100 mb-4 group-hover:text-[#4BC0E8]/20 transition-colors">04</div>
+          <h3 class="text-xl font-bold text-[#0E0E0E] relative z-10">Doorlopende samenwerking of overdracht</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Whitelabel -->
+  <section class="py-20 md:py-32 bg-[#F5F5F5]">
+    <div class="container mx-auto px-6 md:px-12 max-w-7xl">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-[#0E0E0E] mb-6">
+          Whitelabel Samenwerking
+        </h2>
+        <p class="text-xl text-gray-600 mb-10">
+          Yomi werkt ook whitelabel voor marketing-, development- en consultancybureaus.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left mb-12">
+          <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-100 flex items-center">
+            <div class="w-2 h-2 rounded-full bg-[#4BC0E8] mr-3"></div>
+            <span class="text-[#1C1C1C] font-medium">Documentatie en overdraagbare oplossingen</span>
+          </div>
+          <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-100 flex items-center">
+            <div class="w-2 h-2 rounded-full bg-[#4BC0E8] mr-3"></div>
+            <span class="text-[#1C1C1C] font-medium">Direct schakelen met eindklanten onder bureauvlag</span>
+          </div>
+          <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-100 flex items-center">
+            <div class="w-2 h-2 rounded-full bg-[#4BC0E8] mr-3"></div>
+            <span class="text-[#1C1C1C] font-medium">Geen ego, wel resultaat</span>
+          </div>
+          <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-100 flex items-center">
+            <div class="w-2 h-2 rounded-full bg-[#4BC0E8] mr-3"></div>
+            <span class="text-[#1C1C1C] font-medium">Snel inzetbaar op data, tracking, dashboards en SEA/SEO</span>
+          </div>
+        </div>
+
+        <a href="mailto:jordi@yomi.nl"
+          class="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold transition-all duration-300 rounded-lg bg-[#0E0E0E] text-white hover:bg-[#1C1C1C] border border-transparent shadow-lg hover:shadow-xl">
+          Whitelabel mogelijkheden bespreken <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="py-20 md:py-32 bg-white">
+    <div class="container mx-auto px-6 md:px-12 max-w-7xl">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-[#0E0E0E] mb-8">
+          Over Yomi
+        </h2>
+        <p class="text-xl md:text-2xl text-[#1C1C1C] leading-relaxed font-light">
+          Yomi is opgericht door een data-gedreven specialist met ervaring in retail, franchise, e-commerce en B2B
+          leadgeneratie. De kracht ligt in het koppelen van systemen, het automatiseren van handwerk en het bouwen van
+          oplossingen die meteen waarde leveren. Compact, direct en technisch sterk.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#0E0E0E] text-white py-20 pb-10">
+    <div class="container mx-auto px-6 md:px-12 max-w-7xl">
+      <div class="max-w-4xl mx-auto text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6">
+          Klaar voor meer inzicht, minder handwerk en betere resultaten?
+        </h2>
+        <p class="text-xl text-gray-400 mb-10">
+          Stuur een bericht met een korte schets van je vraagstuk.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-6">
+          <a href="mailto:jordi@yomi.nl"
+            class="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold transition-all duration-300 rounded-lg bg-white text-[#0E0E0E] hover:bg-gray-200 border-none">
+            Plan een kennismaking <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+          </a>
+          <a href="mailto:jordi@yomi.nl"
+            class="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold transition-all duration-300 rounded-lg bg-transparent border-2 border-white text-white hover:bg-white hover:text-[#0E0E0E]">
+            Stuur een bericht
+          </a>
+        </div>
+      </div>
+
+      <div
+        class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
+        <div class="mb-4 md:mb-0">
+          <span class="font-bold text-white text-lg tracking-tighter mr-2">YOMI</span>
+          &copy; 2026
+        </div>
+        <div>
+          Data, automatisering en performance marketing
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Sticky CTA -->
+    <div class="fixed bottom-0 left-0 right-0 p-4 bg-white border-t border-gray-200 md:hidden z-50">
+      <a href="mailto:jordi@yomi.nl"
+        class="inline-flex items-center justify-center w-full px-8 py-4 text-lg font-semibold transition-all duration-300 rounded-lg bg-[#0E0E0E] text-white hover:bg-[#1C1C1C]">
+        Mail Jordi <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+      </a>
+    </div>
+  </footer>
+
+  <!-- Initialize Lucide Icons -->
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+
+</html>
