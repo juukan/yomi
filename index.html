@@ -1,756 +1,1595 @@
 <!DOCTYPE html>
-<html lang="nl" class="scroll-smooth">
+<html lang="nl">
 
 <head>
+  <script>
+    document.documentElement.className = 'js';
+  </script>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yomi | Data, Automatisering & Performance</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Yomi — Jordi ter Woord · systemen koppelen & AI in productie</title>
   <meta name="description"
-    content="Yomi helpt organisaties groeien met slimme datakoppelingen, AI-automatiseringen en resultaatgerichte marketing." />
+    content="Yomi is Jordi ter Woord. Ik maak van losgekoppelde systemen één commercieel werkend geheel en zet AI in productie, voor retail, e-commerce en organisaties met veel vestigingen." />
+  <link rel="canonical" href="https://yomi.nl/" />
 
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yomi.nl/" />
+  <meta property="og:title" content="Yomi — systemen koppelen & AI in productie" />
+  <meta property="og:description"
+    content="Jordi ter Woord. Ik bouw het, ik adviseer er niet alleen over. Eén werkend geheel uit losse systemen, plus AI die echt in productie draait." />
+  <meta property="og:image" content="https://yomi.nl/logos/yomi-logo.png" />
+  <meta name="twitter:card" content="summary" />
 
-  <!-- Fonts -->
+  <link rel="icon" type="image/png" href="./logos/yomi-logo.png" />
+  <link rel="apple-touch-icon" href="./logos/yomi-logo.png" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap"
+  <link
+    href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
     rel="stylesheet">
 
-  <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Yomi",
+    "description": "Systemen koppelen, data-architectuur en AI in productie voor retail, e-commerce en organisaties met veel vestigingen.",
+    "url": "https://yomi.nl",
+    "email": "jordi@yomi.nl",
+    "founder": { "@type": "Person", "name": "Jordi ter Woord" },
+    "areaServed": "NL",
+    "knowsAbout": ["Systeemintegratie", "Data-architectuur", "ETL", "AI in productie", "E-commerce", "Click-and-bricks retail", "Multi-vestiging retail", "Marktanalyse", "Performance marketing"]
+  }
+  </script>
 
   <style>
+    :root {
+      --ink: #0E0E0E;
+      --ink-soft: #3F4448;
+      --ink-faint: #5C6368;
+      --bg: #FFFFFF;
+      --surface: #F4F6F8;
+      --surface-2: #ECF0F3;
+      --border: #E3E7EB;
+      --brand: #1B9FD8;
+      --brand-2: #2DA0C8;
+      --brand-deep: #0C6F94;
+      --ink-invert: #FFFFFF;
+
+      --s-1: 4px;
+      --s-2: 8px;
+      --s-3: 12px;
+      --s-4: 16px;
+      --s-5: 24px;
+      --s-6: 32px;
+      --s-7: 48px;
+      --s-8: 64px;
+      --s-9: 96px;
+      --s-10: 128px;
+
+      --maxw: 1200px;
+      --radius: 14px;
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+
     body {
-      font-family: 'Manrope', sans-serif;
-      background-color: #FFFFFF;
-      color: #0E0E0E;
+      font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      font-size: 18px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
 
-    /* Custom selection color */
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: 'Archivo', system-ui, sans-serif;
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -0.035em;
+      color: var(--ink);
+    }
+
+    a {
+      color: var(--brand-deep);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
     ::selection {
-      background-color: #4BC0E8;
-      color: white;
+      background: var(--brand);
+      color: #fff;
     }
 
-    /* Animations */
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
+    :focus-visible {
+      outline: 3px solid var(--ink);
+      outline-offset: 2px;
+      border-radius: 3px;
+    }
+
+    .wrap {
+      max-width: var(--maxw);
+      margin-inline: auto;
+      padding-inline: var(--s-5);
+    }
+
+    @media (min-width: 768px) {
+      .wrap {
+        padding-inline: var(--s-7);
       }
+    }
 
-      to {
-        opacity: 1;
-        transform: translateY(0);
+    .eyebrow {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--brand-deep);
+      display: inline-flex;
+      align-items: center;
+      gap: var(--s-2);
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 2px;
+      background: var(--brand);
+    }
+
+    .eyebrow .num {
+      font-variant-numeric: tabular-nums;
+      color: var(--brand-deep);
+      opacity: 0.65;
+      margin-right: 2px;
+    }
+
+    .proof .eyebrow .num {
+      color: #8AD6F1;
+      opacity: 0.8;
+    }
+
+    section {
+      padding-block: var(--s-9);
+    }
+
+    @media (max-width: 640px) {
+      section {
+        padding-block: var(--s-8);
       }
     }
 
-    .animate-fade-in-up {
-      animation: fadeInUp 0.8s ease-out forwards;
+    .lede {
+      font-size: clamp(1.05rem, 1rem + 0.6vw, 1.4rem);
+      color: var(--ink-soft);
+      max-width: 60ch;
+      line-height: 1.6;
     }
 
-    .delay-100 {
-      animation-delay: 0.1s;
+    .skip {
+      position: absolute;
+      left: -999px;
+      top: 0;
+      background: var(--ink);
+      color: #fff;
+      padding: var(--s-3) var(--s-5);
+      z-index: 200;
     }
 
-    .delay-200 {
-      animation-delay: 0.2s;
+    .skip:focus {
+      left: var(--s-4);
+      top: var(--s-4);
     }
 
-    .delay-300 {
-      animation-delay: 0.3s;
+    nav.bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.86);
+      backdrop-filter: saturate(180%) blur(10px);
+      border-bottom: 1px solid var(--border);
     }
 
-    @keyframes float {
+    .bar .row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+    }
+
+    .bar img {
+      height: 30px;
+    }
+
+    .navlinks {
+      display: none;
+      gap: var(--s-6);
+      align-items: center;
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    .navlinks a {
+      color: var(--ink);
+    }
+
+    .navlinks a:hover {
+      color: var(--brand-deep);
+      text-decoration: none;
+    }
+
+    @media (min-width: 860px) {
+      .navlinks {
+        display: flex;
+      }
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--s-2);
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      padding: 14px 22px;
+      border-radius: 10px;
+      border: 2px solid var(--ink);
+      transition: transform .18s var(--ease), background .18s var(--ease), color .18s var(--ease);
+      cursor: pointer;
+      min-height: 48px;
+    }
+
+    .btn svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .btn-primary {
+      background: var(--ink);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: #000;
+      text-decoration: none;
+      transform: translateY(-2px);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--ink);
+    }
+
+    .btn-ghost:hover {
+      background: var(--ink);
+      color: #fff;
+      text-decoration: none;
+      transform: translateY(-2px);
+    }
+
+    .btn-sm {
+      padding: 10px 16px;
+      font-size: 15px;
+      min-height: 44px;
+    }
+
+    .hero {
+      padding-top: var(--s-8);
+      padding-bottom: var(--s-8);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--s-7);
+      align-items: center;
+    }
+
+    @media (min-width: 980px) {
+      .hero-grid {
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: var(--s-9);
+      }
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 1rem + 5vw, 4.4rem);
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -0.035em;
+      margin-top: var(--s-5);
+    }
+
+    .hero h1 .cy {
+      color: var(--brand-deep);
+    }
+
+    .hero .lede {
+      margin-top: var(--s-5);
+      max-width: 52ch;
+    }
+
+    /* Presence chip */
+    .presence {
+      margin-top: var(--s-6);
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: var(--s-2);
+      font-family: 'Space Grotesk', monospace;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--ink-faint);
+      letter-spacing: 0.02em;
+    }
+
+    .presence span {
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 4px 9px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .presence .live {
+      color: var(--brand-deep);
+      border-color: color-mix(in srgb, var(--brand) 45%, var(--border));
+    }
+
+    .presence .live::before {
+      content: "";
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--brand);
+      margin-right: 7px;
+      vertical-align: middle;
+    }
+
+    /* Signature hero diagram */
+    .hero-viz {
+      width: 100%;
+      max-width: 480px;
+      margin-inline: auto;
+    }
+
+    .hero-viz svg {
+      width: 100%;
+      height: auto;
+      display: block;
+      overflow: visible;
+    }
+
+    .viz-node rect {
+      fill: var(--bg);
+      stroke: var(--border);
+      stroke-width: 1.5;
+    }
+
+    .viz-node text {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      fill: var(--ink-soft);
+    }
+
+    .viz-target rect {
+      fill: var(--ink);
+      stroke: var(--brand);
+      stroke-width: 2;
+      transition: filter .8s var(--ease);
+    }
+
+    .viz-target text {
+      font-family: 'Archivo', sans-serif;
+      font-size: 17px;
+      font-weight: 800;
+      fill: #fff;
+    }
+
+    .viz-link {
+      fill: none;
+      stroke: var(--brand);
+      stroke-width: 1.6;
+      opacity: 0.55;
+      stroke-dasharray: 620;
+      stroke-dashoffset: 620;
+      transition: stroke-dashoffset 1s var(--ease);
+    }
+
+    .hero-viz.in .viz-link {
+      stroke-dashoffset: 0;
+    }
+
+    @keyframes vizpulse {
 
       0%,
       100% {
-        transform: translateY(0);
+        opacity: 0.5;
       }
 
       50% {
-        transform: translateY(-10px);
+        opacity: 0.95;
       }
     }
 
-    .animate-float {
-      animation: float 6s ease-in-out infinite;
+    .hero-viz.in .viz-flow {
+      animation: vizpulse 3.4s ease-in-out infinite;
     }
 
-    .animate-float-delayed {
-      animation: float 7s ease-in-out infinite 1s;
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--s-3);
+      margin-top: var(--s-7);
     }
 
-    .animate-float-slow {
-      animation: float 5s ease-in-out infinite 0.5s;
+    .hero-meta {
+      margin-top: var(--s-8);
+      padding-top: var(--s-6);
+      border-top: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--s-5) var(--s-6);
+      max-width: 820px;
     }
 
-    @keyframes growWidth {
-      from {
-        width: 0;
+    @media (min-width: 480px) {
+      .hero-meta {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 720px) {
+      .hero-meta {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .hero-meta .n {
+      font-family: 'Archivo', sans-serif;
+      font-weight: 800;
+      font-size: clamp(1.5rem, 1.1rem + 1.4vw, 2.1rem);
+      letter-spacing: -0.03em;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .hero-meta .k {
+      font-size: 14px;
+      color: var(--ink-faint);
+      margin-top: 4px;
+    }
+
+    .proof {
+      background: var(--ink);
+      color: #fff;
+    }
+
+    .proof .eyebrow {
+      color: #8AD6F1;
+    }
+
+    .proof .eyebrow::before {
+      background: var(--brand);
+    }
+
+    .proof h2 {
+      color: #fff;
+      font-size: clamp(1.6rem, 1.2rem + 1.4vw, 2.2rem);
+      margin-top: var(--s-4);
+      max-width: 22ch;
+    }
+
+    .proof p {
+      color: #C2C9CF;
+      margin-top: var(--s-4);
+      max-width: 56ch;
+    }
+
+    .logos {
+      margin-top: var(--s-7);
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--s-3);
+    }
+
+    @media (min-width: 560px) {
+      .logos {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    @media (min-width: 900px) {
+      .logos {
+        grid-template-columns: repeat(7, 1fr);
+      }
+    }
+
+    .logos div {
+      background: #fff;
+      border-radius: 10px;
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px;
+    }
+
+    .logos img {
+      max-height: 100%;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .caps {
+      display: grid;
+      gap: var(--s-4);
+      margin-top: var(--s-7);
+      grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 760px) {
+      .caps {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .cap {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: var(--s-6);
+      background: var(--bg);
+      transition: border-color .2s var(--ease), transform .2s var(--ease);
+    }
+
+    .cap:hover {
+      border-color: var(--ink);
+      transform: translateY(-3px);
+    }
+
+    .cap .ic {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: var(--surface);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--ink);
+    }
+
+    .cap .ic svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .cap h3 {
+      font-size: 1.35rem;
+      margin: var(--s-5) 0 var(--s-3);
+    }
+
+    .cap p {
+      color: var(--ink-soft);
+      font-size: 16px;
+    }
+
+    .cap .stack {
+      margin-top: var(--s-5);
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--s-2);
+    }
+
+    .tag {
+      font-size: 12.5px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      color: var(--ink-soft);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 5px 10px;
+      border-radius: 999px;
+    }
+
+    .cases {
+      background: var(--surface);
+    }
+
+    .case-grid {
+      margin-top: var(--s-7);
+      display: grid;
+      gap: var(--s-4);
+      grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 880px) {
+      .case-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .case {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: var(--s-7);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .case .tagline {
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--brand-deep);
+    }
+
+    .case h3 {
+      font-size: 1.5rem;
+      margin: var(--s-3) 0 var(--s-4);
+    }
+
+    .case p {
+      color: var(--ink-soft);
+      font-size: 16px;
+    }
+
+    .case .out {
+      margin-top: var(--s-5);
+      padding-top: var(--s-5);
+      border-top: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: var(--s-3);
+    }
+
+    .case .out .line {
+      display: flex;
+      gap: var(--s-3);
+      align-items: flex-start;
+      font-size: 15.5px;
+    }
+
+    .case .out svg {
+      width: 18px;
+      height: 18px;
+      color: var(--brand-deep);
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+
+    .case .out b {
+      font-variant-numeric: tabular-nums;
+      color: var(--ink);
+    }
+
+    .method .grid {
+      margin-top: var(--s-7);
+      display: grid;
+      gap: var(--s-6);
+      grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 860px) {
+      .method .grid {
+        grid-template-columns: 1.1fr 1fr;
+        gap: var(--s-9);
+      }
+    }
+
+    .method h2 {
+      font-size: clamp(2rem, 1.4rem + 2.4vw, 3.2rem);
+      max-width: 14ch;
+    }
+
+    .method .body p+p {
+      margin-top: var(--s-5);
+    }
+
+    .method .body p {
+      color: var(--ink-soft);
+      max-width: 60ch;
+    }
+
+    .method .body strong {
+      color: var(--ink);
+    }
+
+    .steps {
+      margin-top: var(--s-7);
+      display: grid;
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    @media (min-width: 760px) {
+      .steps {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .step {
+      background: var(--bg);
+      padding: var(--s-6);
+    }
+
+    .step .num {
+      font-family: 'Archivo', sans-serif;
+      font-weight: 900;
+      font-size: 2rem;
+      color: #AEB6BC;
+    }
+
+    .step h4 {
+      font-size: 1.05rem;
+      margin-top: var(--s-3);
+    }
+
+    .step p {
+      font-size: 14.5px;
+      color: var(--ink-faint);
+      margin-top: var(--s-2);
+    }
+
+    .about .grid {
+      margin-top: var(--s-7);
+      display: grid;
+      gap: var(--s-7);
+      grid-template-columns: 1fr;
+      align-items: start;
+    }
+
+    @media (max-width: 859px) {
+      .portrait {
+        aspect-ratio: 16 / 9;
       }
 
-      to {
-        width: 75%;
+      .portrait .mono {
+        font-size: clamp(3rem, 2rem + 9vw, 5rem);
+      }
+
+      .portrait .orb {
+        width: 160px;
+        height: 160px;
+        right: -50px;
+        top: -50px;
       }
     }
 
-    .animate-grow {
-      animation: growWidth 1.5s ease-out forwards;
-      animation-delay: 0.5s;
+    @media (min-width: 860px) {
+      .about .grid {
+        grid-template-columns: 320px 1fr;
+        gap: var(--s-9);
+      }
+    }
+
+    /* Identity block: deliberate typographic portrait.
+       To use a real photo, replace the .portrait inner markup with:
+       <img src="./me/jordi.jpg" alt="Jordi ter Woord" style="width:100%;height:100%;object-fit:cover" /> */
+    .portrait {
+      aspect-ratio: 4 / 5;
+      border-radius: var(--radius);
+      background: var(--ink);
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: var(--s-6);
+    }
+
+    .portrait .mono {
+      font-family: 'Archivo', sans-serif;
+      font-weight: 900;
+      font-size: clamp(4rem, 3rem + 6vw, 7rem);
+      letter-spacing: -0.05em;
+      line-height: 0.9;
+      position: relative;
+      z-index: 1;
+    }
+
+    .portrait .mono .dot {
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .portrait .orb {
+      position: absolute;
+      right: -70px;
+      top: -70px;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 35%, #5FC4EC, var(--brand) 45%, #14507A 100%);
+      opacity: 0.9;
+    }
+
+    .portrait .who {
+      position: relative;
+      z-index: 1;
+    }
+
+    .portrait .who .nm {
+      font-weight: 600;
+      font-size: 1.05rem;
+    }
+
+    .portrait .who .rl {
+      color: #A7BAC3;
+      font-size: 14px;
+      margin-top: 2px;
+    }
+
+    .about h2 {
+      font-size: clamp(1.9rem, 1.4rem + 2vw, 2.8rem);
+    }
+
+    .about .body p {
+      color: var(--ink-soft);
+      margin-top: var(--s-5);
+      max-width: 62ch;
+    }
+
+    .about .body p strong {
+      color: var(--ink);
+    }
+
+    .creds {
+      margin-top: var(--s-6);
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--s-2);
+    }
+
+    .stackwall {
+      margin-top: var(--s-6);
+      padding-top: var(--s-6);
+      border-top: 1px solid var(--border);
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--s-2) var(--s-5);
+    }
+
+    .stackwall span {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--ink-faint);
+      position: relative;
+    }
+
+    .stackwall span:not(:last-child)::after {
+      content: "·";
+      position: absolute;
+      right: -16px;
+      color: var(--border);
+    }
+
+    .wl {
+      background: var(--surface);
+    }
+
+    .wl .box {
+      max-width: 760px;
+    }
+
+    .wl ul {
+      list-style: none;
+      margin-top: var(--s-6);
+      display: grid;
+      gap: var(--s-3);
+      grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 640px) {
+      .wl ul {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .wl li {
+      display: flex;
+      gap: var(--s-3);
+      align-items: flex-start;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: var(--s-4) var(--s-5);
+      font-size: 15.5px;
+    }
+
+    .wl li svg {
+      width: 18px;
+      height: 18px;
+      color: var(--brand-deep);
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+
+    .contact {
+      background: var(--ink);
+      color: #fff;
+      text-align: center;
+    }
+
+    .contact h2 {
+      color: #fff;
+      font-size: clamp(2rem, 1.4rem + 3.4vw, 3.6rem);
+      max-width: 18ch;
+      margin-inline: auto;
+    }
+
+    .contact p {
+      color: #C2C9CF;
+      margin-top: var(--s-5);
+      max-width: 52ch;
+      margin-inline: auto;
+    }
+
+    .contact .cta {
+      margin-top: var(--s-7);
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--s-3);
+      justify-content: center;
+    }
+
+    .contact .btn-primary {
+      background: #fff;
+      color: var(--ink);
+      border-color: #fff;
+    }
+
+    .contact .btn-primary:hover {
+      background: #E8ECEF;
+    }
+
+    .contact .btn-ghost {
+      color: #fff;
+      border-color: #fff;
+    }
+
+    .contact .btn-ghost:hover {
+      background: #fff;
+      color: var(--ink);
+    }
+
+    .contact .mailrow {
+      margin-top: var(--s-6);
+      font-size: 15px;
+      color: #99A1A7;
+    }
+
+    .contact .mailrow a {
+      color: #fff;
+    }
+
+    footer {
+      background: var(--ink);
+      color: #8B939A;
+      border-top: 1px solid #23262A;
+      padding-block: var(--s-7);
+    }
+
+    footer .row {
+      display: flex;
+      flex-direction: column;
+      gap: var(--s-4);
+      align-items: flex-start;
+      justify-content: space-between;
+      font-size: 14px;
+    }
+
+    @media (min-width: 640px) {
+      footer .row {
+        flex-direction: row;
+        align-items: center;
+      }
+    }
+
+    footer .brand {
+      color: #fff;
+      font-family: 'Archivo', sans-serif;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      font-size: 1.1rem;
+    }
+
+    .js .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity .7s var(--ease), transform .7s var(--ease);
+    }
+
+    .js .reveal.in {
+      opacity: 1;
+      transform: none;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .reveal,
+      .btn,
+      .cap,
+      .stackwall img {
+        transition: none !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+
+      .viz-link {
+        stroke-dashoffset: 0 !important;
+        transition: none !important;
+      }
+
+      .hero-viz.in .viz-flow {
+        animation: none !important;
+      }
+    }
+
+    .mcta {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 90;
+      background: #fff;
+      border-top: 1px solid var(--border);
+      padding: 10px var(--s-5);
+      display: block;
+    }
+
+    .mcta .btn {
+      width: 100%;
+      justify-content: center;
+    }
+
+    @media (min-width: 860px) {
+      .mcta {
+        display: none;
+      }
+    }
+
+    body {
+      padding-bottom: 76px;
+    }
+
+    @media (min-width: 860px) {
+      body {
+        padding-bottom: 0;
+      }
     }
   </style>
 </head>
 
-<body class="antialiased">
+<body>
+  <a href="#main" class="skip">Naar hoofdinhoud</a>
 
-  <!-- Navbar -->
-  <nav
-    class="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-md z-50 border-b border-gray-100 h-16 flex items-center">
-    <div class="container mx-auto px-6 md:px-12 max-w-7xl flex justify-between items-center">
-      <a href="#" class="flex items-center">
-        <img src="./logos/yomi-logo.png" alt="YOMI" class="h-8 md:h-10 object-contain" />
-      </a>
-      <div class="hidden md:flex space-x-8 text-sm font-medium text-[#1C1C1C]">
-        <a href="#diensten" class="hover:text-[#4BC0E8] transition-colors">Diensten</a>
-        <a href="#werkwijze" class="hover:text-[#4BC0E8] transition-colors">Werkwijze</a>
-        <a href="mailto:jordi@yomi.nl" class="text-[#0E0E0E] hover:text-[#4BC0E8] font-bold">Contact</a>
+  <nav class="bar">
+    <div class="wrap row">
+      <a href="#" aria-label="Yomi home"><img src="./logos/yomi-logo.png" alt="Yomi" /></a>
+      <div class="navlinks">
+        <a href="#werk">Werk</a>
+        <a href="#aanpak">Aanpak</a>
+        <a href="#over">Over Jordi</a>
+        <a href="mailto:jordi@yomi.nl" class="btn btn-ghost btn-sm">Plan een gesprek</a>
       </div>
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <section class="relative min-h-[90vh] flex items-center bg-white pt-24 pb-16 md:py-0 overflow-hidden">
-    <div class="container mx-auto px-6 md:px-12 max-w-7xl">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+  <main id="main">
 
-        <!-- Left Column: Text -->
-        <div class="z-10 animate-fade-in-up">
-          <h1 class="text-5xl md:text-[64px] leading-[1.1] font-extrabold text-[#0E0E0E] mb-6">
-            Data, automatisering en performance marketing
-          </h1>
-          <p class="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed">
-            Yomi helpt organisaties groeien met slimme datakoppelingen, AI-automatiseringen en resultaatgerichte
-            marketing. We verbinden technologie, data en strategie tot één werkend geheel.
-          </p>
-
-          <ul class="space-y-4 mb-10">
-            <li class="flex items-start">
-              <i data-lucide="bar-chart-3" class="w-6 h-6 text-[#4BC0E8] mr-4 mt-1 flex-shrink-0"></i>
-              <span class="text-lg text-gray-800">Betere inzichten in omzet, marge en klantgedrag</span>
-            </li>
-            <li class="flex items-start">
-              <i data-lucide="settings-2" class="w-6 h-6 text-[#4BC0E8] mr-4 mt-1 flex-shrink-0"></i>
-              <span class="text-lg text-gray-800">Minder handmatig werk door automatisering</span>
-            </li>
-            <li class="flex items-start">
-              <i data-lucide="trending-up" class="w-6 h-6 text-[#4BC0E8] mr-4 mt-1 flex-shrink-0"></i>
-              <span class="text-lg text-gray-800">Effectieve SEO/SEA met echte performance metrics</span>
-            </li>
-            <li class="flex items-start">
-              <i data-lucide="layout-dashboard" class="w-6 h-6 text-[#4BC0E8] mr-4 mt-1 flex-shrink-0"></i>
-              <span class="text-lg text-gray-800">Betrouwbare dashboards voor teams en directie</span>
-            </li>
-            <li class="flex items-start">
-              <i data-lucide="store" class="w-6 h-6 text-[#4BC0E8] mr-4 mt-1 flex-shrink-0"></i>
-              <span class="text-lg text-gray-800">Tools op maat voor retail, franchise en B2B</span>
-            </li>
-          </ul>
-
-          <div class="flex flex-col sm:flex-row gap-4">
-            <a href="mailto:jordi@yomi.nl"
-              class="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold transition-all duration-300 rounded-lg bg-[#0E0E0E] text-white hover:bg-[#1C1C1C] border border-transparent shadow-lg hover:shadow-xl">
-              Plan een kennismaking <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow reveal"><span class="num">01</span> Yomi · Jordi ter Woord</span>
+          <h1 class="reveal">Versnipperde systemen.<br />Eén datalaag.<br /><span class="cy">AI die de productie
+              haalt.</span></h1>
+          <p class="lede reveal">Voor retail, scale-up e-commerce, click-and-bricks en organisaties met veel
+            vestigingen. De commerciële vraag is het uitgangspunt, opgelost met data en integratie. Ik bouw het zelf,
+            geen team om doorheen te praten.</p>
+          <div class="hero-cta reveal">
+            <a href="mailto:jordi@yomi.nl?subject=Kennismaking%20via%20yomi.nl" class="btn btn-primary">Leg je
+              vraagstuk voor
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
             </a>
-            <a href="#diensten"
-              class="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold transition-all duration-300 rounded-lg bg-transparent border-2 border-[#0E0E0E] text-[#0E0E0E] hover:bg-[#0E0E0E] hover:text-white">
-              Bekijk diensten
-            </a>
+            <a href="#werk" class="btn btn-ghost">Bekijk het werk</a>
+          </div>
+          <div class="presence reveal" aria-label="Beschikbaarheid">
+            <span>NL</span><span class="live"><span id="clock">--:--</span> CET</span><span>open voor opdrachten</span>
           </div>
         </div>
+        <div class="hero-viz reveal" role="img"
+          aria-label="Diagram: losse systemen zoals POS, webshop, ERP, WMS, CRM en marketing komen samen in één datalaag">
+          <svg viewBox="0 0 480 380" xmlns="http://www.w3.org/2000/svg">
+            <g class="viz-flow">
+              <path class="viz-link" d="M150 46 C 250 46, 240 175, 322 180" />
+              <path class="viz-link" d="M150 106 C 250 106, 250 178, 322 184" />
+              <path class="viz-link" d="M150 166 C 240 166, 260 182, 322 188" />
+              <path class="viz-link" d="M150 226 C 240 226, 260 196, 322 196" />
+              <path class="viz-link" d="M150 286 C 250 286, 250 204, 322 200" />
+              <path class="viz-link" d="M150 346 C 250 346, 240 210, 322 206" />
+            </g>
+            <g class="viz-node">
+              <rect x="8" y="26" width="142" height="40" rx="9" />
+              <text x="79" y="51" text-anchor="middle">POS / kassa</text>
+              <rect x="8" y="86" width="142" height="40" rx="9" />
+              <text x="79" y="111" text-anchor="middle">Webshop</text>
+              <rect x="8" y="146" width="142" height="40" rx="9" />
+              <text x="79" y="171" text-anchor="middle">ERP</text>
+              <rect x="8" y="206" width="142" height="40" rx="9" />
+              <text x="79" y="231" text-anchor="middle">WMS / fulfilment</text>
+              <rect x="8" y="266" width="142" height="40" rx="9" />
+              <text x="79" y="291" text-anchor="middle">CRM</text>
+              <rect x="8" y="326" width="142" height="40" rx="9" />
+              <text x="79" y="351" text-anchor="middle">Marketing</text>
+            </g>
+            <g class="viz-target">
+              <rect x="322" y="150" width="150" height="82" rx="14" />
+              <text x="397" y="186" text-anchor="middle">Eén</text>
+              <text x="397" y="210" text-anchor="middle">datalaag</text>
+            </g>
+          </svg>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="hero-meta reveal">
+          <div>
+            <div class="n">13+ jaar</div>
+            <div class="k">retail van binnenuit, 140+ vestigingen</div>
+          </div>
+          <div>
+            <div class="n">3 sectoren</div>
+            <div class="k">retail, e-commerce, scale-up</div>
+          </div>
+          <div>
+            <div class="n">End-to-end</div>
+            <div class="k">ERP, fulfilment, CRM, datalaag</div>
+          </div>
+          <div>
+            <div class="n">AI live</div>
+            <div class="k">in productie, niet in een POC-laatje</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <!-- Right Column: Abstract Visual -->
-        <div class="relative h-full min-h-[400px] flex items-center justify-center animate-fade-in-up delay-200">
-          <div class="relative w-full aspect-square max-w-[500px]">
-            <!-- Abstract decorative circles/grid -->
-            <div class="absolute inset-0 bg-gradient-to-tr from-[#F5F5F5] to-white rounded-full opacity-50 blur-3xl">
+    <section class="proof">
+      <div class="wrap">
+        <span class="eyebrow reveal"><span class="num">02</span> Gewerkt voor</span>
+        <h2 class="reveal">Retailers, e-commerce en organisaties met veel vestigingen waar systemen, data en marketing
+          los zand waren.</h2>
+        <p class="reveal">Een deel van het werk loopt whitelabel onder bureauvlag. De rest staat hieronder. Geen
+          stockverhalen, dit zijn echte opdrachten.</p>
+        <div class="logos reveal">
+          <div><img src="./logos/baderie.png" alt="Baderie" /></div>
+          <div><img src="./logos/instalcenter.png" alt="InstalCenter" /></div>
+          <div><img src="./logos/badkamerwinkel.png" alt="Badkamerwinkel.nl" /></div>
+          <div><img src="./logos/badinbeeld.png" alt="Bad in Beeld" /></div>
+          <div><img src="./logos/purdey.png" alt="Purdey" /></div>
+          <div><img src="./logos/cookandpan.png" alt="CookandPan" /></div>
+          <div><img src="./logos/vandebovensteplank.png" alt="Vandebovensteplank" /></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="diensten">
+      <div class="wrap">
+        <span class="eyebrow reveal"><span class="num">03</span> Wat ik echt doe</span>
+        <h2 class="reveal" style="font-size:clamp(1.9rem,1.4rem + 2vw,2.8rem);max-width:18ch;margin-top:var(--s-4)">
+          Vier dingen, diep. Niet tien dingen, oppervlakkig.</h2>
+        <div class="caps">
+
+          <div class="cap reveal">
+            <div class="ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round">
+                <ellipse cx="12" cy="5" rx="8" ry="3" />
+                <path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6" />
+              </svg>
+            </div>
+            <h3>Data-architectuur & integratie</h3>
+            <p>ERP, CRM, fulfilment en marketing in één betrouwbare laag. Idempotente pipelines, reconciliatie en de
+              koppelingen die stilletjes breken als niemand de edge-cases documenteert. Platform-onafhankelijk: ik werk
+              met de systemen die er staan.</p>
+            <div class="stack">
+              <span class="tag">ERP-koppelingen</span><span class="tag">WMS / fulfilment</span><span class="tag">CRM &
+                support</span><span class="tag">EDI</span><span class="tag">datalaag / lakehouse</span>
+            </div>
+          </div>
+
+          <div class="cap reveal">
+            <div class="ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round">
+                <rect x="4" y="4" width="16" height="16" rx="3" />
+                <path d="M9 9h6v6H9zM2 10v4M22 10v4M10 2h4M10 22h4" />
+              </svg>
+            </div>
+            <h3>AI in productie</h3>
+            <p>Geen chatbot-demo. Multi-agent workflows die echt draaien: row-level governance, audit trails,
+              escalatielogica en per-gebruiker context. Gebouwd om vertrouwd te worden, niet om te pitchen.</p>
+            <div class="stack">
+              <span class="tag">agent-orchestratie</span><span class="tag">RAG</span><span class="tag">row-level
+                governance</span><span class="tag">audit trails</span>
+            </div>
+          </div>
+
+          <div class="cap reveal">
+            <div class="ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M9 3 3 6v15l6-3 6 3 6-3V3l-6 3-6-3zM9 3v15M15 6v15" />
+              </svg>
+            </div>
+            <h3>Marktgebied- & potentieanalyse</h3>
+            <p>Interactieve kaart die marktaandeel, demografie, vestigingsdata en leads combineert per gebied. Voor
+              groeiplanning, locatiekeuze en eerlijke leadverdeling, of het nu om eigen winkels, rayons of
+              franchisenemers gaat.</p>
+            <div class="stack">
+              <span class="tag">open overheidsdata</span><span class="tag">geodata</span><span class="tag">POI-data</span><span
+                class="tag">potentiemodellen</span>
+            </div>
+          </div>
+
+          <div class="cap reveal">
+            <div class="ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M3 3v18h18M7 14l4-4 3 3 6-6" />
+                <path d="M16 7h4v4" />
+              </svg>
+            </div>
+            <h3>Performance op marge</h3>
+            <p>SEA, SEO en CRO gestuurd op rendement, niet op kliks. Schone meting en tagging, dashboards die
+              beslissingen voeden in plaats van datagraven te zijn.</p>
+            <div class="stack">
+              <span class="tag">webanalytics</span><span class="tag">tag management</span><span
+                class="tag">campagnesturing</span><span class="tag">dashboarding</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="werk" class="cases">
+      <div class="wrap">
+        <span class="eyebrow reveal"><span class="num">04</span> Werk uit de praktijk</span>
+        <h2 class="reveal" style="font-size:clamp(1.9rem,1.4rem + 2vw,2.8rem);max-width:20ch;margin-top:var(--s-4)">
+          Echte opdrachten, eerlijk beschreven. Geen verzonnen percentages.</h2>
+        <div class="case-grid">
+
+          <article class="case reveal">
+            <span class="tagline">Data-engineering · scale-up e-commerce</span>
+            <h3>Drie systemen tot één waarheid</h3>
+            <p>Voor een snelgroeiend e-commercemerk klantcontact-, fulfilment- en telefoniedata samengebracht in één
+              datalaag. Daarbovenop een Europese marktmonitor die in 15 landen vraag en trends volgt op open data,
+              gericht op een aankomende categorieverschuiving.</p>
+            <div class="out">
+              <div class="line">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"
+                  stroke-linejoin="round" aria-hidden="true">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg><span>Eén analytische basis in plaats van drie losse exports</span>
+              </div>
+              <div class="line">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"
+                  stroke-linejoin="round" aria-hidden="true">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg><span>Marktsignaal als input voor assortiment, niet onderbuik</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="case reveal">
+            <span class="tagline">Performance · B2B</span>
+            <h3>Sturen op CPA, niet op spend</h3>
+            <p>Meetplan opnieuw opgezet (lead- en click-to-call-events), dashboard in drie lagen, en het
+              advertisingaccount opgeschoond: dayparting, negatieve zoekwoorden, kortere formulieren en
+              geo-bidding op het sterkste gebied.</p>
+            <div class="out">
+              <div class="line">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"
+                  stroke-linejoin="round" aria-hidden="true">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg><span><b>CPA €66 → €42</b> na hygiëne-optimalisatie, met <b>22%</b> minder dagbudget</span>
+              </div>
+              <div class="line">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"
+                  stroke-linejoin="round" aria-hidden="true">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg><span>Geo-focus: <b>€31 CPA</b> in het kerngebied vs <b>€124</b> in de rest</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="case reveal">
+            <span class="tagline">Data-architectuur · retail, 140+ vestigingen</span>
+            <h3>Datawarehouse en integraties voor een retailer</h3>
+            <p>Voor een retailorganisatie met 140+ vestigingen (online én fysiek) een datawarehouse opgezet en de
+              koppelingen gebouwd tussen ERP, fulfilment en verkoop. Versnipperde bronsystemen tot één betrouwbare
+              laag waar rapportage en sturing op kunnen draaien.</p>
+            <div class="out">
+              <div class="line">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"
+                  stroke-linejoin="round" aria-hidden="true">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg><span>Eén datalaag in plaats van losse exports per systeem</span>
+              </div>
+              <div class="line">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"
+                  stroke-linejoin="round" aria-hidden="true">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg><span>Koppelingen die blijven werken, met de edge-cases erin</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="case reveal">
+            <span class="tagline">E-commerce · internationaal click-and-bricks</span>
+            <h3>Eén merk, meerdere landen, online én winkel</h3>
+            <p>Voor een click-and-bricks retailer een roadmap en architectuur voor een multi-domein webshop-uitrol
+              over Europa, met een LLM-workflow voor vertaling en lokalisatie. Online en fysieke winkels als één
+              propositie in plaats van twee losse kanalen.</p>
+            <div class="out">
+              <div class="line">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"
+                  stroke-linejoin="round" aria-hidden="true">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg><span>Lokalisatie schaalbaar gemaakt, niet per land handwerk</span>
+              </div>
+              <div class="line">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"
+                  stroke-linejoin="round" aria-hidden="true">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg><span>Architectuur die online en retail verbindt</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="aanpak" class="method">
+      <div class="wrap">
+        <div class="grid">
+          <div>
+            <span class="eyebrow reveal"><span class="num">05</span> Hoe ik bouw</span>
+            <h2 class="reveal">De laatste 3% is het hele verhaal.</h2>
+          </div>
+          <div class="body reveal">
+            <p>Elk systeem dat "geautomatiseerd" of "realtime" heet, draait op een handvol uitzonderingen die niemand
+              opschrijft. Een Unicode-teken in een artikelnummer dat een 3PL-feed sloopt. Een bonusstructuur die
+              eigenlijk psychologie is, vermomd als SQL. Dáár zit het werk, en daar zit het risico.</p>
+            <p>Ik kom uit filosofie én engineering. Eerst <strong>wat bedoelen we precies</strong>, dan pas bouwen. Ik
+              zeg niet "realtime" als het elke nacht is. Ik lever documentatie en overdraagbare oplossingen, zodat je
+              team het zelf bezit. <strong>Geen vendor lock-in, geen ego, wel een werkend systeem.</strong></p>
+          </div>
+        </div>
+        <div class="steps reveal">
+          <div class="step">
+            <div class="num">01</div>
+            <h4>Inventarisatie & datacheck</h4>
+            <p>Wat is er echt, niet wat het label belooft.</p>
+          </div>
+          <div class="step">
+            <div class="num">02</div>
+            <h4>Proof of concept</h4>
+            <p>Klein, werkend, op jouw echte data.</p>
+          </div>
+          <div class="step">
+            <div class="num">03</div>
+            <h4>Automatiseren & härden</h4>
+            <p>Edge-cases, guardrails, audit trails.</p>
+          </div>
+          <div class="step">
+            <div class="num">04</div>
+            <h4>Overdracht of doorlopend</h4>
+            <p>Jij bezit het, ik blijf bereikbaar.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="over" class="about">
+      <div class="wrap">
+        <span class="eyebrow reveal"><span class="num">06</span> Over Jordi</span>
+        <div class="grid">
+          <div class="portrait reveal" role="img" aria-label="Jordi ter Woord, oprichter van Yomi">
+            <div class="orb" aria-hidden="true"></div>
+            <div class="mono" aria-hidden="true">J<span class="dot">T</span>W</div>
+            <div class="who">
+              <div class="nm">Jordi ter Woord</div>
+              <div class="rl">Oprichter Yomi · data-architect & builder</div>
+            </div>
+          </div>
+          <div class="body">
+            <h2 class="reveal">Geen bureau. Eén persoon die het ook echt bouwt.</h2>
+            <p class="reveal">Yomi is mij. Dertien jaar binnen een retailorganisatie met 140+ vestigingen, online én
+              fysiek: begonnen bij e-commerce en advertising met een mediabudget van circa €1,2M en 400K SKU's,
+              doorgegroeid naar teamlead en daarna naar architectuur- en productverantwoordelijkheid voor de data- en
+              AI-infrastructuur. Daarnaast eigen opdrachten in scale-up e-commerce en click-and-bricks.</p>
+            <p class="reveal">Ik werk op het snijvlak van <strong>architectuur, integratie en commerciële
+                vraag</strong>. De commerciële vraag is altijd het uitgangspunt, maar wordt opgelost met data en
+              integratie. Daar komt nu AI bij, in productie, met de governance erbij. Multi-vestiging en franchise zijn
+              één van de contexten waarin ik werk, niet de enige. Filosofie en AI gestudeerd in Nijmegen; schrijven en
+              bouwen zijn voor mij hetzelfde denkgereedschap.</p>
+            <div class="creds reveal">
+              <span class="tag">Data-architectuur</span><span class="tag">Systeemintegratie</span><span
+                class="tag">Retail &amp; e-commerce</span><span class="tag">AI in productie</span><span
+                class="tag">Marktgebiedanalyse</span><span class="tag">Performance op marge</span>
             </div>
 
-            <!-- Data Node Visualization -->
-            <div
-              class="relative z-10 w-full h-full border border-gray-100 rounded-3xl p-8 shadow-2xl bg-white/80 backdrop-blur-sm grid grid-cols-2 gap-4">
-
-              <!-- Growth Metrics Block -->
-              <div class="col-span-2 bg-[#0E0E0E] rounded-2xl p-6 text-white animate-float">
-                <div class="flex justify-between items-center mb-4">
-                  <span class="font-bold text-lg">Growth Metrics</span>
-                  <i data-lucide="trending-up" class="text-[#4BC0E8]"></i>
-                </div>
-                <div class="h-2 bg-gray-700 rounded-full mb-2 overflow-hidden">
-                  <div class="h-full bg-[#10B981] animate-grow" style="width: 0%"></div>
-                </div>
-                <div class="flex justify-between text-sm text-gray-400">
-                  <span>Automated</span>
-                  <span>+24%</span>
-                </div>
-              </div>
-
-              <!-- Realtime Dashboards Block -->
-              <div class="bg-[#F5F5F5] rounded-2xl p-6 flex flex-col justify-between animate-float-delayed">
-                <i data-lucide="layout-dashboard" class="text-[#0E0E0E] w-8 h-8 mb-4"></i>
-                <span class="font-semibold text-[#1C1C1C]">Realtime<br />Dashboards</span>
-              </div>
-
-              <!-- AI Automation Block -->
-              <div
-                class="bg-gradient-to-br from-[#4BC0E8] to-[#2DA0C8] rounded-2xl p-6 flex flex-col justify-between text-white animate-float-slow">
-                <i data-lucide="settings-2" class="w-8 h-8 mb-4 opacity-90"></i>
-                <span class="font-semibold">AI<br />Automation</span>
-              </div>
+            <div class="stackwall reveal" aria-label="Werkterrein">
+              <span>Systeemintegratie</span>
+              <span>ETL &amp; pipelines</span>
+              <span>Datawarehousing</span>
+              <span>Agent-orchestratie</span>
+              <span>EDI</span>
+              <span>Webanalytics &amp; tagging</span>
+              <span>Dashboarding</span>
+              <span>Cloud-platformen</span>
             </div>
-
-            <!-- Decorative floating elements -->
-            <div class="absolute -z-10 top-10 -right-10 w-24 h-24 bg-[#4BC0E8]/20 rounded-full blur-xl animate-pulse">
-            </div>
-            <div class="absolute -z-10 -bottom-10 -left-10 w-32 h-32 bg-[#10B981]/10 rounded-full blur-xl animate-pulse"
-              style="animation-delay: 1s;"></div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Who Section -->
-  <section class="py-20 md:py-32 bg-[#F5F5F5]">
-    <div class="container mx-auto px-6 md:px-12 max-w-7xl">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <div>
-          <h2 class="text-3xl md:text-4xl font-bold text-[#0E0E0E] mb-6">Voor wie Yomi werkt</h2>
-          <p class="text-lg text-gray-700 mb-6">
-            Yomi is gebouwd voor organisaties die data en marketing willen verbinden:
-          </p>
-          <ul class="space-y-4">
-            <li class="flex items-start">
-              <span class="text-[#4BC0E8] font-bold mr-3">•</span>
-              <span class="text-[#1C1C1C]">B2B-organisaties die slimmer leads willen vinden en kwalificeren</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-[#4BC0E8] font-bold mr-3">•</span>
-              <span class="text-[#1C1C1C]">Retail & omnichannel bedrijven die inzicht willen in marktgebieden</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-[#4BC0E8] font-bold mr-3">•</span>
-              <span class="text-[#1C1C1C]">Franchiseformules die rayonpotentie willen begrijpen</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-[#4BC0E8] font-bold mr-3">•</span>
-              <span class="text-[#1C1C1C]">Marketing- en digital agencies die een whitelabel dataspecialist
-                zoeken</span>
-            </li>
-          </ul>
-        </div>
-
-        <div class="bg-white p-8 rounded-xl shadow-sm">
-          <p class="text-sm text-gray-400 font-semibold mb-6 uppercase tracking-widest">Ervaring</p>
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
-            <img src="./logos/badkamerwinkel.png" alt="badkamerwinkel.nl"
-              class="w-full h-16 md:h-20 object-contain grayscale hover:grayscale-0 transition-all duration-300" />
-            <img src="./logos/baderie.png" alt="baderie.nl"
-              class="w-full h-16 md:h-20 object-contain grayscale hover:grayscale-0 transition-all duration-300" />
-            <img src="./logos/instalcenter.png" alt="instalcenter.nl"
-              class="w-full h-16 md:h-20 object-contain grayscale hover:grayscale-0 transition-all duration-300" />
-            <img src="./logos/badinbeeld.png" alt="badinbeeld.nl"
-              class="w-full h-16 md:h-20 object-contain grayscale hover:grayscale-0 transition-all duration-300" />
-            <img src="./logos/purdey.png" alt="Purdey"
-              class="w-full h-16 md:h-20 object-contain grayscale hover:grayscale-0 transition-all duration-300" />
-            <img src="./logos/cookandpan.png" alt="Cookandpan"
-              class="w-full h-16 md:h-20 object-contain grayscale hover:grayscale-0 transition-all duration-300" />
-            <img src="./logos/vandebovensteplank.png" alt="vandebovensteplank.nl"
-              class="w-full h-16 md:h-20 object-contain grayscale hover:grayscale-0 transition-all duration-300" />
-          </div>
-        </div>
+    <section class="wl">
+      <div class="wrap box">
+        <span class="eyebrow reveal"><span class="num">07</span> Whitelabel</span>
+        <h2 class="reveal" style="font-size:clamp(1.9rem,1.4rem + 2vw,2.8rem);max-width:20ch;margin-top:var(--s-4)">
+          Ook inzetbaar onder de vlag van je bureau.</h2>
+        <p class="lede reveal" style="margin-top:var(--s-5)">Een deel van mijn werk loopt whitelabel: jij houdt de
+          klantrelatie, ik lever de data-, integratie- en AI-laag eronder.</p>
+        <ul class="reveal">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"
+              stroke-linejoin="round" aria-hidden="true">
+              <path d="M20 6 9 17l-5-5" />
+            </svg><span>Documentatie en overdraagbare oplossingen</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"
+              stroke-linejoin="round" aria-hidden="true">
+              <path d="M20 6 9 17l-5-5" />
+            </svg><span>Direct schakelen met eindklant onder bureaunaam</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"
+              stroke-linejoin="round" aria-hidden="true">
+              <path d="M20 6 9 17l-5-5" />
+            </svg><span>Snel inzetbaar op data, tracking, dashboards en SEA/SEO</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"
+              stroke-linejoin="round" aria-hidden="true">
+              <path d="M20 6 9 17l-5-5" />
+            </svg><span>Geen ego, wel resultaat</span>
+          </li>
+        </ul>
       </div>
-  </section>
+    </section>
 
-  <!-- Services Section -->
-  <section id="diensten" class="py-20 md:py-32 bg-white">
-    <div class="container mx-auto px-6 md:px-12 max-w-7xl">
-      <div class="max-w-3xl mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold text-[#0E0E0E] mb-6">
-          Onze Diensten
-        </h2>
-        <p class="text-xl text-gray-600">
-          Van technische implementatie tot strategisch advies.
-        </p>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Service 1 -->
-        <div class="bg-[#F5F5F5] p-8 rounded-xl hover:shadow-lg transition-shadow duration-300 group">
-          <div
-            class="w-12 h-12 bg-white rounded-lg flex items-center justify-center mb-6 group-hover:bg-[#0E0E0E] transition-colors duration-300">
-            <i data-lucide="map"
-              class="w-6 h-6 text-[#0E0E0E] group-hover:text-[#4BC0E8] transition-colors duration-300"></i>
-          </div>
-          <h3 class="text-xl font-bold text-[#0E0E0E] mb-3">Rayontool</h3>
-          <p class="text-gray-600 leading-relaxed">Interactieve kaart voor groeiplanning en leaddistributie. Combineert
-            marktaandeel, demografie en formuledata.</p>
-        </div>
-        <!-- Service 2 -->
-        <div class="bg-[#F5F5F5] p-8 rounded-xl hover:shadow-lg transition-shadow duration-300 group">
-          <div
-            class="w-12 h-12 bg-white rounded-lg flex items-center justify-center mb-6 group-hover:bg-[#0E0E0E] transition-colors duration-300">
-            <i data-lucide="users"
-              class="w-6 h-6 text-[#0E0E0E] group-hover:text-[#4BC0E8] transition-colors duration-300"></i>
-          </div>
-          <h3 class="text-xl font-bold text-[#0E0E0E] mb-3">B2B Lead Engine</h3>
-          <p class="text-gray-600 leading-relaxed">Automatische verrijking en scoring van bedrijfsdata met AI en Google
-            Places-data.</p>
-        </div>
-        <!-- Service 3 -->
-        <div class="bg-[#F5F5F5] p-8 rounded-xl hover:shadow-lg transition-shadow duration-300 group">
-          <div
-            class="w-12 h-12 bg-white rounded-lg flex items-center justify-center mb-6 group-hover:bg-[#0E0E0E] transition-colors duration-300">
-            <i data-lucide="trending-up"
-              class="w-6 h-6 text-[#0E0E0E] group-hover:text-[#4BC0E8] transition-colors duration-300"></i>
-          </div>
-          <h3 class="text-xl font-bold text-[#0E0E0E] mb-3">Performance Marketing</h3>
-          <p class="text-gray-600 leading-relaxed">SEO, SEA en CRO uitgevoerd op basis van rendement, niet alleen kliks.
-          </p>
-        </div>
-        <!-- Service 4 -->
-        <div class="bg-[#F5F5F5] p-8 rounded-xl hover:shadow-lg transition-shadow duration-300 group">
-          <div
-            class="w-12 h-12 bg-white rounded-lg flex items-center justify-center mb-6 group-hover:bg-[#0E0E0E] transition-colors duration-300">
-            <i data-lucide="database"
-              class="w-6 h-6 text-[#0E0E0E] group-hover:text-[#4BC0E8] transition-colors duration-300"></i>
-          </div>
-          <h3 class="text-xl font-bold text-[#0E0E0E] mb-3">Dashboards & Data</h3>
-          <p class="text-gray-600 leading-relaxed">Koppelingen tussen ERP, CRM en marketingdata, gebouwd met Power BI of
-            Looker Studio.</p>
-        </div>
-        <!-- Service 5 -->
-        <div class="bg-[#F5F5F5] p-8 rounded-xl hover:shadow-lg transition-shadow duration-300 group">
-          <div
-            class="w-12 h-12 bg-white rounded-lg flex items-center justify-center mb-6 group-hover:bg-[#0E0E0E] transition-colors duration-300">
-            <i data-lucide="bot"
-              class="w-6 h-6 text-[#0E0E0E] group-hover:text-[#4BC0E8] transition-colors duration-300"></i>
-          </div>
-          <h3 class="text-xl font-bold text-[#0E0E0E] mb-3">AI Automatisering</h3>
-          <p class="text-gray-600 leading-relaxed">Praktische workflows voor lead scoring, contentgeneratie en interne
-            automatiseringen.</p>
-        </div>
-        <!-- Service 6 -->
-        <div class="bg-[#F5F5F5] p-8 rounded-xl hover:shadow-lg transition-shadow duration-300 group">
-          <div
-            class="w-12 h-12 bg-white rounded-lg flex items-center justify-center mb-6 group-hover:bg-[#0E0E0E] transition-colors duration-300">
-            <i data-lucide="message-square"
-              class="w-6 h-6 text-[#0E0E0E] group-hover:text-[#4BC0E8] transition-colors duration-300"></i>
-          </div>
-          <h3 class="text-xl font-bold text-[#0E0E0E] mb-3">Consultancy op maat</h3>
-          <p class="text-gray-600 leading-relaxed">Voor integraties, routing, datamodelvalidatie en complexe
-            retail-/franchisevraagstukken.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Rayontool Detail -->
-  <section class="py-20 md:py-32 bg-[#F5F5F5]">
-    <div class="container mx-auto px-6 md:px-12 max-w-7xl">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-        <div class="lg:col-span-5">
-          <h2 class="text-3xl md:text-4xl font-bold text-[#0E0E0E] mb-6">Rayontool voor retail en franchise</h2>
-          <p class="text-xl text-gray-600 mb-8">Een interactieve kaart die marktaandeel, demografie, vestigingsdata en
-            leads combineert. Ontworpen voor franchiseformules, retailers en serviceorganisaties.</p>
-        </div>
-        <div class="lg:col-span-7">
-          <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
-            <li class="flex items-start">
-              <span
-                class="w-6 h-6 rounded-full bg-[#EAF9FE] flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">
-                <i data-lucide="check" class="w-4 h-4 text-[#4BC0E8]"></i>
-              </span>
-              <span class="text-lg text-[#1C1C1C]">Bekijk potentie per wijk of PC4</span>
-            </li>
-            <li class="flex items-start">
-              <span
-                class="w-6 h-6 rounded-full bg-[#EAF9FE] flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">
-                <i data-lucide="check" class="w-4 h-4 text-[#4BC0E8]"></i>
-              </span>
-              <span class="text-lg text-[#1C1C1C]">Optimaliseer leadverdeling en vestigingslocaties</span>
-            </li>
-            <li class="flex items-start">
-              <span
-                class="w-6 h-6 rounded-full bg-[#EAF9FE] flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">
-                <i data-lucide="check" class="w-4 h-4 text-[#4BC0E8]"></i>
-              </span>
-              <span class="text-lg text-[#1C1C1C]">Combineer CBS-data, klantdata en Google Places</span>
-            </li>
-            <li class="flex items-start">
-              <span
-                class="w-6 h-6 rounded-full bg-[#EAF9FE] flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">
-                <i data-lucide="check" class="w-4 h-4 text-[#4BC0E8]"></i>
-              </span>
-              <span class="text-lg text-[#1C1C1C]">Exporteer rapportages direct voor MT of franchisenemers</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Lead Engine Detail -->
-  <section class="py-20 md:py-32 bg-white">
-    <div class="container mx-auto px-6 md:px-12 max-w-7xl">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-        <div class="lg:col-span-5">
-          <h2 class="text-3xl md:text-4xl font-bold text-[#0E0E0E] mb-6">B2B Lead Engine</h2>
-          <a href="mailto:jordi@yomi.nl"
-            class="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold transition-all duration-300 rounded-lg bg-[#0E0E0E] text-white hover:bg-[#1C1C1C] border border-transparent shadow-lg hover:shadow-xl">
-            Meer info <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+    <section id="contact" class="contact">
+      <div class="wrap">
+        <h2 class="reveal">Een vraagstuk dat je tooling niet meer aankan?</h2>
+        <p class="reveal">Stuur een korte schets: welk systeem, welke data, waar het pijn doet. Je krijgt een eerlijk
+          antwoord over of en hoe ik het zou aanpakken, geen offerte-trechter.</p>
+        <div class="cta reveal">
+          <a href="mailto:jordi@yomi.nl?subject=Vraagstuk%20via%20yomi.nl" class="btn btn-primary">Mail Jordi
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
           </a>
+          <a href="https://www.linkedin.com/in/jordi-ter-woord/" class="btn btn-ghost" rel="noopener">LinkedIn</a>
         </div>
-        <div class="lg:col-span-7">
-          <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
-            <li class="flex items-start">
-              <span
-                class="w-6 h-6 rounded-full bg-[#EAF9FE] flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">
-                <i data-lucide="check" class="w-4 h-4 text-[#4BC0E8]"></i>
-              </span>
-              <span class="text-lg text-[#1C1C1C]">Realtime bedrijfsverrijking</span>
-            </li>
-            <li class="flex items-start">
-              <span
-                class="w-6 h-6 rounded-full bg-[#EAF9FE] flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">
-                <i data-lucide="check" class="w-4 h-4 text-[#4BC0E8]"></i>
-              </span>
-              <span class="text-lg text-[#1C1C1C]">AI-gebaseerde scoremodellen</span>
-            </li>
-            <li class="flex items-start">
-              <span
-                class="w-6 h-6 rounded-full bg-[#EAF9FE] flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">
-                <i data-lucide="check" class="w-4 h-4 text-[#4BC0E8]"></i>
-              </span>
-              <span class="text-lg text-[#1C1C1C]">Slimme targeting voor sales</span>
-            </li>
-            <li class="flex items-start">
-              <span
-                class="w-6 h-6 rounded-full bg-[#EAF9FE] flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">
-                <i data-lucide="check" class="w-4 h-4 text-[#4BC0E8]"></i>
-              </span>
-              <span class="text-lg text-[#1C1C1C]">Direct te integreren in CRM of ERP</span>
-            </li>
-          </ul>
-        </div>
+        <div class="mailrow reveal">Of direct: <a href="mailto:jordi@yomi.nl">jordi@yomi.nl</a></div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Performance Detail -->
-  <section class="py-20 md:py-32 bg-white">
-    <div class="container mx-auto px-6 md:px-12 max-w-7xl">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-        <div class="lg:col-span-5">
-          <h2 class="text-3xl md:text-4xl font-bold text-[#0E0E0E] mb-6">Performance Marketing</h2>
-        </div>
-        <div class="lg:col-span-7">
-          <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
-            <li class="flex items-start">
-              <span
-                class="w-6 h-6 rounded-full bg-[#EAF9FE] flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">
-                <i data-lucide="check" class="w-4 h-4 text-[#4BC0E8]"></i>
-              </span>
-              <span class="text-lg text-[#1C1C1C]">Geavanceerde tracking via GTM</span>
-            </li>
-            <li class="flex items-start">
-              <span
-                class="w-6 h-6 rounded-full bg-[#EAF9FE] flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">
-                <i data-lucide="check" class="w-4 h-4 text-[#4BC0E8]"></i>
-              </span>
-              <span class="text-lg text-[#1C1C1C]">Full funnel SEO en SEA</span>
-            </li>
-            <li class="flex items-start">
-              <span
-                class="w-6 h-6 rounded-full bg-[#EAF9FE] flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">
-                <i data-lucide="check" class="w-4 h-4 text-[#4BC0E8]"></i>
-              </span>
-              <span class="text-lg text-[#1C1C1C]">Focus op marge, niet alleen omzet</span>
-            </li>
-            <li class="flex items-start">
-              <span
-                class="w-6 h-6 rounded-full bg-[#EAF9FE] flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">
-                <i data-lucide="check" class="w-4 h-4 text-[#4BC0E8]"></i>
-              </span>
-              <span class="text-lg text-[#1C1C1C]">Dashboards voor direct inzicht</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+  </main>
 
-  <!-- Dashboards Detail -->
-  <section class="py-20 md:py-32 bg-[#F5F5F5]">
-    <div class="container mx-auto px-6 md:px-12 max-w-7xl">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-        <div class="lg:col-span-5">
-          <h2 class="text-3xl md:text-4xl font-bold text-[#0E0E0E] mb-6">Dashboards & Data Stack</h2>
-        </div>
-        <div class="lg:col-span-7">
-          <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
-            <li class="flex items-start">
-              <span
-                class="w-6 h-6 rounded-full bg-[#EAF9FE] flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">
-                <i data-lucide="check" class="w-4 h-4 text-[#4BC0E8]"></i>
-              </span>
-              <span class="text-lg text-[#1C1C1C]">Combineer verkoop, voorraad, marketing en logistiek</span>
-            </li>
-            <li class="flex items-start">
-              <span
-                class="w-6 h-6 rounded-full bg-[#EAF9FE] flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">
-                <i data-lucide="check" class="w-4 h-4 text-[#4BC0E8]"></i>
-              </span>
-              <span class="text-lg text-[#1C1C1C]">Eén waarheid: betrouwbare data voor teams</span>
-            </li>
-            <li class="flex items-start">
-              <span
-                class="w-6 h-6 rounded-full bg-[#EAF9FE] flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">
-                <i data-lucide="check" class="w-4 h-4 text-[#4BC0E8]"></i>
-              </span>
-              <span class="text-lg text-[#1C1C1C]">Dashboards die bruikbaar zijn, geen datagraven</span>
-            </li>
-          </ul>
-          <!-- Tech Stack Badges -->
-          <div class="mt-10 pt-10 border-t border-gray-200">
-            <p class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4">Onze Tech Stack</p>
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 items-center">
-              <img src="./logos/databricks.png" alt="Databricks" class="h-12 md:h-16 object-contain" />
-              <img src="./logos/python.png" alt="Python" class="h-12 md:h-16 object-contain" />
-              <img src="./logos/powerbi.png" alt="Power BI" class="h-12 md:h-16 object-contain" />
-              <img src="./logos/looker.png" alt="Looker Studio" class="h-12 md:h-16 object-contain" />
-              <img src="./logos/gtm.png" alt="Google Tag Manager" class="h-12 md:h-16 object-contain" />
-              <img src="./logos/ga.png" alt="Google Analytics" class="h-12 md:h-16 object-contain" />
-              <span
-                class="px-4 py-2 bg-white border border-gray-200 rounded-md text-sm font-medium text-gray-700 shadow-sm text-center">ERP-integraties</span>
-              <span
-                class="px-4 py-2 bg-white border border-gray-200 rounded-md text-sm font-medium text-gray-700 shadow-sm text-center">Middleware</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Cases -->
-  <section class="py-20 md:py-32 bg-white">
-    <div class="container mx-auto px-6 md:px-12 max-w-7xl">
-      <div class="mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold text-[#0E0E0E] mb-6">
-          Resultaten uit de praktijk
-        </h2>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <!-- Case 1 -->
-        <div
-          class="bg-white p-8 rounded-xl border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-shadow duration-300 flex flex-col h-full">
-          <div class="mb-6">
-            <span class="text-xs font-bold text-[#4BC0E8] uppercase tracking-wider">Retail / Franchise</span>
-            <h3 class="text-2xl font-bold text-[#0E0E0E] mt-2">Nieuwe rayonanalyse gemaakt</h3>
-          </div>
-          <div class="mt-auto">
-            <div class="space-y-3">
-              <div class="flex items-start">
-                <span class="text-[#10B981] font-bold mr-2">→</span>
-                <span class="text-gray-700 font-medium">Betere prioritering van locaties</span>
-              </div>
-              <div class="flex items-start">
-                <span class="text-[#10B981] font-bold mr-2">→</span>
-                <span class="text-gray-700 font-medium">Resultaat: 20–30% betere leadverdeling</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Case 2 -->
-        <div
-          class="bg-white p-8 rounded-xl border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-shadow duration-300 flex flex-col h-full">
-          <div class="mb-6">
-            <span class="text-xs font-bold text-[#4BC0E8] uppercase tracking-wider">Fashion Retailer</span>
-            <h3 class="text-2xl font-bold text-[#0E0E0E] mt-2">Cross-channel dashboard</h3>
-          </div>
-          <div class="mt-auto">
-            <div class="space-y-3">
-              <div class="flex items-start">
-                <span class="text-[#10B981] font-bold mr-2">→</span>
-                <span class="text-gray-700 font-medium">KPI’s gestuurd op marge</span>
-              </div>
-              <div class="flex items-start">
-                <span class="text-[#10B981] font-bold mr-2">→</span>
-                <span class="text-gray-700 font-medium">Resultaat: beslissingen sneller en data-gedreven</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Case 3 -->
-        <div
-          class="bg-white p-8 rounded-xl border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-shadow duration-300 flex flex-col h-full">
-          <div class="mb-6">
-            <span class="text-xs font-bold text-[#4BC0E8] uppercase tracking-wider">B2B Lead Engine</span>
-            <h3 class="text-2xl font-bold text-[#0E0E0E] mt-2">Slimmere targeting</h3>
-          </div>
-          <div class="mt-auto">
-            <div class="space-y-3">
-              <div class="flex items-start">
-                <span class="text-[#10B981] font-bold mr-2">→</span>
-                <span class="text-gray-700 font-medium">Sales richt zich op top 15–20% prospects</span>
-              </div>
-              <div class="flex items-start">
-                <span class="text-[#10B981] font-bold mr-2">→</span>
-                <span class="text-gray-700 font-medium">Resultaat: hogere conversie zonder meer budget</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Process -->
-  <section id="werkwijze" class="py-20 md:py-32 bg-white">
-    <div class="container mx-auto px-6 md:px-12 max-w-7xl">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold text-[#0E0E0E]">
-          Werkwijze
-        </h2>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-        <!-- Step 1 -->
-        <div class="relative group">
-          <div class="text-6xl font-black text-gray-100 mb-4 group-hover:text-[#4BC0E8]/20 transition-colors">01</div>
-          <h3 class="text-xl font-bold text-[#0E0E0E] relative z-10">Inventarisatie & datacheck</h3>
-          <div class="hidden md:block absolute top-8 left-1/2 w-full h-[2px] bg-gray-100 -z-10"></div>
-        </div>
-        <!-- Step 2 -->
-        <div class="relative group">
-          <div class="text-6xl font-black text-gray-100 mb-4 group-hover:text-[#4BC0E8]/20 transition-colors">02</div>
-          <h3 class="text-xl font-bold text-[#0E0E0E] relative z-10">Proof of Concept</h3>
-          <div class="hidden md:block absolute top-8 left-1/2 w-full h-[2px] bg-gray-100 -z-10"></div>
-        </div>
-        <!-- Step 3 -->
-        <div class="relative group">
-          <div class="text-6xl font-black text-gray-100 mb-4 group-hover:text-[#4BC0E8]/20 transition-colors">03</div>
-          <h3 class="text-xl font-bold text-[#0E0E0E] relative z-10">Automatiseren & optimaliseren</h3>
-          <div class="hidden md:block absolute top-8 left-1/2 w-full h-[2px] bg-gray-100 -z-10"></div>
-        </div>
-        <!-- Step 4 -->
-        <div class="relative group">
-          <div class="text-6xl font-black text-gray-100 mb-4 group-hover:text-[#4BC0E8]/20 transition-colors">04</div>
-          <h3 class="text-xl font-bold text-[#0E0E0E] relative z-10">Doorlopende samenwerking of overdracht</h3>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Whitelabel -->
-  <section class="py-20 md:py-32 bg-[#F5F5F5]">
-    <div class="container mx-auto px-6 md:px-12 max-w-7xl">
-      <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-3xl md:text-4xl font-bold text-[#0E0E0E] mb-6">
-          Whitelabel Samenwerking
-        </h2>
-        <p class="text-xl text-gray-600 mb-10">
-          Yomi werkt ook whitelabel voor marketing-, development- en consultancybureaus.
-        </p>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left mb-12">
-          <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-100 flex items-center">
-            <div class="w-2 h-2 rounded-full bg-[#4BC0E8] mr-3"></div>
-            <span class="text-[#1C1C1C] font-medium">Documentatie en overdraagbare oplossingen</span>
-          </div>
-          <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-100 flex items-center">
-            <div class="w-2 h-2 rounded-full bg-[#4BC0E8] mr-3"></div>
-            <span class="text-[#1C1C1C] font-medium">Direct schakelen met eindklanten onder bureauvlag</span>
-          </div>
-          <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-100 flex items-center">
-            <div class="w-2 h-2 rounded-full bg-[#4BC0E8] mr-3"></div>
-            <span class="text-[#1C1C1C] font-medium">Geen ego, wel resultaat</span>
-          </div>
-          <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-100 flex items-center">
-            <div class="w-2 h-2 rounded-full bg-[#4BC0E8] mr-3"></div>
-            <span class="text-[#1C1C1C] font-medium">Snel inzetbaar op data, tracking, dashboards en SEA/SEO</span>
-          </div>
-        </div>
-
-        <a href="mailto:jordi@yomi.nl"
-          class="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold transition-all duration-300 rounded-lg bg-[#0E0E0E] text-white hover:bg-[#1C1C1C] border border-transparent shadow-lg hover:shadow-xl">
-          Whitelabel mogelijkheden bespreken <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- About -->
-  <section class="py-20 md:py-32 bg-white">
-    <div class="container mx-auto px-6 md:px-12 max-w-7xl">
-      <div class="max-w-3xl mx-auto text-center">
-        <h2 class="text-3xl md:text-4xl font-bold text-[#0E0E0E] mb-8">
-          Over Yomi
-        </h2>
-        <p class="text-xl md:text-2xl text-[#1C1C1C] leading-relaxed font-light">
-          Yomi is opgericht door een data-gedreven specialist met ervaring in retail, franchise, e-commerce en B2B
-          leadgeneratie. De kracht ligt in het koppelen van systemen, het automatiseren van handwerk en het bouwen van
-          oplossingen die meteen waarde leveren. Compact, direct en technisch sterk.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-[#0E0E0E] text-white py-20 pb-10">
-    <div class="container mx-auto px-6 md:px-12 max-w-7xl">
-      <div class="max-w-4xl mx-auto text-center mb-16">
-        <h2 class="text-4xl md:text-5xl font-bold mb-6">
-          Klaar voor meer inzicht, minder handwerk en betere resultaten?
-        </h2>
-        <p class="text-xl text-gray-400 mb-10">
-          Stuur een bericht met een korte schets van je vraagstuk.
-        </p>
-        <div class="flex flex-col sm:flex-row justify-center gap-6">
-          <a href="mailto:jordi@yomi.nl"
-            class="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold transition-all duration-300 rounded-lg bg-white text-[#0E0E0E] hover:bg-gray-200 border-none">
-            Plan een kennismaking <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
-          </a>
-          <a href="mailto:jordi@yomi.nl"
-            class="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold transition-all duration-300 rounded-lg bg-transparent border-2 border-white text-white hover:bg-white hover:text-[#0E0E0E]">
-            Stuur een bericht
-          </a>
-        </div>
-      </div>
-
-      <div
-        class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
-        <div class="mb-4 md:mb-0">
-          <span class="font-bold text-white text-lg tracking-tighter mr-2">YOMI</span>
-          &copy; 2026
-        </div>
-        <div>
-          Data, automatisering en performance marketing
-        </div>
-      </div>
-    </div>
-
-    <!-- Mobile Sticky CTA -->
-    <div class="fixed bottom-0 left-0 right-0 p-4 bg-white border-t border-gray-200 md:hidden z-50">
-      <a href="mailto:jordi@yomi.nl"
-        class="inline-flex items-center justify-center w-full px-8 py-4 text-lg font-semibold transition-all duration-300 rounded-lg bg-[#0E0E0E] text-white hover:bg-[#1C1C1C]">
-        Mail Jordi <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
-      </a>
+  <footer>
+    <div class="wrap row">
+      <div><span class="brand">YOMI</span> &nbsp; © 2026 · Jordi ter Woord</div>
+      <div>Systemen koppelen, AI in productie & performance voor retail en e-commerce</div>
     </div>
   </footer>
 
-  <!-- Initialize Lucide Icons -->
+  <div class="mcta">
+    <a href="mailto:jordi@yomi.nl?subject=Kennismaking%20via%20yomi.nl" class="btn btn-primary">Leg je vraagstuk voor
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+        stroke-linejoin="round" aria-hidden="true">
+        <path d="M5 12h14M13 6l6 6-6 6" />
+      </svg>
+    </a>
+  </div>
+
   <script>
-    lucide.createIcons();
+    (function () {
+      var els = document.querySelectorAll('.reveal');
+      if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        els.forEach(function (e) { e.classList.add('in'); });
+        return;
+      }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) {
+            en.target.classList.add('in');
+            io.unobserve(en.target);
+          }
+        });
+      }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+      els.forEach(function (e) { io.observe(e); });
+    })();
+
+    (function () {
+      var el = document.getElementById('clock');
+      if (!el) return;
+      function tick() {
+        try {
+          el.textContent = new Intl.DateTimeFormat('nl-NL', {
+            hour: '2-digit', minute: '2-digit', hour12: false, timeZone: 'Europe/Amsterdam'
+          }).format(new Date());
+        } catch (e) {
+          var d = new Date();
+          el.textContent = ('0' + d.getHours()).slice(-2) + ':' + ('0' + d.getMinutes()).slice(-2);
+        }
+      }
+      tick();
+      setInterval(tick, 30000);
+    })();
   </script>
 </body>
 
