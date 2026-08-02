@@ -79,18 +79,36 @@ FORM: Een precies gespecificeerde, editoriële PDP met sticky besliskolom; geen 
             <button type="button" data-size="38">38</button>
             <button type="button" data-size="40">40</button>
             <button type="button" data-size="42">42</button>
-            <button type="button" data-size="44">44</button>
+            <button class="is-unavailable" type="button" data-size="44" data-available="false" aria-label="Maat 44, tijdelijk niet online beschikbaar"><s>44</s></button>
           </div>
           <p class="field-message" id="size-message" aria-live="polite">Kies een maat om online of in de winkel verder te gaan.</p>
         </fieldset>
 
         <div class="buy-actions">
-          <button class="button button-primary" id="add-product" type="button" disabled>Voeg toe aan winkelmand</button>
-          <button class="button button-secondary" id="check-stock" type="button" disabled>
+          <button class="button button-primary" id="add-product" type="button">Voeg toe aan winkelmand</button>
+          <button class="button button-secondary" id="check-stock" type="button">
             <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 21s7-5.4 7-12a7 7 0 1 0-14 0c0 6.6 7 12 7 12Zm0-9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5Z"/></svg>
             Bekijk winkelvoorraad
           </button>
         </div>
+
+        <section class="availability-panel" id="availability-panel" aria-labelledby="availability-title" hidden>
+          <p class="demo-label">Online tijdelijk niet beschikbaar · demo</p>
+          <h2 id="availability-title">Maat <span id="availability-size">44</span> weer op voorraad?</h2>
+          <p>Ontvang één bericht zodra deze maat online terug is. Liever niet wachten? Bekijk de winkelvoorraad of een vergelijkbare blazer.</p>
+          <form class="restock-form" id="restock-form" novalidate>
+            <label for="restock-email">E-mailadres</label>
+            <div class="notify-action">
+              <input id="restock-email" name="email" type="email" autocomplete="email" placeholder="naam@voorbeeld.nl" required>
+              <button class="button button-primary" type="submit">Mail mij</button>
+            </div>
+            <p class="form-message" id="restock-message" aria-live="polite">Conceptdemo: het e-mailadres wordt niet opgeslagen of verzonden.</p>
+          </form>
+          <div class="availability-actions">
+            <button class="text-link" id="check-unavailable-stock" type="button">Bekijk maat <span id="unavailable-stock-size">44</span> in winkels</button>
+            <a class="text-link" href="https://www.purdey.nl/collections/blazers" target="_blank" rel="noreferrer">Bekijk vergelijkbare blazers</a>
+          </div>
+        </section>
 
         <ul class="assurances" aria-label="Bestelservice">
           <li>Gratis verzending vanaf € 75</li>

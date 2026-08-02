@@ -202,6 +202,10 @@ h1 { margin: 0; font-size: clamp(2.45rem, 4.4vw, 4.5rem); line-height: 0.98; let
 .size-options button:first-child { margin-left: 0; }
 .size-options button:hover { background: var(--warm-paper); }
 .size-options button.is-selected { position: relative; z-index: 1; background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.size-options button.is-unavailable s { text-decoration-thickness: 1px; text-decoration-color: currentColor; }
+.size-options button.is-unavailable:not(.is-selected) { color: rgba(0, 31, 61, 0.52); background: var(--warm-paper); }
+.size-picker.is-invalid .size-options { outline: 2px solid var(--bronze); outline-offset: 2px; }
+.size-picker.is-invalid .field-message { color: var(--ink); font-weight: 600; }
 .field-message { min-height: 1.3rem; margin: 0.6rem 0 0; color: rgba(0, 31, 61, 0.68); font-size: 0.8rem; }
 
 .buy-actions { margin-top: 1.1rem; display: grid; gap: 0.65rem; }
@@ -227,9 +231,37 @@ h1 { margin: 0; font-size: clamp(2.45rem, 4.4vw, 4.5rem); line-height: 0.98; let
 .button svg { width: 18px; height: 18px; }
 .button-primary { background: var(--ink); color: var(--paper); }
 .button-primary:hover, .button-primary:focus-visible { background: var(--deep-ink); }
-.button-secondary { background: transparent; }
+.button-secondary { background: var(--paper); }
 .button-secondary:hover, .button-secondary:focus-visible { background: var(--ink); color: var(--paper); }
 .button:disabled { border-color: rgba(0,31,61,0.22); background: var(--soft-beige); color: rgba(0,31,61,0.42); cursor: not-allowed; }
+
+.availability-panel {
+  margin-top: 1rem;
+  padding: 1.35rem;
+  border: 1px solid var(--sand);
+  background: var(--warm-paper);
+}
+.availability-panel h2 { margin: 0.35rem 0 0.7rem; font-size: 1.65rem; line-height: 1.08; }
+.availability-panel > p:not(.demo-label) { max-width: 56ch; margin: 0 0 1rem; font-size: 0.84rem; }
+.restock-form label { display: block; margin-bottom: 0.38rem; font-size: 0.76rem; font-weight: 600; }
+.notify-action { display: grid; grid-template-columns: minmax(0, 1fr) auto; }
+.notify-action input {
+  min-width: 0;
+  min-height: 49px;
+  padding: 0.75rem 0.85rem;
+  border: 1px solid var(--ink);
+  border-right: 0;
+  border-radius: 0;
+  color: var(--ink);
+  background: var(--paper);
+}
+.notify-action input::placeholder { color: rgba(0, 31, 61, 0.62); }
+.notify-action input[aria-invalid="true"] { border-color: var(--bronze); box-shadow: inset 0 0 0 1px var(--bronze); }
+.notify-action .button { min-width: 8.5rem; }
+.form-message { margin: 0.55rem 0 0; color: rgba(0,31,61,0.68); font-size: 0.72rem; }
+.form-message.is-error { color: var(--ink); font-weight: 600; }
+.availability-actions { display: flex; flex-wrap: wrap; gap: 0.6rem 1.25rem; margin-top: 1rem; }
+.availability-actions .text-link { margin-top: 0; font-size: 0.78rem; font-weight: 600; }
 
 .assurances {
   margin: 1.25rem 0 0;
@@ -367,6 +399,9 @@ h1 { margin: 0; font-size: clamp(2.45rem, 4.4vw, 4.5rem); line-height: 0.98; let
   .size-options { grid-template-columns: repeat(3, 1fr); gap: 0; }
   .size-options button:nth-child(4) { margin-left: 0; margin-top: -1px; }
   .size-options button:nth-child(5), .size-options button:nth-child(6) { margin-top: -1px; }
+  .notify-action { grid-template-columns: 1fr; gap: 0.55rem; }
+  .notify-action input { border-right: 1px solid var(--ink); }
+  .notify-action .button { width: 100%; }
   .visit-actions { grid-template-columns: 1fr; }
   .stock-heading { align-items: flex-start; }
   .store-result { grid-template-columns: 1fr; }
