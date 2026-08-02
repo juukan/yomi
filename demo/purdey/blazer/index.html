@@ -1,0 +1,217 @@
+<!doctype html>
+<!--
+THESIS: Purdey's 30 winkels worden op de productpagina een koopargument; we weigeren de winkel als footerlink of retourclaim.
+OWN-WORLD: Diep marineblauw, warm papier, scherpe rechthoeken, Playfair-koppen en Josefin-taakcopy; echte Purdey-fotografie draagt de pagina.
+STORY: De klant ziet Iris, kiest haar maat, koopt online of controleert dezelfde maat lokaal, en kan de volledige look in één beweging samenstellen.
+FIRST VIEWPORT: Links een beeldessay met Iris; rechts de productbeslissing met maat, winkelmand en de gelijkwaardige winkelvoorraadroute direct in beeld.
+FORM: Een precies gespecificeerde, editoriële PDP met sticky besliskolom; geen concept-seed omdat de gebruiker structuur en merkwereld al vastlegde.
+-->
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="description" content="Werkend Purdey PDP-prototype: Iris Blazer Camel online kopen, winkelvoorraad bekijken of als complete look passen.">
+  <title>Iris Blazer Camel — Purdey prototype</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#product">Meteen naar het product</a>
+
+  <header class="site-header">
+    <div class="service-strip" aria-label="Purdey service">
+      <span>30 winkels in Nederland</span>
+      <span>Gratis verzending vanaf € 75</span>
+      <a href="https://www.purdey.nl/pages/store-locator" target="_blank" rel="noreferrer">Vind een winkel</a>
+    </div>
+    <div class="nav-shell">
+      <a class="brand" href="https://www.purdey.nl/" aria-label="Purdey home" target="_blank" rel="noreferrer">
+        <img src="assets/logo.svg" alt="Purdey">
+      </a>
+      <nav class="main-nav" aria-label="Hoofdnavigatie">
+        <a href="https://www.purdey.nl/collections/shop-all" target="_blank" rel="noreferrer">Collectie</a>
+        <a href="https://www.purdey.nl/collections/new-arrivals" target="_blank" rel="noreferrer">New arrivals</a>
+        <a href="#complete-look">Shop the look</a>
+        <a href="https://www.purdey.nl/pages/store-locator" target="_blank" rel="noreferrer">Winkels</a>
+      </nav>
+      <button class="bag-button" type="button" aria-label="Winkelmand bekijken">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 8h14l-1 12H6L5 8Zm4 0V6a3 3 0 0 1 6 0v2"/></svg>
+        <span id="bag-count">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="product">
+    <div class="breadcrumb"><a href="https://www.purdey.nl/collections/blazers" target="_blank" rel="noreferrer">Blazers</a><span aria-hidden="true">/</span><span>Iris Blazer Camel</span></div>
+
+    <section class="product-layout" aria-labelledby="product-title">
+      <div class="gallery" aria-label="Productfoto's Iris Blazer Camel">
+        <div class="gallery-stage">
+          <img id="main-image" src="assets/iris-product.png" alt="Iris Blazer Camel, vooraanzicht" width="1100" height="1467">
+          <span class="image-counter" id="image-counter">1 / 4</span>
+        </div>
+        <div class="gallery-thumbs" role="list" aria-label="Kies een productbeeld">
+          <button class="thumb is-active" type="button" data-src="assets/iris-product.png" data-alt="Iris Blazer Camel, vooraanzicht" data-index="1" aria-label="Toon vooraanzicht" aria-pressed="true"><img src="assets/iris-product.png" alt=""></button>
+          <button class="thumb" type="button" data-src="assets/iris-model-close.png" data-alt="Iris Blazer Camel, gedragen detail" data-index="2" aria-label="Toon gedragen detail" aria-pressed="false"><img src="assets/iris-model-close.png" alt=""></button>
+          <button class="thumb" type="button" data-src="assets/iris-model-full.png" data-alt="Iris Blazer Camel, complete look" data-index="3" aria-label="Toon complete look" aria-pressed="false"><img src="assets/iris-model-full.png" alt=""></button>
+          <button class="thumb" type="button" data-src="assets/iris-model-back.png" data-alt="Iris Blazer Camel, achteraanzicht" data-index="4" aria-label="Toon achteraanzicht" aria-pressed="false"><img src="assets/iris-model-back.png" alt=""></button>
+        </div>
+      </div>
+
+      <div class="product-decision">
+        <div class="product-heading">
+          <span class="status-label">Nieuw</span>
+          <p class="brand-label">Purdey</p>
+          <h1 id="product-title">Iris Blazer Camel</h1>
+          <p class="price">€ 279,95</p>
+        </div>
+
+        <p class="product-copy">De Iris Blazer van Purdey in camel ruit geeft elke look verfijnde souplesse. Het rechte silhouet op heuplengte voelt prettig en kleedt mooi af — vrouwelijk en moeiteloos.</p>
+
+        <fieldset class="size-picker">
+          <legend><span>Kies uw maat</span><a href="https://www.purdey.nl/products/iris-blazer-camel" target="_blank" rel="noreferrer">Maattabel</a></legend>
+          <div class="size-options">
+            <button type="button" data-size="34">34</button>
+            <button type="button" data-size="36">36</button>
+            <button type="button" data-size="38">38</button>
+            <button type="button" data-size="40">40</button>
+            <button type="button" data-size="42">42</button>
+            <button type="button" data-size="44">44</button>
+          </div>
+          <p class="field-message" id="size-message" aria-live="polite">Kies een maat om online of in de winkel verder te gaan.</p>
+        </fieldset>
+
+        <div class="buy-actions">
+          <button class="button button-primary" id="add-product" type="button" disabled>Voeg toe aan winkelmand</button>
+          <button class="button button-secondary" id="check-stock" type="button" disabled>
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 21s7-5.4 7-12a7 7 0 1 0-14 0c0 6.6 7 12 7 12Zm0-9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5Z"/></svg>
+            Bekijk winkelvoorraad
+          </button>
+        </div>
+
+        <ul class="assurances" aria-label="Bestelservice">
+          <li>Gratis verzending vanaf € 75</li>
+          <li>14 dagen bedenktijd</li>
+          <li>Gratis retourneren in 30 winkels</li>
+        </ul>
+
+        <section class="stock-panel" id="stock-panel" aria-labelledby="stock-title" hidden>
+          <div class="stock-heading">
+            <div>
+              <p class="demo-label">Voorbeeldvoorraad · demo</p>
+              <h2 id="stock-title">Waar kunt u maat <span id="stock-size">—</span> passen?</h2>
+            </div>
+            <button class="text-button" id="close-stock" type="button">Sluiten</button>
+          </div>
+          <form class="location-form" id="location-form">
+            <label for="postcode">Uw postcode of plaats</label>
+            <div class="field-action">
+              <input id="postcode" name="postcode" type="search" value="5061 HK" autocomplete="postal-code">
+              <button type="submit">Zoek</button>
+            </div>
+          </form>
+          <div class="store-results" id="store-results">
+            <article class="store-result is-nearest">
+              <div>
+                <p class="store-name">Purdey Oisterwijk</p>
+                <p>Dorpsstraat 18 · zondag 12:00–17:00 (1e zondag)</p>
+              </div>
+              <div class="stock-status"><span aria-hidden="true"></span>Op voorraad <small>demo</small></div>
+              <button class="visit-button" type="button" data-store="Oisterwijk">Kom Iris hier passen</button>
+            </article>
+            <article class="store-result">
+              <div>
+                <p class="store-name">Purdey Den Bosch</p>
+                <p>Bekijk winkel voor adres en openingstijden</p>
+              </div>
+              <div class="stock-status stock-low"><span aria-hidden="true"></span>Beperkt <small>demo</small></div>
+              <button class="visit-button" type="button" data-store="Den Bosch">Bekijk deze winkel</button>
+            </article>
+          </div>
+          <p class="stock-disclaimer">Dit prototype gebruikt voorbeeldvoorraad. Er wordt niets automatisch gereserveerd; de winkel bevestigt de actuele beschikbaarheid.</p>
+        </section>
+
+        <section class="visit-panel" id="visit-panel" aria-live="polite" hidden>
+          <p class="visit-kicker">Uw pasbezoek voorbereid</p>
+          <h2>Iris in maat <span id="visit-size">—</span> · <span id="visit-store">Oisterwijk</span></h2>
+          <p>Neem de gekozen maat mee naar de winkelpagina en bel desgewenst vooraf. Zo blijft de belofte netjes: wel een gerichte winkelintentie, geen fictieve reservering.</p>
+          <div class="visit-actions">
+            <a class="button button-primary" href="https://www.purdey.nl/pages/purdey-winkel-oisterwijk" target="_blank" rel="noreferrer">Bekijk winkel en route</a>
+            <a class="button button-secondary" href="tel:+31132032957">Bel Oisterwijk</a>
+          </div>
+        </section>
+
+        <details class="product-details">
+          <summary>Pasvorm en materiaal</summary>
+          <p>Recht silhouet op heuplengte, lange mouwen, kraag, knoopsluiting en paspelzakken. Raadpleeg de actuele Purdey-PDP voor volledige samenstelling en producttransparantie.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="look-section" id="complete-look" aria-labelledby="look-title">
+      <div class="look-visual">
+        <img src="assets/iris-model-full.png" alt="Iris Blazer Camel als complete look met top en jeans" width="1000" height="1500">
+        <p class="look-caption">Eén look, twee verkooproutes:<br>online meenemen of gericht passen.</p>
+      </div>
+      <div class="look-builder">
+        <p class="section-kicker">Shop the look</p>
+        <h2 id="look-title">Draag Iris als complete look</h2>
+        <p class="look-intro">De combinatie staat niet alleen ter inspiratie: kies per item de maat en voeg de set samen toe.</p>
+
+        <div class="look-items">
+          <article class="look-item" data-price="279.95">
+            <label class="item-check"><input type="checkbox" checked aria-label="Iris Blazer Camel meenemen"><span></span></label>
+            <img src="assets/iris-product.png" alt="Iris Blazer Camel">
+            <div class="look-item-copy"><p>Purdey</p><h3>Iris Blazer Camel</h3><span>€ 279,95</span></div>
+            <label class="compact-size">Maat<select aria-label="Maat Iris Blazer Camel"><option>34</option><option>36</option><option selected>38</option><option>40</option><option>42</option><option>44</option></select></label>
+          </article>
+          <article class="look-item" data-price="49.95">
+            <label class="item-check"><input type="checkbox" checked aria-label="Babette top meenemen"><span></span></label>
+            <img src="assets/look-top.png" alt="Babette SL U-neck Lace Zand">
+            <div class="look-item-copy"><p>Rosemunde</p><h3>Babette SL U-neck Lace Zand</h3><span>€ 49,95</span></div>
+            <label class="compact-size">Maat<select aria-label="Maat Babette top"><option>XS</option><option>S</option><option selected>M</option><option>L</option><option>XL</option></select></label>
+          </article>
+          <article class="look-item" data-price="169.95">
+            <label class="item-check"><input type="checkbox" checked aria-label="Paris jeans meenemen"><span></span></label>
+            <img src="assets/look-jeans.png" alt="Paris Flared Auth. Denim Blauw Wash">
+            <div class="look-item-copy"><p>Cambio</p><h3>Paris Flared Auth. Denim</h3><span>€ 169,95</span></div>
+            <label class="compact-size">Maat<select aria-label="Maat Paris jeans"><option>34</option><option>36</option><option selected>38</option><option>40</option><option>42</option><option>44</option></select></label>
+          </article>
+        </div>
+
+        <div class="look-total">
+          <span>Geselecteerd: <strong id="selected-count">3 items</strong></span>
+          <span>Totaal <strong id="look-total">€ 499,85</strong></span>
+        </div>
+        <button class="button button-primary look-add" id="add-look" type="button">Voeg complete look toe</button>
+        <button class="text-link" id="look-stock" type="button">Bekijk winkelvoorraad voor deze look <span aria-hidden="true">→</span></button>
+        <p class="look-note" id="look-note" aria-live="polite">Voorraadcontrole per item en maat wordt in een pilot aan Purdey's echte voorraad gekoppeld.</p>
+      </div>
+    </section>
+
+    <section class="service-close" aria-labelledby="service-title">
+      <div>
+        <p class="section-kicker">Purdey in 30 winkels</p>
+        <h2 id="service-title">Online gezien.<br>In de winkel zeker.</h2>
+      </div>
+      <p>De winkel hoeft geen uitweg uit de webshop te zijn. Met maat, product en look al gekozen wordt een winkelbezoek een concrete volgende stap.</p>
+      <a class="button button-secondary light-button" href="https://www.purdey.nl/pages/store-locator" target="_blank" rel="noreferrer">Vind uw Purdey-winkel</a>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden>
+    <span id="toast-message"></span>
+    <button type="button" id="close-toast" aria-label="Melding sluiten">×</button>
+  </div>
+
+  <footer class="site-footer">
+    <img src="assets/logo.svg" alt="Purdey">
+    <p>Conceptdemo op basis van publiek zichtbare productdata, vastgelegd op 2 augustus 2026. Geen echte bestelling, voorraadkoppeling of reservering.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

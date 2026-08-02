@@ -1,0 +1,147 @@
+<!--
+THESIS: De winkelpagina is een bruikbaar bezoekplan en fysiek bewijs; lange stadscopy rond één generieke afbeelding wordt geweigerd.
+OWN-WORLD: Purdey-marine, wit en warm papier; Playfair/Josefin; echte Oisterwijk-fotografie; vlakke lijnen en rechthoekige acties.
+STORY: De bezoeker ziet de nieuwe winkel, controleert of zij terechtkan, kiest route of parkeren en weet wie zij kan bellen.
+FIRST VIEWPORT: Oisterwijk-interieur groot links; status, adres en routeactie rechts; vier praktische intenties direct eronder.
+FORM: Editorieel winkelportret, structurele keuze 1; bezoekplan als rustige tweede akte; geen concept-seed wegens de precies gespecificeerde flow.
+-->
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow, noarchive" />
+    <meta name="description" content="Concept voor de winkelpagina van Purdey Oisterwijk met route, parkeren, openingstijden en echte winkelbeelden." />
+    <title>Purdey Oisterwijk — concept winkelpagina</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="store.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Meteen naar de inhoud</a>
+    <div class="service-bar">Gratis retour in 30 winkels · persoonlijk stijladvies in uw buurt</div>
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="Purdey conceptoverzicht">PURDEY</a>
+      <nav class="primary-nav" aria-label="Hoofdnavigatie">
+        <a href="https://www.purdey.nl/collections/shop-all">Collectie</a>
+        <a href="https://www.purdey.nl/collections/new-arrivals">New arrivals</a>
+        <a href="../blazer/index.html">Blazers</a>
+        <a href="locator.html" aria-current="page">Winkels</a>
+      </nav>
+      <a class="header-action" href="locator.html">Alle winkels</a>
+    </header>
+
+    <main id="main">
+      <section class="store-hero" aria-labelledby="store-title">
+        <div class="store-hero-media">
+          <img src="assets/oisterwijk-interieur.jpg" alt="Zithoek in de nieuwe Purdey-winkel in Oisterwijk" />
+        </div>
+        <div class="store-hero-copy">
+          <p class="anniversary">De 30e Purdey-winkel</p>
+          <h1 id="store-title">Welkom in Oisterwijk.</h1>
+          <p class="today-status" data-open-status>Openingstijden laden…</p>
+          <p class="hero-address">Dorpsstraat 18<br />5061 HK Oisterwijk</p>
+          <div class="action-group">
+            <a class="button button-primary" href="https://www.google.com/maps/dir/?api=1&destination=51.5802447,5.1926484" target="_blank" rel="noreferrer" data-event="store_route_click">Plan uw route</a>
+            <a class="button button-secondary" href="#parkeren" data-event="store_parking_open">Parkeren</a>
+          </div>
+        </div>
+      </section>
+
+      <nav class="quick-intents" aria-label="Praktische winkelacties">
+        <a href="https://www.google.com/maps/dir/?api=1&destination=51.5802447,5.1926484" target="_blank" rel="noreferrer" data-event="store_route_click">Route</a>
+        <a href="#parkeren" data-event="store_parking_open">Parkeren</a>
+        <a href="tel:+31132032957" data-event="store_call_click">Bel de winkel</a>
+        <a href="#openingstijden" data-event="store_hours_open">Openingstijden</a>
+      </nav>
+
+      <section class="store-story" aria-labelledby="story-title">
+        <div class="store-story-copy">
+          <p class="anniversary">Persoonlijk stijladvies</p>
+          <h2 id="story-title">Even kijken. Rustig passen. Goed kiezen.</h2>
+          <p>In de nieuwe winkel aan de Dorpsstraat helpen onze stylisten u graag met pasvorm, combinaties en een complete look. Loop gerust binnen; bellen vooraf kan natuurlijk ook.</p>
+          <a class="button button-secondary" href="tel:+31132032957" data-event="store_call_click">Vraag het winkelteam</a>
+        </div>
+        <div class="store-gallery" aria-label="Foto's van Purdey Oisterwijk">
+          <img src="assets/oisterwijk-balie.jpg" alt="Balie en Purdey-logo in de winkel in Oisterwijk" />
+          <img src="assets/oisterwijk-interieur.jpg" alt="Zithoek voor persoonlijk advies in Purdey Oisterwijk" />
+        </div>
+      </section>
+
+      <section class="visit-plan" id="parkeren" aria-labelledby="visit-title">
+        <a
+          class="map-wrap"
+          href="https://www.google.com/maps/dir/?api=1&destination=51.5802447,5.1926484"
+          target="_blank"
+          rel="noreferrer"
+          data-event="store_map_click"
+          aria-label="Open route naar Purdey Oisterwijk in Google Maps"
+        >
+          <img src="assets/oisterwijk-route.svg" alt="Schematische wandelroute van station Oisterwijk naar Purdey aan de Dorpsstraat" />
+          <span class="map-action">Open route</span>
+        </a>
+        <div class="visit-copy">
+          <p class="anniversary">Plan uw bezoek</p>
+          <h2 id="visit-title">Zonder zoeken aankomen.</h2>
+
+          <div class="info-block">
+            <h3>Met de auto</h3>
+            <p>Navigeer naar Dorpsstraat 18. In het centrum van Oisterwijk geldt betaald parkeren van maandag tot en met zaterdag; op zondag parkeert u gratis.</p>
+            <a href="https://www.google.com/maps/dir/?api=1&destination=51.5802447,5.1926484" target="_blank" rel="noreferrer" data-event="store_route_click">Open route in Google Maps</a>
+          </div>
+
+          <div class="info-block">
+            <h3>Parkeren</h3>
+            <p>Op de Dorpsstraat betaalt u per kwartier. Op officiële parkeerterreinen en delen van de Spoorlaan en Vloeiweg geldt een uurtarief. In een blauwe zone kunt u maximaal twee uur gratis parkeren met parkeerschijf.</p>
+            <a href="https://www.oisterwijk.nl/parkeren/betaald-parkeren" target="_blank" rel="noreferrer" data-event="store_parking_source">Bekijk actuele parkeerinfo</a>
+          </div>
+
+          <div class="info-block">
+            <h3>Met trein of fiets</h3>
+            <p>Plan uw wandel- of fietsroute vanaf station Oisterwijk rechtstreeks naar de Dorpsstraat.</p>
+            <a href="https://www.google.com/maps/dir/?api=1&origin=Station+Oisterwijk&destination=Dorpsstraat+18,+Oisterwijk&travelmode=walking" target="_blank" rel="noreferrer" data-event="store_walk_route_click">Bekijk wandelroute</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="opening-contact" id="openingstijden" aria-labelledby="hours-title">
+        <div>
+          <p class="anniversary">Wanneer u welkom bent</p>
+          <h2 id="hours-title">Openingstijden</h2>
+          <dl class="hours-list">
+            <div><dt>Maandag</dt><dd>12:00–18:00</dd></div>
+            <div><dt>Dinsdag</dt><dd>10:00–18:00</dd></div>
+            <div><dt>Woensdag</dt><dd>10:00–18:00</dd></div>
+            <div><dt>Donderdag</dt><dd>10:00–18:00</dd></div>
+            <div><dt>Vrijdag</dt><dd>10:00–18:00</dd></div>
+            <div><dt>Zaterdag</dt><dd>10:00–17:00</dd></div>
+            <div><dt>Zondag</dt><dd>Eerste zondag 12:00–17:00</dd></div>
+          </dl>
+        </div>
+
+        <div>
+          <p class="anniversary">Direct contact</p>
+          <h2>Het winkelteam helpt u graag.</h2>
+          <address class="contact-list">
+            Purdey Oisterwijk<br />
+            Dorpsstraat 18<br />
+            5061 HK Oisterwijk
+            <a href="tel:+31132032957" data-event="store_call_click">013 203 2957</a>
+            <a href="mailto:734-pu-oisterwijk@purdey.nl" data-event="store_email_click">734-pu-oisterwijk@purdey.nl</a>
+          </address>
+          <a class="button button-primary" href="https://www.google.com/maps/dir/?api=1&destination=51.5802447,5.1926484" target="_blank" rel="noreferrer" data-event="store_visit_intent">Kom langs in Oisterwijk</a>
+        </div>
+      </section>
+    </main>
+
+    <p class="source-note">Actuele publieke winkel- en parkeerdata vastgelegd op 2 augustus 2026. Controleer feestdagen en afwijkende openingstijden voor vertrek.</p>
+    <footer class="site-footer">
+      <div class="footer-brand">PURDEY</div>
+      <p>30 winkels · persoonlijk stijladvies · gratis retour in de winkel</p>
+    </footer>
+
+    <div class="mobile-action-bar" aria-label="Snelle winkelacties">
+      <a class="button button-primary" href="https://www.google.com/maps/dir/?api=1&destination=51.5802447,5.1926484" target="_blank" rel="noreferrer" data-event="store_route_click">Plan route</a>
+      <a class="button button-secondary" href="tel:+31132032957" data-event="store_call_click">Bel</a>
+    </div>
+  </body>
+</html>

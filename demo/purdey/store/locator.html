@@ -1,0 +1,123 @@
+<!--
+THESIS: Dertig fysieke winkels worden zichtbaar bewijs en handelbare klantintentie; de generieke kaart-plus-placeholder wordt geweigerd.
+OWN-WORLD: Purdey-marine, wit en warm papier; Playfair/Josefin; echte locatiespecifieke fotografie; vlakke lijnen en rechthoekige acties.
+STORY: De bezoeker herkent een echte winkel, zoekt op plaats of postcode, vergelijkt praktische details en kiest route of winkelpagina.
+FIRST VIEWPORT: Zoekbelofte en invoer links; nieuw Oisterwijk-interieur beeldvullend rechts; primaire actie direct in het zoekveld.
+FORM: Editorieel zoekportret, structurele keuze 1; split-stage binnen de vastgelegde Purdey-wereld; geen concept-seed wegens de precies gespecificeerde flow.
+-->
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow, noarchive" />
+    <meta name="description" content="Concept voor een rijkere Purdey-winkelzoeker met echte locatiebeelden en directe bezoekacties." />
+    <title>Vind uw Purdey-winkel — concept</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="store.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Meteen naar de inhoud</a>
+    <div class="service-bar">Gratis retour in 30 winkels · persoonlijk stijladvies in uw buurt</div>
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="Purdey conceptoverzicht">PURDEY</a>
+      <nav class="primary-nav" aria-label="Hoofdnavigatie">
+        <a href="https://www.purdey.nl/collections/shop-all">Collectie</a>
+        <a href="https://www.purdey.nl/collections/new-arrivals">New arrivals</a>
+        <a href="../blazer/index.html">Blazers</a>
+        <a href="locator.html" aria-current="page">Winkels</a>
+      </nav>
+      <a class="header-action" href="#winkels">30 winkels</a>
+    </header>
+
+    <main id="main">
+      <section class="locator-hero" aria-labelledby="locator-title">
+        <div class="locator-copy">
+          <p class="anniversary">Nu 30 winkels</p>
+          <h1 id="locator-title">Een winkel die past bij uw dag.</h1>
+          <p class="lede">Bekijk de sfeer, openingstijden en bereikbaarheid vóór u vertrekt. Zo weet u precies waar u welkom bent.</p>
+          <form class="search-form" data-store-search>
+            <label class="label" for="store-query">Plaats of postcode</label>
+            <div class="search-row">
+              <input id="store-query" data-store-input type="search" placeholder="Bijvoorbeeld Oisterwijk of 5061" autocomplete="postal-code" />
+              <button class="button button-primary" type="submit" data-event="store_locator_search">Vind mijn winkel</button>
+            </div>
+          </form>
+        </div>
+        <div class="locator-visual">
+          <img src="assets/oisterwijk-interieur.jpg" alt="Zithoek in de nieuwe Purdey-winkel in Oisterwijk" />
+          <div class="image-caption">
+            <strong>Nieuw: Oisterwijk</strong>
+            <span>Dorpsstraat 18 · de dertigste Purdey-winkel</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="locator-results" id="winkels" aria-labelledby="stores-title">
+        <div class="section-intro">
+          <h2 id="stores-title">Kies met vertrouwen.</h2>
+          <p>Geen anonieme pin op de kaart, maar een eerste indruk van de winkel waar u naartoe gaat — met de informatie die een bezoek makkelijk maakt.</p>
+        </div>
+        <p class="result-meta" data-result-count aria-live="polite">Twee pilotlocaties met een eigen Purdey-beeld en directe bezoekinformatie.</p>
+
+        <div class="store-list">
+          <article class="store-row" data-store-row data-search="Oisterwijk 5061 Dorpsstraat Noord-Brabant">
+            <img class="store-thumb" src="assets/oisterwijk-balie.jpg" alt="Balie van Purdey Oisterwijk tijdens de opening" />
+            <div>
+              <p class="store-status">Nieuw · winkel 30</p>
+              <h3>Purdey Oisterwijk</h3>
+              <p class="store-address">Dorpsstraat 18 · 5061 HK</p>
+            </div>
+            <div>
+              <p class="label">Reguliere opening</p>
+              <p class="store-hours">Ma 12:00–18:00 · di–vr 10:00–18:00 · za 10:00–17:00</p>
+            </div>
+            <div class="store-actions">
+              <a href="oisterwijk.html" data-event="store_detail_open">Bekijk winkel</a>
+              <a href="https://www.google.com/maps/dir/?api=1&destination=51.5802447,5.1926484" target="_blank" rel="noreferrer" data-event="store_route_click">Plan route</a>
+            </div>
+          </article>
+
+          <article class="store-row" data-store-row data-search="Oosterbeek 6862 Utrechtseweg Gelderland">
+            <img class="store-thumb" src="assets/oosterbeek-gevel.jpg" alt="Gevel van Purdey Oosterbeek aan de Utrechtseweg" />
+            <div>
+              <p class="store-status">Eigen winkelbeeld</p>
+              <h3>Purdey Oosterbeek</h3>
+              <p class="store-address">Utrechtseweg 182–184 · 6862 AV</p>
+            </div>
+            <div>
+              <p class="label">Reguliere opening</p>
+              <p class="store-hours">Ma 13:00–17:00 · di 10:00–17:00 · wo–za 10:00–17:30</p>
+            </div>
+            <div class="store-actions">
+              <a href="https://www.purdey.nl/pages/purdey-winkel-oosterbeek" target="_blank" rel="noreferrer">Bekijk winkel</a>
+              <a href="https://www.google.com/maps/dir/?api=1&destination=Utrechtseweg+182-184,+Oosterbeek" target="_blank" rel="noreferrer" data-event="store_route_click" data-store="oosterbeek">Plan route</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="empty-state" data-empty-state hidden>
+          <h3>Deze locatie valt buiten de twee uitgewerkte pilotvoorbeelden.</h3>
+          <p>In productie krijgt iedere locatie een eigen beeld en winkelpagina. Bekijk nu de huidige volledige winkelzoeker.</p>
+          <a class="button button-secondary" href="https://www.purdey.nl/pages/store-locator" target="_blank" rel="noreferrer">Bekijk alle winkels</a>
+        </div>
+      </section>
+
+      <section class="all-locations" aria-labelledby="all-title">
+        <div>
+          <h2 id="all-title">Purdey is dichtbij.</h2>
+          <p class="all-locations-note">Deze twee pagina's bewijzen de template. De onderstaande 30 plaatsen zijn de productie-uitrol — niet dertig fictief uitgewerkte demo's.</p>
+        </div>
+        <div class="city-cloud" aria-label="De 30 Purdey-steden voor productie-uitrol">
+          <span>Alkmaar</span><span>Amersfoort</span><span>Amstelveen</span><span>Apeldoorn</span><span>Arnhem</span><span>Bergen</span><span>Blerick</span><span>Breda</span><span>Den Bosch</span><span>Den Haag</span><span>Eindhoven</span><span>Haarlem</span><span>Heemstede</span><span>Heerlen</span><span>Hengelo</span><span>Hillegersberg</span><span>Laren</span><span>Leidschendam</span><span>Maastricht</span><span>Nijmegen</span><span>Oisterwijk</span><span>Oosterbeek</span><span>Rotterdam</span><span>Sluis</span><span>Uden</span><span>Utrecht</span><span>Veenendaal</span><span>Zeist</span><span>Zutphen</span><span>Zwolle</span>
+        </div>
+      </section>
+    </main>
+
+    <p class="source-note">Conceptpilot met actuele publieke winkelgegevens (2 augustus 2026). Voor productie: alle 30 locatiebeelden en openingstijden vanuit één beheerde bron voeden.</p>
+    <footer class="site-footer">
+      <div class="footer-brand">PURDEY</div>
+      <p>30 winkels · persoonlijk stijladvies · gratis retour in de winkel</p>
+    </footer>
+  </body>
+</html>
