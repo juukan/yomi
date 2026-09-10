@@ -701,7 +701,7 @@
 
     .system-row {
       display: grid;
-      grid-template-columns: 94px minmax(230px, 0.82fr) 1fr 0.9fr 0.95fr;
+      grid-template-columns: 84px minmax(258px, 0.92fr) 1fr 0.9fr 0.95fr;
       gap: 24px;
       align-items: stretch;
       padding: 26px;
@@ -725,8 +725,9 @@
     }
 
     .system-main h3 {
-      font-size: 26px;
-      overflow-wrap: break-word;
+      font-size: 25px;
+      overflow-wrap: normal;
+      hyphens: none;
     }
 
     .system-main p {
@@ -1700,6 +1701,46 @@
       overflow: hidden;
     }
 
+    a.case-block {
+      display: block;
+      transition: transform 0.18s var(--ease), box-shadow 0.18s var(--ease), border-color 0.18s var(--ease);
+    }
+
+    a.case-block:hover {
+      transform: translateY(-3px);
+      border-color: var(--blue);
+      box-shadow: 0 22px 48px rgba(21, 39, 56, 0.12);
+    }
+
+    a.case-block.ink:hover {
+      border-color: var(--blue);
+    }
+
+    .cb-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-top: 24px;
+      color: var(--blue-deep);
+      font-size: 14px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .ink .cb-more {
+      color: var(--white);
+    }
+
+    .cb-more svg {
+      width: 16px;
+      height: 16px;
+      transition: transform 0.18s var(--ease);
+    }
+
+    a.case-block:hover .cb-more svg {
+      transform: translateX(4px);
+    }
+
     .case-block.ink {
       color: var(--white);
       background: var(--ink);
@@ -2393,98 +2434,132 @@
         </div>
 
         <div class="case-stack">
-          <article class="case-block ink">
+          <a class="case-block ink" href="/werk/franchisecockpit.html">
             <div class="cb-top">
               <div class="cb-tags">
-                <span class="pill">Datafundament</span>
-                <span>Retail &amp; e-commerce</span>
-              </div>
-              <span class="live"><span class="dot" aria-hidden="true"></span>Live</span>
-            </div>
-            <div class="cb-body">
-              <div>
-                <h3 class="cb-name">Retaildata voor 140+ vestigingen</h3>
-                <p class="cb-lede">Data uit ERP, e-commerce, voorraad en fulfilment zat versnipperd: elk team had zijn
-                  eigen rapport en zijn eigen definitie van hetzelfde getal. Er staat nu &eacute;&eacute;n analytische
-                  laag met vaste definities, quality checks en monitoring, waar winkels, DC en directie dagelijks op
-                  sturen.</p>
-              </div>
-              <div class="cb-metrics">
-                <div><strong>28+</strong><span>Bronnen gekoppeld</span></div>
-                <div><strong>140+</strong><span>Vestigingen in beeld</span></div>
-                <div><strong>1</strong><span>Set definities</span></div>
-              </div>
-            </div>
-          </article>
-
-          <article class="case-block">
-            <div class="cb-top">
-              <div class="cb-tags">
-                <span class="pill">Systeemintegratie</span>
-                <span>E-commerce</span>
-              </div>
-              <span class="live"><span class="dot" aria-hidden="true"></span>Live</span>
-            </div>
-            <div class="cb-body">
-              <div>
-                <h3 class="cb-name">Drie systemen, &eacute;&eacute;n klantbeeld</h3>
-                <p class="cb-lede">Drie systemen die niets van elkaar wisten, terwijl klantenservice en inkoop precies
-                  dezelfde vraag probeerden te beantwoorden. Nu loopt het door &eacute;&eacute;n datalaag, inclusief de
-                  edge cases die zo'n koppeling normaal stukmaken.</p>
-              </div>
-              <div class="cb-metrics">
-                <div><strong>CRM</strong><span>Klantcontact</span></div>
-                <div><strong>WMS</strong><span>Fulfilment</span></div>
-                <div><strong>VoIP</strong><span>Telefonie</span></div>
-              </div>
-            </div>
-          </article>
-
-          <article class="case-block ink">
-            <div class="cb-top">
-              <div class="cb-tags">
-                <span class="pill">AI-workflow</span>
-                <span>Multi-domein webshop</span>
-              </div>
-              <span class="live"><span class="dot" aria-hidden="true"></span>In gebruik</span>
-            </div>
-            <div class="cb-body">
-              <div>
-                <h3 class="cb-name">LLM-workflows voor lokalisatie</h3>
-                <p class="cb-lede">Een uitrol over meerdere landen en domeinen waarbij vertalen met de hand niet meer
-                  bij te benen was. De workflow genereert, maar publiceert niets zonder review: tone of voice en
-                  vaktermen blijven van het merk, niet van het model.</p>
-              </div>
-              <div class="cb-metrics">
-                <div><strong>LLM</strong><span>Vertaling en content</span></div>
-                <div><strong>Review</strong><span>Mens in de lus</span></div>
-                <div><strong>CMS</strong><span>Direct gepubliceerd</span></div>
-              </div>
-            </div>
-          </article>
-
-          <article class="case-block">
-            <div class="cb-top">
-              <div class="cb-tags">
-                <span class="pill">Productdata</span>
-                <span>PIM en assets</span>
+                <span class="pill">Datafundament + interne tool</span>
+                <span>Baderie &middot; Bad in Beeld &middot; InstalCenter</span>
               </div>
               <span class="live"><span class="dot" aria-hidden="true"></span>Live intern</span>
             </div>
             <div class="cb-body">
               <div>
-                <h3 class="cb-name">Productdata die publicatieklaar is</h3>
-                <p class="cb-lede">Artikelen, varianten, beelden en documenten hingen los van elkaar, waardoor niemand
-                  kon zeggen welk product echt publicatieklaar was. Die vraag is nu per artikel te beantwoorden, en dat
-                  is meteen de voorwaarde om AI-content betrouwbaar te maken.</p>
+                <h3 class="cb-name">E&eacute;n cockpit voor 140+ vestigingen</h3>
+                <p class="cb-lede">Elk team had een eigen rapport en een eigen definitie van hetzelfde getal. Er staat nu &eacute;&eacute;n cockpit op een gedeelde datalaag die laat zien welke formule aandacht vraagt, welke showroom opvolging nodig heeft, en of dat signaal uit prestatie, efficiency of datakwaliteit komt.</p>
+                <span class="cb-more">Bekijk de case <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg></span>
               </div>
               <div class="cb-metrics">
-                <div><strong>PIM</strong><span>E&eacute;n productwaarheid</span></div>
-                <div><strong>Assets</strong><span>Gekoppeld aan varianten</span></div>
-                <div><strong>Status</strong><span>Compleet of niet</span></div>
+                <div><strong>140+</strong><span>Vestigingen</span></div>
+                <div><strong>28+</strong><span>Bronnen</span></div>
+                <div><strong>Dagelijks</strong><span>Refresh</span></div>
               </div>
             </div>
-          </article>
+          </a>
+          <a class="case-block" href="/werk/inkoopvergelijk.html">
+            <div class="cb-top">
+              <div class="cb-tags">
+                <span class="pill">Data engineering + interne tool</span>
+                <span>IGM Inkoop</span>
+              </div>
+              <span class="live"><span class="dot" aria-hidden="true"></span>Live intern</span>
+            </div>
+            <div class="cb-body">
+              <div>
+                <h3 class="cb-name">3,4 miljoen artikelregels doorzoekbaar</h3>
+                <p class="cb-lede">De volledige productcatalogus zat in een datapool-export van 26 GB XML, en was daarmee praktisch onbruikbaar. Inkopers zochten met de hand naar alternatieven op basis van wat ze toevallig wisten. Die export is nu een vergelijkingstool met een betrouwbaarheidsscore per match.</p>
+                <span class="cb-more">Bekijk de case <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg></span>
+              </div>
+              <div class="cb-metrics">
+                <div><strong>26 GB</strong><span>Bronexport</span></div>
+                <div><strong>3,4M</strong><span>Artikelregels</span></div>
+                <div><strong>268</strong><span>Fabrikanten</span></div>
+              </div>
+            </div>
+          </a>
+          <a class="case-block ink" href="/werk/productdata-pim.html">
+            <div class="cb-top">
+              <div class="cb-tags">
+                <span class="pill">Productdata + AI-verrijking</span>
+                <span>IGM PIM &middot; REGN</span>
+              </div>
+              <span class="live"><span class="dot" aria-hidden="true"></span>Live intern</span>
+            </div>
+            <div class="cb-body">
+              <div>
+                <h3 class="cb-name">E&eacute;n productwaarheid voor catalogus en verkoop</h3>
+                <p class="cb-lede">Basisproduct, leveranciersaanbieding en verkoopuiting werden door elkaar gebruikt alsof het hetzelfde was. Dat gaat goed tot je exporteert naar een webshop of dealerfeed. Die drie betekenissen zijn nu strikt gescheiden, en per artikel is zichtbaar of het publicatieklaar is.</p>
+                <span class="cb-more">Bekijk de case <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg></span>
+              </div>
+              <div class="cb-metrics">
+                <div><strong>3</strong><span>Productbetekenissen</span></div>
+                <div><strong>1</strong><span>Expliciete brug</span></div>
+                <div><strong>AFAS</strong><span>Blijft financi&euml;le bron</span></div>
+              </div>
+            </div>
+          </a>
+          <a class="case-block" href="/werk/bonusadministratie.html">
+            <div class="cb-top">
+              <div class="cb-tags">
+                <span class="pill">Documentverwerking + regellogica</span>
+                <span>IGM Finance &amp; Inkoop</span>
+              </div>
+              <span class="live"><span class="dot" aria-hidden="true"></span>In gebruik</span>
+            </div>
+            <div class="cb-body">
+              <div>
+                <h3 class="cb-name">215 contracten omgezet naar rekenbare regels</h3>
+                <p class="cb-lede">De aanname was dat bonusafspraken vooral omzetstaffels zouden zijn. Uit de analyse van 215 contracten bleek dat maar een kwart te kloppen: de rest waren condities, cashback per stuk, groeibonussen en dealerschapsafspraken met elk hun eigen rekenlogica.</p>
+                <span class="cb-more">Bekijk de case <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg></span>
+              </div>
+              <div class="cb-metrics">
+                <div><strong>215</strong><span>Contracten</span></div>
+                <div><strong>445</strong><span>Actieve regels</span></div>
+                <div><strong>10</strong><span>Categorie&euml;n</span></div>
+              </div>
+            </div>
+          </a>
+          <a class="case-block ink" href="/werk/cookandpan-databricks.html">
+            <div class="cb-top">
+              <div class="cb-tags">
+                <span class="pill">Datalaag + AI in productie</span>
+                <span>Cook &amp; Pan</span>
+              </div>
+              <span class="live"><span class="dot" aria-hidden="true"></span>Deels live</span>
+            </div>
+            <div class="cb-body">
+              <div>
+                <h3 class="cb-name">Een datalaag waar agents op mogen werken</h3>
+                <p class="cb-lede">Elk datavraagstuk liep via &eacute;&eacute;n persoon die het vertaalde, begeleidde en valideerde. De datalaag is nu zo ingericht dat agents er zelf op kunnen werken, met kosten per aanvraag zichtbaar en een pull request in plaats van een live patch.</p>
+                <span class="cb-more">Bekijk de case <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg></span>
+              </div>
+              <div class="cb-metrics">
+                <div><strong>57</strong><span>Notebooks in kaart</span></div>
+                <div><strong>~40</strong><span>Jobs</span></div>
+                <div><strong>1</strong><span>Workspace</span></div>
+              </div>
+            </div>
+          </a>
+          <a class="case-block" href="/werk/purdey-winkelbeleving.html">
+            <div class="cb-top">
+              <div class="cb-tags">
+                <span class="pill">E-commerce + integratie</span>
+                <span>Purdey</span>
+              </div>
+              <span class="live"><span class="dot" aria-hidden="true"></span>Prototype</span>
+            </div>
+            <div class="cb-body">
+              <div>
+                <h3 class="cb-name">Van webshop naar winkel</h3>
+                <p class="cb-lede">Een merk met dertig winkels en een webshop die elkaar nauwelijks kenden. In plaats van een adviesrapport heb ik de voorgestelde route als klikbaar prototype gebouwd, zodat het gesprek over de ervaring ging en niet over een aanname.</p>
+                <span class="cb-more">Bekijk de case <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg></span>
+              </div>
+              <div class="cb-metrics">
+                <div><strong>3</strong><span>Werkende schermen</span></div>
+                <div><strong>1</strong><span>Klikbare flow</span></div>
+                <div><strong>0</strong><span>Slides</span></div>
+              </div>
+            </div>
+          </a>
         </div>
 
         <div class="operator-proof">

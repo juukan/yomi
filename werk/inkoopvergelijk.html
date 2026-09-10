@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="nl">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>3,4 miljoen artikelregels doorzoekbaar gemaakt - Yomi</title>
+  <meta name="description" content="Inkopers vergeleken leveranciersprijzen met de hand, per aanvraag, in Excel. De volledige productcatalogus zat wel in een datapool-export, maar die was 26 GB aan XML en daarmee pra" />
+  <link rel="canonical" href="https://yomi.nl/werk/inkoopvergelijk.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://yomi.nl/werk/inkoopvergelijk.html" />
+  <meta property="og:title" content="3,4 miljoen artikelregels doorzoekbaar gemaakt - Yomi" />
+  <meta property="og:description" content="Inkopers vergeleken leveranciersprijzen met de hand, per aanvraag, in Excel. De volledige productcatalogus zat wel in een datapool-export, maar die was 26 GB aan XML en daarmee pra" />
+  <meta property="og:image" content="https://yomi.nl/logos/yomi-logo.png" />
+  <link rel="icon" type="image/png" href="../logos/yomi-logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/case.css" />
+</head>
+
+<body>
+  <a href="#main" class="skip">Direct naar inhoud</a>
+
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="/" aria-label="Yomi home"><img src="../logos/yomi-logo.png" alt="" /></a>
+      <a class="back" href="/#werk">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+          stroke-linejoin="round" aria-hidden="true">
+          <path d="M19 12H5M11 18l-6-6 6-6" />
+        </svg>
+        Alle cases
+      </a>
+      <a class="btn btn-primary" href="mailto:jordi@yomi.nl?subject=Vraag%20over%20de%20case%203%2C4%20miljoen%20artikelregels%20doorzoekbaar%20gemaakt">
+        Vraag hierover stellen
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+      </a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="case-hero">
+      <div class="wrap">
+        <div class="meta-line">
+          <span class="pill">Data engineering + interne tool</span>
+          <span class="pill">IGM Inkoop</span>
+          <span class="live"><span class="dot" aria-hidden="true"></span>Live intern</span>
+        </div>
+        <h1>3,4 miljoen artikelregels doorzoekbaar gemaakt</h1>
+        <p class="lede">Inkopers vergeleken leveranciersprijzen met de hand, per aanvraag, in Excel. De volledige productcatalogus zat wel in een datapool-export, maar die was 26 GB aan XML en daarmee praktisch onbruikbaar. Die export is nu een doorzoekbare vergelijkingstool.</p>
+        <div class="metrics">
+          <div><strong>26 GB</strong><span>Bronexport per run</span></div>
+          <div><strong>3,4M</strong><span>Artikelregels</span></div>
+          <div><strong>268</strong><span>Fabrikanten</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="sec-head">
+          <div class="sec-no">01</div>
+          <h2>Het vraagstuk</h2>
+        </div>
+        <div class="prose">
+          <p>De volledige productwereld waar de organisatie mee werkt stond in een Compano SALES005-export: twee XML-bestanden van samen 26 GB, met 3.369.374 artikelregels en 2.043.270 productregels. Er zat alles in wat je nodig hebt, inclusief bruto- en nettoprijzen per kortingsgroep, maar niemand kon er iets mee. Een bestand van elf gigabyte open je niet even.</p>
+          <p>Het gevolg was voorspelbaar. Bij elke klantaanvraag zocht een inkoper handmatig naar een alternatief artikel bij een andere leverancier, op basis van wat hij toevallig wist. Vergelijkbare artikelen die niemand kende, kwamen simpelweg nooit in beeld.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="sec-head">
+          <div class="sec-no">02</div>
+          <h2>Wat ik gebouwd heb</h2>
+        </div>
+        <ul class="build-list">
+          <li><b>01</b><span>Een Python-ingestlaag die de SALES005-export streamend parseert en bulk-load naar Postgres doet, in plaats van het bestand in geheugen te trekken.</span></li>
+          <li><b>02</b><span>Validatie op de echte data voordat er iets gebouwd werd: 95% van de regels bleek al een doorgerekende nettoprijs te bevatten, waardoor een losse conditietabel voor de meeste gevallen overbodig was.</span></li>
+          <li><b>03</b><span>Een matching-laag die artikelen van verschillende fabrikanten aan elkaar koppelt op GTIN, fabrikantcode, omschrijving en verpakkingskenmerken, met een betrouwbaarheidsscore per match.</span></li>
+          <li><b>04</b><span>Een zoek- en vergelijkscherm waarin een inkoper een artikel invoert en alternatieven ziet met netto prijs, kortingsgroep en fabrikant ernaast.</span></li>
+          <li><b>05</b><span>Analyse-runs die als resultaat bewaard blijven, zodat een eerdere vergelijking reproduceerbaar is en niet opnieuw hoeft.</span></li>
+          <li><b>06</b><span>Excel-export voor de inkopers die het gesprek met een leverancier toch op papier voeren.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="sec-head">
+          <div class="sec-no">03</div>
+          <h2>Hoe het werkt</h2>
+        </div>
+        <div class="flow">
+          <div><h4>Bron</h4><strong>Compano SALES005</strong><p>26 GB XML, volledige replace</p></div>
+          <div><h4>Ingest</h4><strong>Python streaming parser</strong><p>Bulk-load naar Postgres</p></div>
+          <div><h4>Match</h4><strong>Score per koppeling</strong><p>GTIN, code, tekst, verpakking</p></div>
+          <div><h4>Tool</h4><strong>Next.js op Vercel</strong><p>Zoeken, vergelijken, exporteren</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap split">
+        <div>
+          <div class="sec-head">
+            <div class="sec-no">04</div>
+            <h2>Wat het opleverde</h2>
+          </div>
+          <div class="prose">
+            <p>Een vergelijking die eerder een halve dag handwerk was, is nu een zoekopdracht. Belangrijker nog: de inkoper ziet alternatieven die hij zelf niet had bedacht, omdat de tool de hele catalogus kent en niet alleen het deel dat iemand uit zijn hoofd weet.</p>
+            <p>De grootste winst zat niet in de tool maar in de bronanalyse ervoor. Door eerst te valideren wat er werkelijk in de export zit, verviel een groot deel van de oorspronkelijk geplande conditielogica. Dat scheelde weken bouwen aan iets wat de data al gaf.</p>
+          </div>
+          <div class="note">
+            <p>Cijfers beschrijven het volume van de bronexport en de techniek die nodig was om die te verwerken. Leverancierscondities, prijzen en marges staan niet op deze pagina en horen daar ook niet.</p>
+          </div>
+        </div>
+        <div class="panel">
+          <h3>Uitgangspunten</h3>
+          <ul>
+            <li><span aria-hidden="true">&#10003;</span>Volledige catalogus in plaats van bekende artikelen</li>
+            <li><span aria-hidden="true">&#10003;</span>Betrouwbaarheidsscore per match</li>
+            <li><span aria-hidden="true">&#10003;</span>Analyse-runs blijven reproduceerbaar</li>
+            <li><span aria-hidden="true">&#10003;</span>Excel-export voor leveranciersgesprekken</li>
+            <li><span aria-hidden="true">&#10003;</span>Draait als interne app op eigen omgeving</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="sec-head">
+          <div class="sec-no">05</div>
+          <h2>Gebouwd met</h2>
+        </div>
+        <div class="stack">
+          <span>Python</span>
+          <span>PostgreSQL</span>
+          <span>Supabase</span>
+          <span>Next.js</span>
+          <span>TypeScript</span>
+          <span>Vercel</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-cta">
+      <div class="wrap">
+        <div class="cta-panel">
+          <div>
+            <h2>Herkenbaar vraagstuk?</h2>
+            <p>Stuur kort welke systemen meedoen en waar het vastloopt. Dan krijg je een eerlijk antwoord over de beste
+              eerste stap, ook als dat is dat je mij niet nodig hebt.</p>
+          </div>
+          <a class="btn" href="mailto:jordi@yomi.nl?subject=Vraagstuk%20via%20yomi.nl">Mail Jordi <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg></a>
+        </div>
+        <a class="next-case" href="./productdata-pim.html">
+          <div>
+            <small>Volgende case</small>
+            <strong>E&eacute;n productwaarheid voor catalogus, verkoop en inkoop</strong>
+          </div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div>Yomi &copy; 2026 - Jordi ter Woord</div>
+      <div>Datafundament - Systeemintegratie - AI in productie</div>
+    </div>
+  </footer>
+</body>
+
+</html>
+

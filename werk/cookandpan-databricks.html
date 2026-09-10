@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="nl">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Een datalaag waar agents veilig op mogen werken - Yomi</title>
+  <meta name="description" content="Elk datavraagstuk liep via één persoon die het vertaalde, begeleidde en valideerde. Die persoon was de bottleneck. De opdracht was om de datalaag zo in te richten dat agents er zel" />
+  <link rel="canonical" href="https://yomi.nl/werk/cookandpan-databricks.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://yomi.nl/werk/cookandpan-databricks.html" />
+  <meta property="og:title" content="Een datalaag waar agents veilig op mogen werken - Yomi" />
+  <meta property="og:description" content="Elk datavraagstuk liep via één persoon die het vertaalde, begeleidde en valideerde. Die persoon was de bottleneck. De opdracht was om de datalaag zo in te richten dat agents er zel" />
+  <meta property="og:image" content="https://yomi.nl/logos/yomi-logo.png" />
+  <link rel="icon" type="image/png" href="../logos/yomi-logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/case.css" />
+</head>
+
+<body>
+  <a href="#main" class="skip">Direct naar inhoud</a>
+
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="/" aria-label="Yomi home"><img src="../logos/yomi-logo.png" alt="" /></a>
+      <a class="back" href="/#werk">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+          stroke-linejoin="round" aria-hidden="true">
+          <path d="M19 12H5M11 18l-6-6 6-6" />
+        </svg>
+        Alle cases
+      </a>
+      <a class="btn btn-primary" href="mailto:jordi@yomi.nl?subject=Vraag%20over%20de%20case%20Een%20datalaag%20waar%20agents%20veilig%20op%20mogen%20werken">
+        Vraag hierover stellen
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+      </a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="case-hero">
+      <div class="wrap">
+        <div class="meta-line">
+          <span class="pill">Datalaag + AI in productie</span>
+          <span class="pill">Cook &amp; Pan</span>
+          <span class="live"><span class="dot" aria-hidden="true"></span>Deels live</span>
+        </div>
+        <h1>Een datalaag waar agents veilig op mogen werken</h1>
+        <p class="lede">Elk datavraagstuk liep via &eacute;&eacute;n persoon die het vertaalde, begeleidde en valideerde. Die persoon was de bottleneck. De opdracht was om de datalaag zo in te richten dat agents er zelf op kunnen werken, met kosten, herkomst en goedkeuring zichtbaar.</p>
+        <div class="metrics">
+          <div><strong>57</strong><span>Notebooks in kaart</span></div>
+          <div><strong>~40</strong><span>Jobs ge&iuml;nventariseerd</span></div>
+          <div><strong>1</strong><span>Workspace, geen losse stack</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="sec-head">
+          <div class="sec-no">01</div>
+          <h2>Het vraagstuk</h2>
+        </div>
+        <div class="prose">
+          <p>In een Databricks-omgeving die organisch was gegroeid bouwden verschillende mensen los van elkaar aan vergelijkbare oplossingen. Er was geen centraal overzicht van wat er al bestond, dus hergebruik gebeurde alleen als iemand het toevallig wist. Kennis vertrok met de medewerker.</p>
+          <p>Tegelijk was er een concrete wens om AI-agents in te zetten voor datavragen en pipeline-wijzigingen. Dat kan alleen als drie dingen geregeld zijn: de agent mag niet zomaar productie aanpassen, iemand moet kunnen zien wat het kost, en gevoelige data mag niet in een modelaanroep belanden.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="sec-head">
+          <div class="sec-no">02</div>
+          <h2>Wat ik gebouwd heb</h2>
+        </div>
+        <ul class="build-list">
+          <li><b>01</b><span>Een datalaag waarin Shopify, fulfilment en e-mailplatform samenkomen, met de bestaande jobs als vertrekpunt in plaats van een nieuwe stack ernaast.</span></li>
+          <li><b>02</b><span>Een productie-integratie met een taalmodel voor het verrijken van consumentinteracties, inclusief herstel van de quotalimieten waar die eerder op vastliep.</span></li>
+          <li><b>03</b><span>Een afschermingsplan voor persoonsgegevens op de productieomgeving, zodat agenttoegang niet automatisch toegang tot klantdata betekent.</span></li>
+          <li><b>04</b><span>Een ontwerp voor een MCP-gateway waarmee agents gecontroleerd bij data en tooling kunnen, met authenticatie en autorisatie per bron.</span></li>
+          <li><b>05</b><span>Een uitsplitsing van het platformverbruik per gebruiker en per proces, zodat kosten toewijsbaar zijn in plaats van &eacute;&eacute;n maandbedrag.</span></li>
+          <li><b>06</b><span>Een architectuur waarin een agent nooit rechtstreeks live patcht: output is altijd een pull request plus een begrijpelijk validatiebericht aan de aanvrager.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="sec-head">
+          <div class="sec-no">03</div>
+          <h2>Hoe het werkt</h2>
+        </div>
+        <div class="flow">
+          <div><h4>Intake</h4><strong>Slack en mail</strong><p>Verzoek wordt vastgelegd</p></div>
+          <div><h4>Triage</h4><strong>Klein model</strong><p>Type en risicoklasse</p></div>
+          <div><h4>Bouw</h4><strong>Groot model</strong><p>Catalog-check, dan PR</p></div>
+          <div><h4>Akkoord</h4><strong>Aanvrager</strong><p>Merge, job draait vanaf git</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap split">
+        <div>
+          <div class="sec-head">
+            <div class="sec-no">04</div>
+            <h2>Wat het opleverde</h2>
+          </div>
+          <div class="prose">
+            <p>Het gedeelte dat draait is de datalaag met de modelintegratie erop: die verrijkt consumentinteracties in productie. Het agentplatform daarboven is ontworpen en opgezet als scaffold, maar draait nog niet als geheel.</p>
+            <p>De belangrijkste ontwerpkeuze is dat een agent nooit direct in productie schrijft. Een verzoek eindigt altijd in een pull request en een validatiebericht in begrijpelijke taal, waar de aanvrager zelf ja of nee op zegt. Dat maakt het verschil tussen automatisering die je durft aan te zetten en een demo.</p>
+          </div>
+          <div class="note">
+            <p>Eerlijk over de status: de datalaag en de modelintegratie draaien in productie. Het volledige agentplatform is ontwerp plus scaffold en is nog niet als geheel in gebruik.</p>
+          </div>
+        </div>
+        <div class="panel">
+          <h3>Uitgangspunten</h3>
+          <ul>
+            <li><span aria-hidden="true">&#10003;</span>Alles binnen de bestaande omgeving</li>
+            <li><span aria-hidden="true">&#10003;</span>Agent levert een PR, nooit een live patch</li>
+            <li><span aria-hidden="true">&#10003;</span>Elke modelaanroep gelogd met kosten</li>
+            <li><span aria-hidden="true">&#10003;</span>Verplichte check op wat er al bestaat</li>
+            <li><span aria-hidden="true">&#10003;</span>Persoonsgegevens afgeschermd van agenttoegang</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="sec-head">
+          <div class="sec-no">05</div>
+          <h2>Gebouwd met</h2>
+        </div>
+        <div class="stack">
+          <span>Databricks</span>
+          <span>Delta Lake</span>
+          <span>Python</span>
+          <span>Gemini</span>
+          <span>MCP</span>
+          <span>GitHub</span>
+          <span>Slack</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-cta">
+      <div class="wrap">
+        <div class="cta-panel">
+          <div>
+            <h2>Herkenbaar vraagstuk?</h2>
+            <p>Stuur kort welke systemen meedoen en waar het vastloopt. Dan krijg je een eerlijk antwoord over de beste
+              eerste stap, ook als dat is dat je mij niet nodig hebt.</p>
+          </div>
+          <a class="btn" href="mailto:jordi@yomi.nl?subject=Vraagstuk%20via%20yomi.nl">Mail Jordi <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg></a>
+        </div>
+        <a class="next-case" href="./purdey-winkelbeleving.html">
+          <div>
+            <small>Volgende case</small>
+            <strong>Van webshop naar winkel, als werkend prototype</strong>
+          </div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div>Yomi &copy; 2026 - Jordi ter Woord</div>
+      <div>Datafundament - Systeemintegratie - AI in productie</div>
+    </div>
+  </footer>
+</body>
+
+</html>
+

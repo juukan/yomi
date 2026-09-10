@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="nl">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>215 leverancierscontracten omgezet naar rekenbare regels - Yomi</title>
+  <meta name="description" content="Bonusafspraken stonden in PDF-contracten en werden met de hand nagerekend. De vraag was niet of dat sneller kon, maar of het überhaupt betrouwbaar te automatiseren viel. Dat begon " />
+  <link rel="canonical" href="https://yomi.nl/werk/bonusadministratie.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://yomi.nl/werk/bonusadministratie.html" />
+  <meta property="og:title" content="215 leverancierscontracten omgezet naar rekenbare regels - Yomi" />
+  <meta property="og:description" content="Bonusafspraken stonden in PDF-contracten en werden met de hand nagerekend. De vraag was niet of dat sneller kon, maar of het überhaupt betrouwbaar te automatiseren viel. Dat begon " />
+  <meta property="og:image" content="https://yomi.nl/logos/yomi-logo.png" />
+  <link rel="icon" type="image/png" href="../logos/yomi-logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/case.css" />
+</head>
+
+<body>
+  <a href="#main" class="skip">Direct naar inhoud</a>
+
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="/" aria-label="Yomi home"><img src="../logos/yomi-logo.png" alt="" /></a>
+      <a class="back" href="/#werk">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+          stroke-linejoin="round" aria-hidden="true">
+          <path d="M19 12H5M11 18l-6-6 6-6" />
+        </svg>
+        Alle cases
+      </a>
+      <a class="btn btn-primary" href="mailto:jordi@yomi.nl?subject=Vraag%20over%20de%20case%20215%20leverancierscontracten%20omgezet%20naar%20rekenbare%20regels">
+        Vraag hierover stellen
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+      </a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="case-hero">
+      <div class="wrap">
+        <div class="meta-line">
+          <span class="pill">Documentverwerking + regellogica</span>
+          <span class="pill">IGM Finance &amp; Inkoop</span>
+          <span class="live"><span class="dot" aria-hidden="true"></span>In gebruik</span>
+        </div>
+        <h1>215 leverancierscontracten omgezet naar rekenbare regels</h1>
+        <p class="lede">Bonusafspraken stonden in PDF-contracten en werden met de hand nagerekend. De vraag was niet of dat sneller kon, maar of het &uuml;berhaupt betrouwbaar te automatiseren viel. Dat begon met uitzoeken hoe die afspraken er in werkelijkheid uitzien.</p>
+        <div class="metrics">
+          <div><strong>215</strong><span>Contracten geanalyseerd</span></div>
+          <div><strong>445</strong><span>Actieve regels</span></div>
+          <div><strong>10</strong><span>Regelcategorie&euml;n</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="sec-head">
+          <div class="sec-no">01</div>
+          <h2>Het vraagstuk</h2>
+        </div>
+        <div class="prose">
+          <p>Voordat je een bonusadministratie kunt bouwen, moet je weten welke soorten afspraken er bestaan. Dat was niemand bekend, omdat elke afspraak in een eigen contract stond en in eigen bewoordingen. De aanname was dat het vooral omzetstaffels zouden zijn.</p>
+          <p>Die aanname klopte niet. Uit de analyse van 215 contractextracties kwamen 686 regelrijen, waarvan er 445 daadwerkelijk actief of herkenbaar waren. En slechts een kwart daarvan was een klassieke omzetstaffel. De rest bestond uit showroomcondities, dealerschapsafspraken, cashback per stuk, groeibonussen en vaste bijdragen, die stuk voor stuk andere rekenlogica nodig hebben.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="sec-head">
+          <div class="sec-no">02</div>
+          <h2>Wat ik gebouwd heb</h2>
+        </div>
+        <ul class="build-list">
+          <li><b>01</b><span>Een gestructureerde inventarisatie van alle contractafspraken, met per regel een categorie en een implementatieklasse voor het platform.</span></li>
+          <li><b>02</b><span>Een expliciete scheiding tussen wat een bonusresultaat is en wat alleen een conditie is, zodat condities niet per ongeluk als bonus meetellen.</span></li>
+          <li><b>03</b><span>Een restcategorie voor regels die te weinig patroon bevatten om automatisch te classificeren, in plaats van die met een gok in te vullen.</span></li>
+          <li><b>04</b><span>Een importdefinitie voor inkoopmeldingen die per leverancier verschilt maar naar &eacute;&eacute;n canoniek formaat wordt gebracht.</span></li>
+          <li><b>05</b><span>Een converter in drie stappen waarmee een medewerker leveranciersbestanden zelf omzet, met handleiding, zonder tussenkomst van een ontwikkelaar.</span></li>
+          <li><b>06</b><span>Een leveranciersinventaris met structuurprofielen, zodat een nieuw bestandsformaat herkend wordt in plaats van elke keer opnieuw uitgezocht.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="sec-head">
+          <div class="sec-no">03</div>
+          <h2>Hoe het werkt</h2>
+        </div>
+        <div class="flow">
+          <div><h4>Contract</h4><strong>PDF-afspraken</strong><p>Extractie naar tekst</p></div>
+          <div><h4>Analyse</h4><strong>Categorie per regel</strong><p>Actief, conditie of template</p></div>
+          <div><h4>Model</h4><strong>Implementatieklasse</strong><p>Staffel, cashback, groei</p></div>
+          <div><h4>Platform</h4><strong>BAP</strong><p>Berekenen en herberekenen</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap split">
+        <div>
+          <div class="sec-head">
+            <div class="sec-no">04</div>
+            <h2>Wat het opleverde</h2>
+          </div>
+          <div class="prose">
+            <p>De belangrijkste opbrengst was niet het platform maar de bevinding vooraf: het merendeel van de afspraken past niet in een standaard staffel. Was dat pas tijdens de bouw duidelijk geworden, dan was er een systeem gebouwd dat driekwart van de werkelijkheid niet aankan.</p>
+            <p>De converter is overgedragen aan de afdeling zelf. Nieuwe leveranciersbestanden worden daar nu in drie stappen omgezet, met een handleiding en zonder ontwikkelaar in de keten.</p>
+          </div>
+          <div class="note">
+            <p>Aantallen beschrijven de omvang van de analyse. Leveranciersnamen, bonuspercentages, staffels en contractvoorwaarden staan niet op deze pagina.</p>
+          </div>
+        </div>
+        <div class="panel">
+          <h3>Uitgangspunten</h3>
+          <ul>
+            <li><span aria-hidden="true">&#10003;</span>Analyse v&oacute;&oacute;r de bouw, niet erna</li>
+            <li><span aria-hidden="true">&#10003;</span>Condities gescheiden van bonusresultaat</li>
+            <li><span aria-hidden="true">&#10003;</span>Onduidelijke regels expliciet apart gezet</li>
+            <li><span aria-hidden="true">&#10003;</span>Converter overgedragen aan de afdeling</li>
+            <li><span aria-hidden="true">&#10003;</span>Handleiding in plaats van afhankelijkheid</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="sec-head">
+          <div class="sec-no">05</div>
+          <h2>Gebouwd met</h2>
+        </div>
+        <div class="stack">
+          <span>Python</span>
+          <span>Next.js</span>
+          <span>TypeScript</span>
+          <span>Supabase</span>
+          <span>PostgreSQL</span>
+          <span>Vercel</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-cta">
+      <div class="wrap">
+        <div class="cta-panel">
+          <div>
+            <h2>Herkenbaar vraagstuk?</h2>
+            <p>Stuur kort welke systemen meedoen en waar het vastloopt. Dan krijg je een eerlijk antwoord over de beste
+              eerste stap, ook als dat is dat je mij niet nodig hebt.</p>
+          </div>
+          <a class="btn" href="mailto:jordi@yomi.nl?subject=Vraagstuk%20via%20yomi.nl">Mail Jordi <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg></a>
+        </div>
+        <a class="next-case" href="./cookandpan-databricks.html">
+          <div>
+            <small>Volgende case</small>
+            <strong>Een datalaag waar agents veilig op mogen werken</strong>
+          </div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div>Yomi &copy; 2026 - Jordi ter Woord</div>
+      <div>Datafundament - Systeemintegratie - AI in productie</div>
+    </div>
+  </footer>
+</body>
+
+</html>
+
