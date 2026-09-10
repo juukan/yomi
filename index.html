@@ -4,16 +4,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Yomi - data, AI in productie en performance op marge</title>
+  <title>Yomi - datafundament, systeemintegratie en AI in productie</title>
   <meta name="description"
-    content="Yomi is Jordi ter Woord. Ik bouw datafundamenten, integraties en AI-workflows die operationele data omzetten in praktische sturing. Performance marketing is de commerciële lens." />
+    content="Yomi is Jordi ter Woord. Ik bouw datawarehouses, koppelingen, AI-workflows en interne tools die in productie draaien en die je team zelf blijft gebruiken. Geen rapport, geen lock-in." />
   <link rel="canonical" href="https://yomi.nl/" />
 
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://yomi.nl/" />
-  <meta property="og:title" content="Yomi - data, AI in productie en performance op marge" />
+  <meta property="og:title" content="Yomi - datafundament, systeemintegratie en AI in productie" />
   <meta property="og:description"
-    content="Data en techniek als fundament. Daarboven: integraties, slimme workflows en AI-toepassingen die echt in productie draaien." />
+    content="Datawarehouses, koppelingen, AI-workflows en interne tools die in productie blijven draaien. Gebouwd, niet geadviseerd." />
   <meta property="og:image" content="https://yomi.nl/logos/yomi-logo.png" />
   <meta name="twitter:card" content="summary" />
 
@@ -35,8 +35,8 @@
     "email": "jordi@yomi.nl",
     "founder": { "@type": "Person", "name": "Jordi ter Woord" },
     "areaServed": "NL",
-    "description": "Data-architectuur, datawarehousing, systeemintegratie, AI-workflows in productie en performance-sturing op marge.",
-    "knowsAbout": ["Data-architectuur", "Systeemintegratie", "AI in productie", "Performance marketing", "SEA", "SEO", "CRO", "ETL", "Datawarehousing", "Retail", "E-commerce"]
+    "description": "Data-architectuur, datawarehousing, systeemintegratie, AI-workflows in productie en interne tools voor retail en e-commerce.",
+    "knowsAbout": ["Data-architectuur", "Systeemintegratie", "AI in productie", "ETL", "Datawarehousing", "Productdata en PIM", "Interne tools", "Retail", "E-commerce"]
   }
   </script>
 
@@ -725,7 +725,8 @@
     }
 
     .system-main h3 {
-      font-size: 30px;
+      font-size: 26px;
+      overflow-wrap: break-word;
     }
 
     .system-main p {
@@ -1646,6 +1647,419 @@
         flex-direction: column;
       }
     }
+
+    /* --- genummerde sectiekoppen --- */
+    .sec-index {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(300px, 0.6fr);
+      gap: 64px;
+      align-items: start;
+      padding-bottom: 26px;
+      margin-bottom: 46px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .sec-title {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: 26px;
+      align-items: start;
+    }
+
+    .sec-no {
+      color: var(--ink);
+      font-family: "Archivo", "Inter", sans-serif;
+      font-size: 74px;
+      font-weight: 900;
+      line-height: 0.8;
+    }
+
+    .sec-title h2 {
+      max-width: 20ch;
+      font-size: clamp(34px, 3.7vw, 54px);
+      line-height: 0.98;
+    }
+
+    .sec-index > p {
+      padding-top: 10px;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.5;
+    }
+
+    /* --- case blokken --- */
+    .case-stack {
+      display: grid;
+      gap: 18px;
+    }
+
+    .case-block {
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius);
+      background: var(--white);
+      overflow: hidden;
+    }
+
+    .case-block.ink {
+      color: var(--white);
+      background: var(--ink);
+      border-color: var(--ink);
+    }
+
+    .cb-top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 15px 24px;
+      border-bottom: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .ink .cb-top {
+      border-bottom-color: rgba(255, 255, 255, 0.16);
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .cb-tags {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .pill {
+      padding: 6px 10px;
+      border: 1px solid var(--line-strong);
+      border-radius: 6px;
+      color: var(--ink);
+    }
+
+    .ink .pill {
+      border-color: rgba(255, 255, 255, 0.3);
+      color: var(--white);
+    }
+
+    .cb-body {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+      gap: 44px;
+      padding: 30px 24px 32px;
+    }
+
+    .cb-name {
+      max-width: 16ch;
+      font-family: "Archivo", "Inter", sans-serif;
+      font-size: clamp(30px, 3.3vw, 48px);
+      font-weight: 900;
+      line-height: 0.98;
+    }
+
+    .ink .cb-name {
+      color: var(--white);
+    }
+
+    .cb-lede {
+      max-width: 640px;
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 16.5px;
+      line-height: 1.5;
+    }
+
+    .ink .cb-lede {
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    .cb-metrics {
+      align-self: start;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .ink .cb-metrics {
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .cb-metrics div {
+      padding: 18px 14px;
+      border-right: 1px solid var(--line);
+    }
+
+    .ink .cb-metrics div {
+      border-right-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .cb-metrics div:last-child {
+      border-right: 0;
+    }
+
+    .cb-metrics strong {
+      display: block;
+      color: var(--ink);
+      font-family: "Archivo", "Inter", sans-serif;
+      font-size: 30px;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .ink .cb-metrics strong {
+      color: var(--white);
+    }
+
+    .cb-metrics span {
+      display: block;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 800;
+      line-height: 1.3;
+      text-transform: uppercase;
+    }
+
+    .ink .cb-metrics span {
+      color: rgba(255, 255, 255, 0.58);
+    }
+
+    /* --- herkomst --- */
+    .roots-section {
+      background: var(--surface);
+      border-block: 1px solid var(--line);
+    }
+
+    .roots {
+      display: grid;
+      grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+      gap: 56px;
+      align-items: start;
+    }
+
+    .roots h2 {
+      font-size: clamp(34px, 3.7vw, 54px);
+      line-height: 0.98;
+    }
+
+    .roots-copy p {
+      color: var(--text);
+      font-size: 19px;
+      line-height: 1.5;
+    }
+
+    .roots-copy p + p {
+      margin-top: 18px;
+    }
+
+    .then-now {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      margin-top: 28px;
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius);
+      background: var(--white);
+      overflow: hidden;
+    }
+
+    .then-now div {
+      padding: 22px;
+      border-right: 1px solid var(--line);
+    }
+
+    .then-now div:last-child {
+      border-right: 0;
+    }
+
+    .then-now h4 {
+      color: var(--muted);
+      font-family: "Inter", system-ui, sans-serif;
+      font-size: 11px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .then-now strong {
+      display: block;
+      margin-top: 12px;
+      color: var(--ink);
+      font-family: "Archivo", "Inter", sans-serif;
+      font-size: 22px;
+      font-weight: 900;
+      line-height: 1.1;
+    }
+
+    .then-now span {
+      display: block;
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 14.5px;
+      line-height: 1.45;
+    }
+
+    .then-now .now strong {
+      color: var(--blue);
+    }
+
+    /* --- waarborgen --- */
+    .assure {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius);
+      background: var(--white);
+      overflow: hidden;
+    }
+
+    .assure div {
+      padding: 26px 22px;
+      border-right: 1px solid var(--line);
+    }
+
+    .assure div:last-child {
+      border-right: 0;
+    }
+
+    .assure strong {
+      display: block;
+      color: var(--ink);
+      font-family: "Archivo", "Inter", sans-serif;
+      font-size: 20px;
+      font-weight: 900;
+      line-height: 1.1;
+    }
+
+    .assure span {
+      display: block;
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 14.5px;
+      line-height: 1.45;
+    }
+
+    /* --- concrete klussen --- */
+    .jobs-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 0.6fr);
+      gap: 44px;
+      align-items: end;
+      margin: 56px 0 20px;
+    }
+
+    .jobs-head h3 {
+      max-width: 24ch;
+      font-size: 32px;
+      line-height: 1.05;
+    }
+
+    .jobs-head p {
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .jobs {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius);
+      background: var(--line);
+      gap: 1px;
+      overflow: hidden;
+    }
+
+    .job {
+      display: grid;
+      grid-template-columns: 32px minmax(0, 1fr);
+      gap: 12px;
+      padding: 18px 20px;
+      background: var(--white);
+      color: var(--text);
+      font-size: 15px;
+      font-weight: 650;
+      line-height: 1.35;
+    }
+
+    .job b {
+      color: var(--blue);
+      font-family: "Archivo", "Inter", sans-serif;
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    @media (max-width: 1180px) {
+      .sec-index {
+        grid-template-columns: 1fr;
+        gap: 22px;
+      }
+
+      .cb-body {
+        grid-template-columns: 1fr;
+        gap: 26px;
+      }
+
+      .roots {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .assure {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .assure div:nth-child(2) {
+        border-right: 0;
+      }
+
+      .jobs {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .sec-title {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .sec-no {
+        font-size: 46px;
+      }
+
+      .cb-metrics,
+      .then-now,
+      .assure,
+      .jobs {
+        grid-template-columns: 1fr;
+      }
+
+      .cb-metrics div,
+      .then-now div,
+      .assure div {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .cb-metrics div:last-child,
+      .then-now div:last-child,
+      .assure div:last-child {
+        border-bottom: 0;
+      }
+
+      .dark-table {
+        table-layout: fixed;
+      }
+
+      .dark-table th,
+      .dark-table td {
+        overflow-wrap: break-word;
+        hyphens: auto;
+      }
+    }
   </style>
 </head>
 
@@ -1658,8 +2072,9 @@
         <img src="./logos/yomi-logo.png" alt="" />
       </a>
       <nav class="nav-links" aria-label="Hoofdnavigatie">
+        <a href="#systemen">Wat ik bouw</a>
         <a href="#werk">Werk</a>
-        <a href="#systemen">Systemen</a>
+        <a href="#herkomst">Herkomst</a>
         <a href="#aanpak">Aanpak</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -1677,10 +2092,9 @@
     <section class="hero" aria-labelledby="hero-title">
       <div class="wrap hero-layout">
         <div class="hero-copy">
-          <h1 id="hero-title">AI die draait op echte data. Workflows die sturen op <span>marge.</span></h1>
-          <p class="hero-lede">Mijn vertrekpunt is data en techniek: koppelingen, datawarehouses en betrouwbare
-            definities. Daarboven bouw ik integraties, slimme workflows en AI-toepassingen die werkprocessen versnellen
-            en commerci&euml;le sturing verbeteren.</p>
+          <h1 id="hero-title">Datasystemen en AI-workflows die in productie <span>blijven draaien.</span></h1>
+          <p class="hero-lede">Koppelingen, een datawarehouse en AI-workflows die landen in het werk van je team. Ik
+            analyseer, bouw en draag over. E&eacute;n persoon, in jouw omgeving, zonder lock-in.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="mailto:jordi@yomi.nl?subject=Vraagstuk%20via%20yomi.nl">
               Leg je vraagstuk voor
@@ -1706,7 +2120,7 @@
                   <path d="M14 7h7v7" />
                 </svg>
               </span>
-              <span><strong>Data -> AI -> Actie</strong>Geen losse pilots, maar processen die waarde leveren.</span>
+              <span><strong>Gebouwd</strong>Werkende software, geen rapport met aanbevelingen.</span>
             </div>
             <div class="proof-item">
               <span class="icon check" aria-hidden="true">
@@ -1715,7 +2129,7 @@
                   <path d="M20 6 9 17l-5-5" />
                 </svg>
               </span>
-              <span><strong>Performance op marge</strong>Meer winst per klant, niet alleen meer omzet.</span>
+              <span><strong>Van binnenuit</strong>Dertien jaar zelf verantwoordelijk in retail.</span>
             </div>
             <div class="proof-item">
               <span class="icon" aria-hidden="true">
@@ -1725,25 +2139,26 @@
                   <path d="M9 12l2 2 4-5" />
                 </svg>
               </span>
-              <span><strong>Controleerbaar</strong>Audit trails, governance en overdraagbare documentatie.</span>
+              <span><strong>Overdraagbaar</strong>Je team draait het daarna zelf verder.</span>
             </div>
           </div>
         </div>
 
-        <div class="ops-board" aria-label="Operationeel diagram van Yomi werkwijze">
+        <div class="ops-board" aria-label="Voorbeeldweergave van een Yomi-stuurlaag">
           <div class="ops-top">
-            <span class="status"><span class="dot" aria-hidden="true"></span>Systeemstatus: alle lagen operationeel</span>
-            <span>Laatst bijgewerkt: <span id="clock">09:41</span> - realtime</span>
+            <span class="status"><span class="dot" aria-hidden="true"></span>Voorbeeld: zo ziet een stuurlaag
+              eruit</span>
+            <span>Illustratie, geen klantdata - <span id="clock">09:41</span></span>
           </div>
           <div class="ops-canvas">
             <svg class="ops-wires" aria-hidden="true"></svg>
             <div class="ops-col">
               <div class="ops-title">Bronnen</div>
-              <div class="source"><span class="source-ico">Ads</span><span>Google Ads<small>Actief</small></span></div>
-              <div class="source"><span class="source-ico">GA4</span><span>Analytics<small>Actief</small></span></div>
+              <div class="source"><span class="source-ico">PIM</span><span>Productdata<small>Actief</small></span></div>
               <div class="source"><span class="source-ico">ERP</span><span>ERP / CRM<small>Actief</small></span></div>
               <div class="source"><span class="source-ico">Shop</span><span>Webshop<small>Actief</small></span></div>
-              <div class="source"><span class="source-ico">BI</span><span>Dashboards<small>Actief</small></span></div>
+              <div class="source"><span class="source-ico">WMS</span><span>Voorraad<small>Actief</small></span></div>
+              <div class="source"><span class="source-ico">BI</span><span>Rapportage<small>Actief</small></span></div>
             </div>
             <div class="ops-col">
               <div class="ops-title">Datalaag</div>
@@ -1753,26 +2168,26 @@
             </div>
             <div class="ops-col">
               <div class="ops-title">AI & workflows</div>
-              <div class="node">Forecasting<small>Vraag, voorraad, marge</small></div>
-              <div class="node">Bid optimizer<small>ROAS -> marge</small></div>
+              <div class="node">Forecasting<small>Vraag en voorraad</small></div>
+              <div class="node">Productdata-verrijking<small>Content en varianten</small></div>
               <div class="node">RAG & agents<small>Acties met audit trail</small></div>
               <div class="node">Alerting<small>Afwijkingen naar eigenaar</small></div>
             </div>
             <div class="ops-col">
-              <div class="ops-title">Performance signalen</div>
-              <div class="metric"><span>Marge per order</span><strong>28.7%</strong>
+              <div class="ops-title">Signalen</div>
+              <div class="metric"><span>Bronnen in sync</span><strong>28</strong>
                 <svg class="spark" viewBox="0 0 120 24" fill="none" aria-hidden="true">
                   <path d="M2 18l16-6 15 4 16-8 16 7 17-10 16 6 20-8" stroke="#139a43" stroke-width="2.2"
                     stroke-linecap="round" />
                 </svg>
               </div>
-              <div class="metric"><span>Blended ROAS</span><strong>6.47x</strong>
+              <div class="metric"><span>Handmatige exports</span><strong>0</strong>
                 <svg class="spark" viewBox="0 0 120 24" fill="none" aria-hidden="true">
                   <path d="M2 15l18 2 14-6 18 4 18-8 16 3 14-5 18 2" stroke="#139a43" stroke-width="2.2"
                     stroke-linecap="round" />
                 </svg>
               </div>
-              <div class="metric"><span>CPA op marge</span><strong>&euro;42</strong>
+              <div class="metric"><span>Data-refresh</span><strong>dagelijks</strong>
                 <svg class="spark" viewBox="0 0 120 24" fill="none" aria-hidden="true">
                   <path d="M2 8l15 6 16-2 16 4 18-9 15 5 18-8 18 3" stroke="#139a43" stroke-width="2.2"
                     stroke-linecap="round" />
@@ -1792,15 +2207,15 @@
 
       <div class="logo-band">
         <div class="wrap logo-inner">
-          <div class="band-label">Gewerkt voor en met</div>
-          <div class="logos" aria-label="Client en platform logo's">
+          <div class="band-label">Gewerkt voor</div>
+          <div class="logos" aria-label="Opdrachtgevers en merken">
             <div class="logo-tile"><img src="./logos/baderie.png" alt="Baderie" /></div>
             <div class="logo-tile"><img src="./logos/instalcenter.png" alt="InstalCenter" /></div>
             <div class="logo-tile"><img src="./logos/badkamerwinkel.png" alt="Badkamerwinkel.nl" /></div>
             <div class="logo-tile"><img src="./logos/purdey.png" alt="Purdey" /></div>
             <div class="logo-tile"><img src="./logos/cookandpan.png" alt="CookandPan" /></div>
-            <div class="logo-tile"><img src="./logos/google.png" alt="Google" /></div>
-            <div class="logo-tile"><img src="./logos/databricks.png" alt="Databricks" /></div>
+            <div class="logo-tile"><img src="./logos/vandebovensteplank.png" alt="Vandebovensteplank" /></div>
+            <div class="logo-tile"><img src="./logos/badinbeeld.png" alt="Bad in Beeld" /></div>
           </div>
         </div>
       </div>
@@ -1808,12 +2223,16 @@
 
     <section class="systems" id="systemen" aria-labelledby="systems-title">
       <div class="wrap">
-        <div class="section-head">
-          <div>
-            <h2 id="systems-title">Drie systemen die direct waarde moeten bewijzen</h2>
-            <div class="blue-line" aria-hidden="true"></div>
+        <div class="sec-index">
+          <div class="sec-title">
+            <div class="sec-no">01</div>
+            <div>
+              <h2 id="systems-title">Drie soorten werk. Alle drie moeten ze in productie eindigen.</h2>
+              <div class="blue-line" aria-hidden="true"></div>
+            </div>
           </div>
-          <p>Geen AI-theater. Eerst de data, dan de workflow, dan de commerci&euml;le sturing.</p>
+          <p>Eerst de data kloppend krijgen, dan de workflow eromheen, dan de tool waar mensen daadwerkelijk hun
+            beslissing in nemen. In die volgorde, omdat het anders niet blijft draaien.</p>
         </div>
 
         <div class="system-stack">
@@ -1828,9 +2247,9 @@
               <h4>Input</h4>
               <ul class="flow-list">
                 <li><span class="mini-mark">S</span>Shop / CMS</li>
-                <li><span class="mini-mark">A</span>Ads en analytics</li>
+                <li><span class="mini-mark">P</span>PIM en productdata</li>
                 <li><span class="mini-mark">E</span>ERP, CRM en fulfilment</li>
-                <li><span class="mini-mark">K</span>Kosten en marge</li>
+                <li><span class="mini-mark">K</span>Inkoop en kosten</li>
               </ul>
             </div>
             <div class="flow-col">
@@ -1892,38 +2311,60 @@
           <article class="system-row">
             <div class="system-no">03</div>
             <div class="system-main">
-              <h3>Performance op marge</h3>
-              <p>Tracking, SEA/SEO en CRO gestuurd op winst per klant, niet alleen op omzet.</p>
+              <h3>Interne tools en cockpits</h3>
+              <p>De laag waar mensen hun beslissing in nemen: vestigings- en rayonanalyse, inkoopvergelijk,
+                productdata-review.</p>
               <a class="btn btn-light" href="#aanpak">Bekijk aanpak</a>
             </div>
             <div class="flow-col">
               <h4>Input</h4>
               <ul class="flow-list">
-                <li><span class="mini-mark">G</span>Google Ads en SEO-data</li>
-                <li><span class="mini-mark">E</span>GA4 events</li>
-                <li><span class="mini-mark">C</span>Kosten per campagne</li>
-                <li><span class="mini-mark">M</span>Marge per product</li>
+                <li><span class="mini-mark">D</span>De datalaag eronder</li>
+                <li><span class="mini-mark">P</span>Proces en rollen</li>
+                <li><span class="mini-mark">V</span>Vragen uit de operatie</li>
+                <li><span class="mini-mark">B</span>Beslisregels en drempels</li>
               </ul>
             </div>
             <div class="flow-col">
               <h4>Build</h4>
               <ul class="flow-list">
-                <li><span class="mini-mark">1</span>Attributie en MMM licht</li>
-                <li><span class="mini-mark">2</span>KPI's op marge en LTV</li>
-                <li><span class="mini-mark">3</span>Budget allocatie engine</li>
-                <li><span class="mini-mark">4</span>Alerts en anomalie detectie</li>
+                <li><span class="mini-mark">1</span>Werkende UI op echte data</li>
+                <li><span class="mini-mark">2</span>Rollen, rechten en scope</li>
+                <li><span class="mini-mark">3</span>Beslislogica en signalering</li>
+                <li><span class="mini-mark">4</span>Bijsturen op echt gebruik</li>
               </ul>
             </div>
             <div class="flow-col deliver">
               <h4>Praktische deliverables</h4>
               <ul class="flow-list">
-                <li><span class="mini-mark">&#10003;</span>Tracking en events gevalideerd</li>
-                <li><span class="mini-mark">&#10003;</span>KPI dashboard: POAS, LTV, marge</li>
-                <li><span class="mini-mark">&#10003;</span>Budget en biedstrategie op marge</li>
-                <li><span class="mini-mark">&#10003;</span>Test roadmap en performance review</li>
+                <li><span class="mini-mark">&#10003;</span>Tool die wekelijks gebruikt wordt</li>
+                <li><span class="mini-mark">&#10003;</span>Rollen, rechten en logging</li>
+                <li><span class="mini-mark">&#10003;</span>Documentatie en overdracht</li>
+                <li><span class="mini-mark">&#10003;</span>Doorontwikkeling op gebruik</li>
               </ul>
             </div>
           </article>
+        </div>
+
+        <div class="jobs-head">
+          <h3>Concreet gaat het meestal hierover.</h3>
+          <p>De klussen die in de praktijk het vaakst terugkomen. Vrijwel altijd begint het bij &eacute;&eacute;n
+            daarvan, niet bij alle twaalf.</p>
+        </div>
+
+        <div class="jobs" aria-label="Terugkerende klussen">
+          <div class="job"><b>01</b>Bronnen koppelen aan &eacute;&eacute;n datalaag</div>
+          <div class="job"><b>02</b>Definities en KPI's vastleggen</div>
+          <div class="job"><b>03</b>Data quality checks en monitoring</div>
+          <div class="job"><b>04</b>Productdata compleet krijgen</div>
+          <div class="job"><b>05</b>Beeld en documenten aan artikelen koppelen</div>
+          <div class="job"><b>06</b>Vraag- en voorraadforecasting</div>
+          <div class="job"><b>07</b>Orders en documenten automatisch verwerken</div>
+          <div class="job"><b>08</b>Interne cockpits en analysetools</div>
+          <div class="job"><b>09</b>Inkoop- en assortimentsvergelijking</div>
+          <div class="job"><b>10</b>RAG-assistenten op eigen documenten</div>
+          <div class="job"><b>11</b>Alerts bij afwijkingen, naar de eigenaar</div>
+          <div class="job"><b>12</b>Rechten, logging en overdracht</div>
         </div>
 
         <div class="tool-row" aria-label="Platforms">
@@ -1931,7 +2372,6 @@
           <span><img src="./logos/databricks.png" alt="" />Databricks</span>
           <span><img src="./logos/powerbi.png" alt="" />Power BI</span>
           <span><img src="./logos/looker.png" alt="" />Looker</span>
-          <span><img src="./logos/gtm.png" alt="" />GTM</span>
           <span><img src="./logos/python.png" alt="" />Python</span>
           <span>en wat er al staat</span>
         </div>
@@ -1940,171 +2380,201 @@
 
     <section class="proof-section" id="werk" aria-labelledby="work-title">
       <div class="wrap">
-        <div class="section-head">
-          <div>
-            <h2 id="work-title">Werk dat in de operatie landt</h2>
-            <div class="blue-line" aria-hidden="true"></div>
+        <div class="sec-index">
+          <div class="sec-title">
+            <div class="sec-no">02</div>
+            <div>
+              <h2 id="work-title">Werk dat het team is blijven gebruiken.</h2>
+              <div class="blue-line" aria-hidden="true"></div>
+            </div>
           </div>
-          <p>Echte opdrachten: datalagen, koppelingen, AI-workflows en performance sturing die teams kunnen gebruiken.</p>
+          <p>Systemen in productie bij retail- en e-commerceorganisaties, met een eerlijk label erbij. Live betekent
+            live. Intern betekent intern.</p>
         </div>
 
-        <div class="case-ledger">
-          <div class="case-head" aria-hidden="true">
-            <div></div>
-            <div>Vraagstuk</div>
-            <div>Discipline</div>
-            <div>Systeemlaag</div>
-            <div>Status</div>
-            <div>Impact</div>
-          </div>
-
-          <div class="case-line">
-            <div class="case-no">01</div>
-            <div class="case-title"><strong>Retaildata voor 140+ vestigingen</strong><span>Van losse bronnen naar
-                &eacute;&eacute;n stuurlaag voor winkels en DC.</span></div>
-            <div>Datawarehouse</div>
-            <div>ERP, fulfilment, verkoop en marketing</div>
-            <div class="live"><span class="dot" aria-hidden="true"></span>Live</div>
-            <div class="impact"><span>E&eacute;n waarheid voor rapportage</span><span>Marge en voorraad in beeld</span></div>
-          </div>
-
-          <div class="case-detail">
-            <div>
-              <h4>Context</h4>
-              <p>Data uit ERP, e-commerce, voorraad en advertising zat versnipperd. Teams werkten met verschillende
-                rapporten en definities.</p>
-              <ul>
-                <li>Datamodellering en KPI-definities met operatie</li>
-                <li>Ingestie naar een centrale analytische laag</li>
-                <li>Automatisering en data quality checks</li>
-              </ul>
+        <div class="case-stack">
+          <article class="case-block ink">
+            <div class="cb-top">
+              <div class="cb-tags">
+                <span class="pill">Datafundament</span>
+                <span>Retail &amp; e-commerce</span>
+              </div>
+              <span class="live"><span class="dot" aria-hidden="true"></span>Live</span>
             </div>
-            <div>
-              <h4>Voor en na</h4>
-              <table class="before-after">
-                <tr>
-                  <th>Onderdeel</th>
-                  <th>Voor</th>
-                  <th>Na</th>
-                </tr>
-                <tr>
-                  <td>Beschikbaarheid</td>
-                  <td>Wisselend per bron</td>
-                  <td>Dagelijks actueel</td>
-                </tr>
-                <tr>
-                  <td>Rapporteren</td>
-                  <td>Handmatig en veel Excel</td>
-                  <td>Gestandaardiseerd in BI</td>
-                </tr>
-                <tr>
-                  <td>Sturingsinfo</td>
-                  <td>Beperkt tot omzet</td>
-                  <td>Omzet, marge, voorraad en marketing</td>
-                </tr>
-              </table>
+            <div class="cb-body">
+              <div>
+                <h3 class="cb-name">Retaildata voor 140+ vestigingen</h3>
+                <p class="cb-lede">Data uit ERP, e-commerce, voorraad en fulfilment zat versnipperd: elk team had zijn
+                  eigen rapport en zijn eigen definitie van hetzelfde getal. Er staat nu &eacute;&eacute;n analytische
+                  laag met vaste definities, quality checks en monitoring, waar winkels, DC en directie dagelijks op
+                  sturen.</p>
+              </div>
+              <div class="cb-metrics">
+                <div><strong>28+</strong><span>Bronnen gekoppeld</span></div>
+                <div><strong>140+</strong><span>Vestigingen in beeld</span></div>
+                <div><strong>1</strong><span>Set definities</span></div>
+              </div>
             </div>
-            <div>
-              <h4>Resultaat</h4>
-              <ul>
-                <li>E&eacute;n datalaag in plaats van losse exports per systeem</li>
-                <li>Koppelingen die blijven werken, met edge cases erin</li>
-                <li>Teams sturen met meer vertrouwen op dezelfde definities</li>
-              </ul>
+          </article>
+
+          <article class="case-block">
+            <div class="cb-top">
+              <div class="cb-tags">
+                <span class="pill">Systeemintegratie</span>
+                <span>E-commerce</span>
+              </div>
+              <span class="live"><span class="dot" aria-hidden="true"></span>Live</span>
             </div>
-          </div>
+            <div class="cb-body">
+              <div>
+                <h3 class="cb-name">Drie systemen, &eacute;&eacute;n klantbeeld</h3>
+                <p class="cb-lede">Drie systemen die niets van elkaar wisten, terwijl klantenservice en inkoop precies
+                  dezelfde vraag probeerden te beantwoorden. Nu loopt het door &eacute;&eacute;n datalaag, inclusief de
+                  edge cases die zo'n koppeling normaal stukmaken.</p>
+              </div>
+              <div class="cb-metrics">
+                <div><strong>CRM</strong><span>Klantcontact</span></div>
+                <div><strong>WMS</strong><span>Fulfilment</span></div>
+                <div><strong>VoIP</strong><span>Telefonie</span></div>
+              </div>
+            </div>
+          </article>
 
-          <div class="case-line">
-            <div class="case-no">02</div>
-            <div class="case-title"><strong>Performance sturen op CPA en marge</strong><span>Van klik en conversie naar
-                winst per order.</span></div>
-            <div>SEA / SEO</div>
-            <div>Google Ads, GA4, Looker</div>
-            <div class="live"><span class="dot" aria-hidden="true"></span>Live</div>
-            <div class="impact"><span>CPA &euro;66 -> &euro;42</span><span>22% minder dagbudget</span></div>
-          </div>
+          <article class="case-block ink">
+            <div class="cb-top">
+              <div class="cb-tags">
+                <span class="pill">AI-workflow</span>
+                <span>Multi-domein webshop</span>
+              </div>
+              <span class="live"><span class="dot" aria-hidden="true"></span>In gebruik</span>
+            </div>
+            <div class="cb-body">
+              <div>
+                <h3 class="cb-name">LLM-workflows voor lokalisatie</h3>
+                <p class="cb-lede">Een uitrol over meerdere landen en domeinen waarbij vertalen met de hand niet meer
+                  bij te benen was. De workflow genereert, maar publiceert niets zonder review: tone of voice en
+                  vaktermen blijven van het merk, niet van het model.</p>
+              </div>
+              <div class="cb-metrics">
+                <div><strong>LLM</strong><span>Vertaling en content</span></div>
+                <div><strong>Review</strong><span>Mens in de lus</span></div>
+                <div><strong>CMS</strong><span>Direct gepubliceerd</span></div>
+              </div>
+            </div>
+          </article>
 
-          <div class="case-line">
-            <div class="case-no">03</div>
-            <div class="case-title"><strong>E-commerce systemen tot &eacute;&eacute;n waarheid</strong><span>Klantcontact,
-                fulfilment en telefonie samengebracht.</span></div>
-            <div>Integratie</div>
-            <div>CRM, fulfilment, telefonie, datalaag</div>
-            <div class="live"><span class="dot" aria-hidden="true"></span>Live</div>
-            <div class="impact"><span>Minder losse exports</span><span>Marktsignaal voor assortiment</span></div>
-          </div>
-
-          <div class="case-line">
-            <div class="case-no">04</div>
-            <div class="case-title"><strong>LLM-workflows voor lokalisatie</strong><span>Multi-domein webshop-uitrol met
-                vertaling en controle.</span></div>
-            <div>AI workflow</div>
-            <div>LLM, CMS, review flow</div>
-            <div class="live"><span class="dot" aria-hidden="true"></span>In gebruik</div>
-            <div class="impact"><span>Lokalisatie schaalbaar</span><span>Controle op tone of voice</span></div>
-          </div>
+          <article class="case-block">
+            <div class="cb-top">
+              <div class="cb-tags">
+                <span class="pill">Productdata</span>
+                <span>PIM en assets</span>
+              </div>
+              <span class="live"><span class="dot" aria-hidden="true"></span>Live intern</span>
+            </div>
+            <div class="cb-body">
+              <div>
+                <h3 class="cb-name">Productdata die publicatieklaar is</h3>
+                <p class="cb-lede">Artikelen, varianten, beelden en documenten hingen los van elkaar, waardoor niemand
+                  kon zeggen welk product echt publicatieklaar was. Die vraag is nu per artikel te beantwoorden, en dat
+                  is meteen de voorwaarde om AI-content betrouwbaar te maken.</p>
+              </div>
+              <div class="cb-metrics">
+                <div><strong>PIM</strong><span>E&eacute;n productwaarheid</span></div>
+                <div><strong>Assets</strong><span>Gekoppeld aan varianten</span></div>
+                <div><strong>Status</strong><span>Compleet of niet</span></div>
+              </div>
+            </div>
+          </article>
         </div>
 
         <div class="operator-proof">
           <div>
-            <h3>Geen dashboards om naar te kijken. Wel stuurinformatie om op te handelen.</h3>
-            <p>De output moet zichtbaar zijn in beslissingen: budgetten, voorraad, campagnes, processen en overdracht.</p>
+            <h3>Geen dashboards om naar te kijken. Wel systemen waar mensen in werken.</h3>
+            <p>De uitkomst moet terug te zien zijn in het werk zelf: voorraad, inkoop, assortiment, productdata en
+              processen. Anders is het een rapport met een mooiere lay-out.</p>
             <div class="proof-metrics">
-              <div><strong>28+</strong><span>Databronnen verbonden</span></div>
-              <div><strong>140+</strong><span>Vestigingen in &eacute;&eacute;n stuurlaag</span></div>
-              <div><strong>3</strong><span>Lagen: data, AI, performance</span></div>
+              <div><strong>28+</strong><span>Databronnen</span></div>
+              <div><strong>140+</strong><span>Vestigingen</span></div>
+              <div><strong>13</strong><span>Jaar ervaring</span></div>
             </div>
           </div>
           <div>
             <table class="dark-table">
               <tr>
-                <th>Voorbeeld</th>
+                <th>Onderdeel</th>
                 <th>Voor</th>
                 <th>Na</th>
               </tr>
               <tr>
-                <td>Focus</td>
-                <td>Alleen conversies</td>
-                <td>CPA en marge</td>
+                <td>Rapportage</td>
+                <td>Handmatig en veel Excel</td>
+                <td>Gestandaardiseerd in BI</td>
               </tr>
               <tr>
-                <td>Data</td>
-                <td>Platformdata</td>
-                <td>Ads + GA4 + kosten + marge</td>
+                <td>Definities</td>
+                <td>Per team anders</td>
+                <td>E&eacute;n semantisch model</td>
               </tr>
               <tr>
-                <td>Optimalisatie</td>
-                <td>Klik / conversie</td>
-                <td>Winst per order</td>
+                <td>Beschikbaarheid</td>
+                <td>Wisselend per bron</td>
+                <td>Dagelijks actueel</td>
               </tr>
               <tr>
-                <td>Resultaat</td>
-                <td>CPA &euro;66</td>
-                <td>CPA &euro;42 en minder spend</td>
+                <td>Eigenaarschap</td>
+                <td>Bij de leverancier</td>
+                <td>Bij het team zelf</td>
               </tr>
             </table>
           </div>
           <ul class="dark-checks">
             <li><span class="live"><span class="dot" aria-hidden="true"></span>Data quality checks</span></li>
-            <li><span class="live"><span class="dot" aria-hidden="true"></span>KPI-validatie</span></li>
-            <li><span class="live"><span class="dot" aria-hidden="true"></span>Budget en pacing</span></li>
+            <li><span class="live"><span class="dot" aria-hidden="true"></span>Definities en KPI-validatie</span></li>
+            <li><span class="live"><span class="dot" aria-hidden="true"></span>Logging en monitoring</span></li>
             <li><span class="live"><span class="dot" aria-hidden="true"></span>Anomalie detectie</span></li>
-            <li><span class="live"><span class="dot" aria-hidden="true"></span>Marge dashboards</span></li>
+            <li><span class="live"><span class="dot" aria-hidden="true"></span>Rechten en overdracht</span></li>
           </ul>
         </div>
+      </div>
+    </section>
 
-        <div class="logo-strip">
-          <div class="band-label">Werken met</div>
-          <div class="logos">
-            <div class="logo-tile"><img src="./logos/baderie.png" alt="Baderie" /></div>
-            <div class="logo-tile"><img src="./logos/instalcenter.png" alt="InstalCenter" /></div>
-            <div class="logo-tile"><img src="./logos/badkamerwinkel.png" alt="Badkamerwinkel.nl" /></div>
-            <div class="logo-tile"><img src="./logos/purdey.png" alt="Purdey" /></div>
-            <div class="logo-tile"><img src="./logos/cookandpan.png" alt="CookandPan" /></div>
-            <div class="logo-tile"><img src="./logos/vandebovensteplank.png" alt="Vandebovensteplank" /></div>
-            <div class="logo-tile"><img src="./logos/ga.png" alt="Google Analytics" /></div>
-            <div class="logo-tile"><img src="./logos/looker.png" alt="Looker" /></div>
-            <div class="logo-tile"><img src="./logos/powerbi.png" alt="Power BI" /></div>
+    <section class="roots-section" id="herkomst" aria-labelledby="roots-title">
+      <div class="wrap">
+        <div class="sec-index">
+          <div class="sec-title">
+            <div class="sec-no">03</div>
+            <div>
+              <h2 id="roots-title">Waar ik vandaan kom.</h2>
+              <div class="blue-line" aria-hidden="true"></div>
+            </div>
+          </div>
+          <p>Eerlijk over de herkomst, duidelijk over het verschil met nu.</p>
+        </div>
+
+        <div class="roots">
+          <div class="roots-copy">
+            <p>Ik ben begonnen in performance marketing en e-commerce. Daar heb ik leren meten voordat je iets beweert:
+              aannames toetsen, onderscheid maken tussen een cijfer dat beweegt en een resultaat dat telt, en accepteren
+              dat je eigen data je ongelijk kan geven.</p>
+            <p>Die discipline zit nog in alles wat ik bouw. Maar het is niet meer wat ik doe. Campagnes optimaliseren
+              laat ik aan anderen. Ik bouw de laag eronder, waar die beslissingen hun cijfers vandaan halen en waar het
+              in de meeste bedrijven daadwerkelijk vastloopt.</p>
+          </div>
+          <div>
+            <div class="then-now">
+              <div>
+                <h4>Toen</h4>
+                <strong>Performance marketing</strong>
+                <span>SEA, SEO en e-commerce. Meten, testen en sturen op wat aantoonbaar werkt. Dat is mijn
+                  vertrekpunt geweest, niet mijn eindstation.</span>
+              </div>
+              <div class="now">
+                <h4>Nu</h4>
+                <strong>Data, integratie en AI</strong>
+                <span>Datawarehouses, koppelingen, AI-workflows en interne tools die in productie draaien en door het
+                  team zelf worden gebruikt.</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -2112,13 +2582,16 @@
 
     <section class="method" id="aanpak" aria-labelledby="method-title">
       <div class="wrap">
-        <div class="section-head">
-          <div>
-            <h2 id="method-title">Zo wordt een idee een werkend systeem</h2>
-            <div class="blue-line" aria-hidden="true"></div>
+        <div class="sec-index">
+          <div class="sec-title">
+            <div class="sec-no">04</div>
+            <div>
+              <h2 id="method-title">Zo wordt een idee een werkend systeem.</h2>
+              <div class="blue-line" aria-hidden="true"></div>
+            </div>
           </div>
-          <p>Van vraag naar productie zonder deck-theater: klein genoeg om snel te bewijzen, stevig genoeg om over te
-            dragen.</p>
+          <p>Vier stappen, elk met iets tastbaars aan het eind. Klein genoeg om snel te bewijzen, stevig genoeg om over
+            te dragen.</p>
         </div>
 
         <div class="timeline" aria-label="Yomi werkwijze">
@@ -2132,7 +2605,7 @@
             </div>
             <h3>Diagnose</h3>
             <p>Bronnen, definities en commerci&euml;le vraag scherp krijgen.</p>
-            <div class="step-output"><span class="dot" aria-hidden="true"></span>Output: diagnose en plan</div>
+            <div class="step-output"><span class="dot" aria-hidden="true"></span>Wat je krijgt: diagnose en plan</div>
           </article>
           <article class="step" data-step="2">
             <div class="step-ico" aria-hidden="true">
@@ -2144,7 +2617,8 @@
             </div>
             <h3>Prototype</h3>
             <p>Klein werkend op echte data, met de risicovolle aannames vooraan.</p>
-            <div class="step-output"><span class="dot" aria-hidden="true"></span>Output: werkend prototype</div>
+            <div class="step-output"><span class="dot" aria-hidden="true"></span>Wat je krijgt: een werkend prototype
+            </div>
           </article>
           <article class="step" data-step="3">
             <div class="step-ico" aria-hidden="true">
@@ -2156,7 +2630,8 @@
             </div>
             <h3>Productie</h3>
             <p>Rechten, logging, monitoring, documentatie en overdracht.</p>
-            <div class="step-output"><span class="dot" aria-hidden="true"></span>Output: productie en overdracht</div>
+            <div class="step-output"><span class="dot" aria-hidden="true"></span>Wat je krijgt: productie en
+              overdracht</div>
           </article>
           <article class="step" data-step="4">
             <div class="step-ico" aria-hidden="true">
@@ -2166,9 +2641,10 @@
                 <path d="M17 7h3v3" />
               </svg>
             </div>
-            <h3>Sturen</h3>
-            <p>Dashboard, optimalisaties en performance reviews in normaal ritme.</p>
-            <div class="step-output"><span class="dot" aria-hidden="true"></span>Output: dashboard en review</div>
+            <h3>Meelopen</h3>
+            <p>Monitoring, doorontwikkeling en periodieke review, zolang je dat nuttig vindt.</p>
+            <div class="step-output"><span class="dot" aria-hidden="true"></span>Wat je krijgt: een systeem dat blijft
+              werken</div>
           </article>
         </div>
 
@@ -2183,13 +2659,38 @@
           Ritme: korte sprints met wekelijkse updates en duidelijke beslispunten.
         </div>
 
+        <div class="jobs-head">
+          <h3>Wat er hoe dan ook geldt.</h3>
+          <p>Vier afspraken die niet ter discussie staan, ongeacht de opdracht.</p>
+        </div>
+
+        <div class="assure" aria-label="Waarborgen">
+          <div>
+            <strong>Jij bent eigenaar</strong>
+            <span>Code, data, documentatie en toegang staan op jouw naam, vanaf dag &eacute;&eacute;n.</span>
+          </div>
+          <div>
+            <strong>Geen lock-in</strong>
+            <span>Het draait in jouw omgeving, op jouw stack. Ik bouw niets waar je alleen via mij bij kunt.</span>
+          </div>
+          <div>
+            <strong>Klein beginnen</strong>
+            <span>Het eerste beslispunt ligt binnen weken, niet kwartalen. Stoppen kan daar ook.</span>
+          </div>
+          <div>
+            <strong>Direct met mij</strong>
+            <span>Geen accountmanager, geen overdracht binnen een team. Dezelfde persoon analyseert, bouwt en draagt
+              over.</span>
+          </div>
+        </div>
+
         <div class="fit-faq">
           <div>
             <h3>Past dit bij jouw vraagstuk?</h3>
             <div class="fit-list">
               <div><span class="icon check" aria-hidden="true">&#10003;</span>Losse systemen remmen groei</div>
               <div><span class="icon check" aria-hidden="true">&#10003;</span>AI moet in productie, niet in demo</div>
-              <div><span class="icon check" aria-hidden="true">&#10003;</span>Marketingdata moet winst sturen</div>
+              <div><span class="icon check" aria-hidden="true">&#10003;</span>Niemand vertrouwt de cijfers nog</div>
               <div><span class="icon check" aria-hidden="true">&#10003;</span>Je zoekt een bouwer, geen deck</div>
             </div>
           </div>
@@ -2198,13 +2699,14 @@
             <div class="faq-list">
               <details>
                 <summary>Met welke tools en platforms werk je?</summary>
-                <p>Met wat er al staat. Vaak gaat het om Google Ads, GA4, GTM, Looker, Power BI, Databricks, Python,
-                  ERP-, CRM-, CMS- en fulfilmentsystemen.</p>
+                <p>Met wat er al staat. Vaak gaat het om Databricks, Power BI, Looker, Python en de ERP-, PIM-, CRM-,
+                  CMS- en fulfilmentsystemen die je al draait. Ik zet er geen nieuw platform naast als het niet hoeft.
+                </p>
               </details>
               <details>
                 <summary>Hoe ziet een typische samenwerking eruit?</summary>
-                <p>Eerst een diagnose op data, processen en commercieel doel. Daarna een kleine werkende slice, daarna
-                  productie, overdracht en optimalisatie.</p>
+                <p>Eerst een diagnose op bronnen, definities en het proces eromheen. Daarna een kleine werkende slice op
+                  echte data, daarna productie, overdracht en meelopen.</p>
               </details>
               <details>
                 <summary>Hoe snel zien we resultaat?</summary>
@@ -2213,13 +2715,18 @@
               </details>
               <details>
                 <summary>Wat als we nog geen goede data hebben?</summary>
-                <p>Dan is dat het eerste werk. AI of performance optimalisatie zonder betrouwbare datalaag wordt snel
-                  duur theater.</p>
+                <p>Dan is dat het eerste werk. AI op een wankele datalaag wordt snel duur theater: het levert antwoorden
+                  die niemand durft te gebruiken.</p>
+              </details>
+              <details>
+                <summary>Doe je ook nog marketing of campagnes?</summary>
+                <p>Nee. Daar kom ik vandaan en die meetdiscipline neem ik mee, maar campagnes optimaliseren doe ik niet
+                  meer. Ik bouw de data-, integratie- en AI-laag eronder.</p>
               </details>
               <details>
                 <summary>Werk je ook whitelabel voor bureaus?</summary>
-                <p>Ja. Dan blijft de klantrelatie bij het bureau en lever ik de data-, integratie-, AI- of
-                  performance-laag eronder.</p>
+                <p>Ja. Dan blijft de klantrelatie bij het bureau en lever ik de data-, integratie- of AI-laag
+                  eronder.</p>
               </details>
             </div>
           </div>
@@ -2235,25 +2742,24 @@
             bouwt en overdraagt.</p>
         </div>
         <div class="about-copy">
-          <h2 id="about-title">Mijn vertrekpunt is data en techniek. De waarde zit in de laag erboven.</h2>
+          <h2 id="about-title">Ik heb dit eerst van binnenuit gedaan, niet als leverancier.</h2>
           <p>Yomi is mij: Jordi ter Woord. Dertien jaar binnen retail en e-commerce met 140+ vestigingen, online en
             fysiek. Begonnen bij advertising en e-commerce, doorgegroeid naar teamlead en daarna naar architectuur- en
             productverantwoordelijkheid voor data- en AI-infrastructuur.</p>
-          <p>Mijn verleden in performance marketing blijft belangrijk: meten, testen en sturen op waarde in plaats van
-            onderbuik. Maar het zwaartepunt is verschoven naar het fundament eronder: datawarehouses, integraties,
-            definities, rechten en betrouwbare systeemkoppelingen.</p>
-          <p>De toegevoegde waarde zit meestal in de laag daarboven: slimme workflows, AI-toepassingen, dashboards,
-            alerts en proceslogica die echt in productie draaien. Niet als demo, maar als onderdeel van hoe teams
-            werken en beslissen.</p>
+          <p>Dat verschil bepaalt hoe ik werk. Ik heb zelf de gevolgen gedragen van koppelingen die 's nachts omvallen,
+            van definities waar twee afdelingen het niet over eens zijn, en van tooling die niemand meer durft aan te
+            raken nadat de bouwer weg is. Daarom bouw ik nu anders.</p>
+          <p>Wat ik lever is de laag waar het werk echt gebeurt: datawarehouses, koppelingen, AI-workflows en interne
+            tools die in productie draaien. Niet als demo, maar als onderdeel van hoe teams werken en beslissen.</p>
           <p>Ik werk met eindklanten en whitelabel onder bureaus. Geen vendor lock-in, geen vage innovatie-sprints, wel
             overdraagbare systemen die teams zelf kunnen blijven gebruiken.</p>
           <div class="tags">
             <span class="tag">Data-architectuur</span>
             <span class="tag">Systeemintegratie</span>
             <span class="tag">AI in productie</span>
-            <span class="tag">Performance op marge</span>
+            <span class="tag">Interne tools</span>
             <span class="tag">Retail &amp; e-commerce</span>
-            <span class="tag">SEA / SEO / CRO</span>
+            <span class="tag">Productdata en PIM</span>
             <span class="tag">Whitelabel voor bureaus</span>
           </div>
         </div>
@@ -2263,9 +2769,9 @@
     <section class="final-cta" id="contact" aria-labelledby="contact-title">
       <div class="wrap cta-panel">
         <div>
-          <h2 id="contact-title">Leg je <span>data-, AI- of performance</span>vraagstuk voor</h2>
-          <p>Geen pitchdeck. Stuur kort wat je probeert te sturen, welke systemen meedoen en waar het vastloopt. Dan
-            krijg je een eerlijk antwoord over de beste eerste stap.</p>
+          <h2 id="contact-title">Leg je <span>data-, integratie- of AI-</span>vraagstuk voor</h2>
+          <p>Geen pitchdeck. Stuur kort welke systemen meedoen, wat je probeert te weten te komen en waar het vastloopt.
+            Dan krijg je een eerlijk antwoord over de beste eerste stap, ook als dat is dat je mij niet nodig hebt.</p>
         </div>
         <div>
           <div class="cta-actions">
@@ -2296,7 +2802,7 @@
   <footer class="footer">
     <div class="wrap">
       <div>Yomi &copy; 2026 - Jordi ter Woord</div>
-      <div>Data als fundament - AI in productie - Performance op marge</div>
+      <div>Datafundament - Systeemintegratie - AI in productie</div>
     </div>
   </footer>
 
